@@ -28,6 +28,12 @@ export const content = {
       title: "作品",
       projects: [
         {
+          name: "王者荣耀世界 Honor of Kings World",
+          tag: "腾讯天美 · 游戏交互设计",
+          description: "基于《王者荣耀》IP 的开放世界动作角色扮演游戏(2026 年上市)。负责战斗 UI 与多个玩法系统的交互设计。",
+          fullDescription: "我在腾讯天美工作室的三年半里,担任这款大型开放世界游戏的交互设计师,负责大量核心界面与系统的交互设计。\n\n战斗层面,我负责了战斗 UI 的整体设计,包括血条、游戏内 HUD、技能盘等玩家高频交互的核心模块。系统层面,我设计了家园、宠物、成就、副本等多个玩法系统的交互流程。\n\n这段经历让我在一个工业级的大型项目中,系统打磨了从需求到落地的完整交互设计能力,以及在复杂系统、跨部门协作下做设计决策的能力。"
+        },
+        {
           name: "点宇宙 Genesis",
           tag: "微信小游戏",
           description: "粒子合成 × 宇宙演化。从夸克到奇点,一个人走完全程。",
@@ -40,11 +46,6 @@ export const content = {
           description: "一条专属链接,让客户在手机上完成合同签署,结果自动归档。",
           fullDescription: "为衍生品投资客户做的线上合同签署工具。管理员发送专属链接,客户在手机上完成风险确认、阅读合同、手写签名,系统自动把签好的 PDF 合成并同步回 Airtable——把原本繁琐的线下签署流程搬到了线上。\n\n我设计并实现了两套签署流程(开户 4 步 / 补签 3 步),处理了手写签名画板、服务端 PDF 合成、幂等防重复提交、链接失效、并发提交等一系列真实工程边界。整套基于 Next.js + Airtable + Vercel,移动端优先。",
           github: "https://github.com/yummyooyummy/signing-app"
-        },
-        {
-          name: "Ski Mini-Program",
-          tag: "小程序",
-          description: "复杂应用的 0-1 产品规划(内容补充中)"
         }
       ],
       viewDetails: "查看详情 →",
@@ -52,7 +53,7 @@ export const content = {
     },
     lab: {
       title: "实验室",
-      description: "代码与创意的实验——包括这个完全由 AI 构建的网站。"
+      description: "这里放一些还在路上的探索——用 AI 把想法快速试出来的地方。"
     },
     contact: {
       title: "联系我",
@@ -94,6 +95,12 @@ export const content = {
       title: "Work",
       projects: [
         {
+          name: "Honor of Kings: World",
+          tag: "Tencent TiMi · Game Interaction Design",
+          description: "An open-world action RPG built on the Honor of Kings IP (released 2026). Led battle UI and the interaction design of multiple gameplay systems.",
+          fullDescription: "Over three and a half years at Tencent's TiMi Studio, I worked as an interaction designer on this large-scale open-world game, responsible for the interaction design of many core interfaces and systems.\n\nOn the combat side, I led the design of the battle UI — health bars, in-game HUD, and the skill wheel, the high-frequency modules players touch constantly. On the systems side, I designed the interaction flows for multiple gameplay systems, including the home, pet, achievement, and dungeon systems.\n\nWorking on an industrial-scale project sharpened my end-to-end interaction design — from requirements to shipping — and my ability to make design decisions inside complex systems and cross-team collaboration."
+        },
+        {
           name: "Genesis",
           tag: "WeChat Mini Game",
           description: "Particle fusion meets cosmic evolution — from quark to singularity, built solo.",
@@ -106,11 +113,6 @@ export const content = {
           description: "One private link lets a client sign a contract on their phone — auto-archived.",
           fullDescription: "An online contract-signing tool for derivatives investment clients. An admin sends a unique link; the client confirms risk, reads the contract, and signs by hand on their phone. The system auto-composes the signed PDF and syncs it back to Airtable — moving a tedious offline process fully online.\n\nI designed and built two signing flows (4-step onboarding / 3-step re-signing) and handled real engineering edges: handwritten-signature canvas, server-side PDF composition, idempotent submission, expired links, concurrent writes. Built on Next.js + Airtable + Vercel, mobile-first.",
           github: "https://github.com/yummyooyummy/signing-app"
-        },
-        {
-          name: "Ski Mini-Program",
-          tag: "Mini-Program",
-          description: "0-to-1 product planning for a complex app (content TBD)"
         }
       ],
       viewDetails: "View details →",
@@ -118,7 +120,7 @@ export const content = {
     },
     lab: {
       title: "Lab",
-      description: "Experiments in code and craft — including this website, built entirely with AI."
+      description: "Experiments still in progress — where I use AI to quickly test ideas into something real."
     },
     contact: {
       title: "Contact",
