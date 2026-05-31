@@ -21,13 +21,28 @@ export default function Work({ content }) {
           {content.work.projects.map((project, index) => (
             <div
               key={index}
-              className="bg-white border border-gray-200 p-6 rounded-lg hover:shadow-lg transition-shadow"
+              className="bg-white border border-gray-200 p-6 rounded-lg hover:shadow-lg transition-shadow flex flex-col"
             >
-              <h3 className="text-xl font-bold mb-2">{project.name}</h3>
-              <p className="text-gray-600 mb-4">{project.description}</p>
-              <span className="text-purple hover:underline cursor-not-allowed opacity-50">
-                {content.work.viewDetails}
-              </span>
+              <h3 className="text-xl font-bold mb-1">{project.name}</h3>
+              {project.tag && (
+                <p className="text-xs uppercase tracking-wider text-gray-500 mb-3">{project.tag}</p>
+              )}
+              <p className="text-gray-600 mb-4 flex-grow">{project.description}</p>
+              <div className="flex items-center gap-4 mt-auto">
+                {project.github && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-purple hover:underline focus:outline-none focus:ring-2 focus:ring-purple rounded"
+                  >
+                    {content.work.viewCode}
+                  </a>
+                )}
+                <span className="text-purple cursor-not-allowed opacity-50">
+                  {content.work.viewDetails}
+                </span>
+              </div>
             </div>
           ))}
         </div>

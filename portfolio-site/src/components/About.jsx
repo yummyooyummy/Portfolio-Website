@@ -17,7 +17,7 @@ export default function About({ content }) {
     >
       <div className="max-w-3xl mx-auto">
         <h2 className="text-4xl font-bold mb-8">{content.about.title}</h2>
-        <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+        <p className="text-lg text-gray-700 mb-6 leading-relaxed whitespace-pre-line">
           {content.about.bio}
         </p>
         <p className="text-lg text-gray-600 mt-6">

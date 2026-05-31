@@ -46,7 +46,7 @@ docs/superpowers/specs/          # 设计文档
 
 - **Navbar：** 固定顶部导航，包含导航链接和语言切换按钮（中/EN）
 - **Hero：** 首屏大标题区，展示核心价值主张 + "联系我"和"下载简历"按钮
-- **Stats：** 三个大数字展示关键成就（产品数量、工作年限、语言能力）
+- **Stats：** 四个大数字展示关键成就（0→1 全流程、腾讯经验、AI 落地产品数、双语能力）
 - **About：** 个人介绍和工作经历
 - **Work：** 项目作品展示，3个卡片式布局
 - **Lab：** 实验室板块，展示技术探索
@@ -100,17 +100,18 @@ export const content = {
 - [x] 修复 Tailwind CSS v4 兼容性问题（降级到 v3.4.0）
 - [x] 本地开发环境运行正常
 - [x] Git 仓库初始化并推送到 GitHub
+- [x] 替换 Hero / Stats / About / Work 真实文案（中英双语；Stats 改为 4 项、移动端 2 列 / 桌面端 4 列；About 支持多段；Work 卡片接入 GitHub 链接,前两个项目已挂上,Ski 项目内容待补)
 
 ### 🚧 进行中
 - [ ] 无
 
 ### 📋 待办
-- [ ] 替换真实文案内容（`src/content.js` 中的占位文本）
-- [ ] 替换真实姓名（`src/components/Navbar.jsx` 第 18 行）
+- [ ] 替换真实姓名（`src/components/Navbar.jsx` 第 18 行 + `index.html` / `PROJECT.md` 中的 `[填你的名字]`）
 - [ ] 更新真实联系方式（邮箱、LinkedIn）
 - [ ] 替换真实简历 PDF（`public/cv.pdf`）
-- [ ] 视觉细节调整和优化
-- [ ] 添加项目详情页（Work 卡片的"查看详情"链接）
+- [ ] 补充第 3 个项目（Ski Mini-Program）的真实文案
+- [ ] 视觉细节调整和优化（4 列 Stats / Work 新卡片布局需在浏览器中视觉验证)
+- [ ] 添加项目详情页（Work 卡片的"查看详情"链接,长内容已存在 `fullDescription` 字段中)
 - [ ] 部署到 Vercel
 - [ ] 配置自定义域名（可选）
 - [ ] SEO 优化（meta 标签、Open Graph）
@@ -204,4 +205,4 @@ git push origin main
 ---
 
 **最后更新：** 2026-06-01  
-**项目状态：** 开发中（框架完成，待内容替换）
+**项目状态：** 开发中（核心文案已替换，姓名 / 联系方式 / 简历 / Ski 项目内容待补)
