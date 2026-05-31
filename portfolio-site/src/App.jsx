@@ -14,8 +14,8 @@ function detectLangFromPath() {
   return window.location.pathname.startsWith('/en') ? 'en' : 'zh';
 }
 
-function App() {
-  const [lang] = useState(detectLangFromPath);
+function App({ initialLang }) {
+  const [lang] = useState(() => initialLang ?? detectLangFromPath());
 
   useEffect(() => {
     document.documentElement.lang = lang;

@@ -109,14 +109,14 @@ export const content = {
 - [x] Lab 改造为支持项目卡片列表（`content.lab` 增加 `projects` 数组,中英双语；`Lab.jsx` 在 description 下方 `.map()` 渲染卡片网格,样式与 Work 一致——同样的圆角/边框/内边距/响应式 3 列网格,移除 GitHub 链接和"查看详情"链接,无 hover shadow,且对 `projects` 缺失/空数组做了兜底）
 - [x] 滑雪小程序作为第一张占位卡片加入 Lab（中文"滑雪小程序 · 小程序 · 内容补充中" / 英文"Ski Mini-Program · Mini Program · Coming soon"）
 - [x] 语言切换由 query string `?lang=` 改为路径前缀（中文 `/`、英文 `/en/`）：`App.jsx` 用 `useState` 初始化时读 `pathname.startsWith('/en')`,`useEffect` 同步 `document.documentElement.lang`；`Navbar.jsx` 语言切换由 button 改为 `<a href>` 链接（支持右键新标签页,SEO 友好,带 `hrefLang` 属性）；新增 `portfolio-site/vercel.json`：SPA fallback rewrite 让 `/en/` 等路径刷新不 404 + `/?lang=en` 308 永久重定向到 `/en/` 平滑迁移老链接。**这是 SSG 改造的第 1 步,纯路由重构,未引入预渲染。**
+- [x] **SSG 第 2 步:手写 prerender 脚本**（方案 B,放弃 vite-react-ssg——它最新版 peer 不支持 vite 8 + 多路由模式强依赖 react-router,对两路由项目过度设计）：新增 `src/entry-server.jsx`（用 `renderToString` 把 App 渲成字符串）；`App.jsx` 加可选 `initialLang` prop,SSR 时由脚本注入,CSR 时回退到 pathname 检测；`main.jsx` 由 `createRoot` 改为 `hydrateRoot` 复用 SSR 输出；新增 `prerender.mjs`：build 后对 `/` 和 `/en/` 各调一次 `render(lang)`,注入到 dist/index.html 模板的 `<div id="root">`,改 `<html lang>` 为 zh/en,加 `<link rel="alternate" hreflang>` 互指（zh / en / x-default 三条）,产物分别写到 `dist/index.html` 和 `dist/en/index.html`,清理临时 `dist-ssr/`；`package.json` 的 `build` 脚本扩展为 `vite build && vite build --ssr ... && node prerender.mjs`,Vercel 的 `npm run build` / output `dist` 不变。预渲染后 HTML 从 0.79KB 涨到 ~10KB,均含真实中英文内容（"郑雨晴 / 设计师 / 王者荣耀 / 点宇宙 / 实验室"、"Yuqing Zheng / Designer / Honor of Kings / Genesis / Lab"）,搜索引擎和 OG / Twitter Card 抓取器现在能直接读到完整渲染内容。
 
 ### 🚧 进行中
 - [ ] 无
 
 ### 📋 待办
 - [ ] 替换真实简历 PDF（`public/cv.pdf`）
-- [ ] **SSG 第 2 步**：接入 vite-react-ssg,把 `/` 和 `/en/` 编译为真正的静态 HTML（当前是路径就绪但仍是 CSR 兜底）
-- [ ] **SSG 第 3 步**：Vercel 部署后用 curl / OG 预览 / Google Search Console URL Inspection 验证两个语言版本的预渲染产物
+- [ ] **SSG 第 3 步**：Vercel 部署后用 curl / OG 预览 / Google Search Console URL Inspection 验证两个语言版本的预渲染产物在线上可访问、搜索引擎抓取无误
 - [ ] 视觉细节调整和优化（Work 新卡片布局、王者荣耀世界长描述、Lab 单卡片显示效果需在浏览器中视觉验证）
 - [ ] 添加项目详情页（Work 卡片的"查看详情"链接,长内容已存在 `fullDescription` 字段中)
 - [ ] 部署到 Vercel
@@ -211,4 +211,4 @@ git push origin main
 ---
 
 **最后更新：** 2026-06-01  
-**项目状态：** 开发中（Work / Lab 内容已落地;语言切换已切到路径前缀 `/` + `/en/`;SSG 第 1 步完成,2-3 步待续;cv.pdf / 部署待办)
+**项目状态：** 开发中（SSG 第 1+2 步完成,`/` 和 `/en/` 已是含完整内容的预渲染静态 HTML,SEO/OG 抓取就绪;Vercel 在线验证待办;cv.pdf / 简历替换待办)
