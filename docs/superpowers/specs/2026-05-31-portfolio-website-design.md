@@ -61,20 +61,33 @@ src/
 - **Position:** Fixed at top, white background with `shadow-sm`
 - **Height:** 64px (h-16)
 - **Content:** 
-  - Left: Name/logo text "Your Name"
-  - Right: Navigation links (About, Work, Lab, Contact)
+  - Left: Name/logo text "[填你的名字]"
+  - Center: Navigation links (About, Work, Lab, Contact)
+  - Right: Language toggle button (中 / EN)
 - **Behavior:** 
   - Smooth scroll to section anchors on click
   - Scroll offset: -80px to account for fixed navbar height
   - Links have hover state (text color changes to accent purple)
 - **Responsive:** 
-  - Desktop (≥768px): Horizontal nav links
-  - Mobile (<768px): Hamburger menu (three horizontal lines icon)
+  - Desktop (≥768px): Horizontal nav links in center, language toggle on right
+  - Mobile (<768px): Hamburger menu (three horizontal lines icon) + language toggle visible
     - Menu opens as slide-down overlay with white background
     - Links stacked vertically with py-4 spacing
     - Menu closes automatically when link is clicked
     - Toggle animation: 0.3s ease-in-out
     - Z-index: 50
+
+#### Language Toggle
+- **Position:** Right side of navbar (always visible, even on mobile)
+- **Design:** Simple text button showing current/alternate language
+  - Shows "EN" when in Chinese mode (clicking switches to English)
+  - Shows "中" when in English mode (clicking switches to Chinese)
+  - Style: text-gray-600, hover:text-purple, cursor-pointer
+- **Behavior:**
+  - Click toggles between zh/en
+  - Updates URL parameter (?lang=zh or ?lang=en)
+  - Re-renders all content in selected language
+  - Persists selection in URL for sharing
 
 #### Hero
 - **Layout:** Centered content, full viewport height (min-h-screen)
@@ -164,7 +177,7 @@ src/
   - Large CTA text: "Let's talk." (text-4xl or text-5xl, font-bold, mb-8)
   - Links container (flex gap-6):
     - Email: `mailto:placeholder@example.com` link
-    - GitHub: `https://github.com/placeholder` (opens in new tab: `target="_blank" rel="noopener noreferrer"`)
+    - GitHub: `https://github.com/yummyooyummy` (opens in new tab: `target="_blank" rel="noopener noreferrer"`)
     - LinkedIn: `https://linkedin.com/in/placeholder` (opens in new tab: `target="_blank" rel="noopener noreferrer"`)
   - Link styling: text-purple, hover:underline, text-lg
 
@@ -172,10 +185,10 @@ src/
 - **Layout:** Centered, small text
 - **Spacing:** py-8, border-top (border-gray-200)
 - **Content:**
-  - Copyright notice: "© 2026 Your Name. Built with AI."
+  - Copyright notice: "© 2026 [填你的名字]. Built with AI."
     - Style: text-sm, text-gray-600
   - Social links (same as Contact section, same order):
-    - Email, GitHub, LinkedIn
+    - Email, GitHub (https://github.com/yummyooyummy), LinkedIn
     - Style: text-sm, text-purple, hover:underline
     - Layout: flex gap-4, mt-4
     - Same target="_blank" behavior for external links
@@ -250,7 +263,7 @@ All content is placeholder text provided by the user. Real content will be added
 
 ### Contact
 - Email: placeholder@example.com
-- GitHub: github.com/placeholder
+- GitHub: https://github.com/yummyooyummy
 - LinkedIn: linkedin.com/in/placeholder
 
 ## Implementation Notes
@@ -289,9 +302,57 @@ Basic meta tags to include in index.html:
 ```html
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Portfolio of [Your Name] - Designer who turns ideas into real products with AI" />
-<title>Your Name - Portfolio</title>
+<meta name="description" content="Portfolio of [填你的名字] - Designer who turns ideas into real products with AI" />
+<title>[填你的名字] - Portfolio</title>
 ```
+
+### Internationalization (i18n)
+
+**Language Support:** Chinese (zh) and English (en)
+
+**Default Language Logic:**
+- No URL parameter or `?lang=zh` → Chinese
+- `?lang=en` → English
+- Language toggle button updates URL parameter
+
+**Content Structure:**
+All text content stored in a centralized content object:
+```js
+const content = {
+  zh: {
+    nav: { about: '关于', work: '作品', lab: '实验室', contact: '联系' },
+    hero: {
+      headline: "I'm a designer who turns ideas into real, working products with AI.",
+      subtitle: "交互设计师 · 前腾讯 · 用 AI 独立完成产品从 0 到 1",
+      cta1: "联系我",
+      cta2: "下载简历"
+    },
+    // ... all other content
+  },
+  en: {
+    nav: { about: 'About', work: 'Work', lab: 'Lab', contact: 'Contact' },
+    hero: {
+      headline: "I'm a designer who turns ideas into real, working products with AI.",
+      subtitle: "Interaction Designer · Ex-Tencent · Building products end-to-end with AI",
+      cta1: "Contact me",
+      cta2: "Download CV"
+    },
+    // ... all other content
+  }
+};
+```
+
+**Implementation:**
+- Use React state to manage current language
+- Read initial language from URL parameter on mount
+- Language toggle button updates both state and URL
+- All components consume content from the centralized object
+- Placeholder content provided for both languages (user will replace later)
+
+**URL Behavior:**
+- Clicking language toggle updates `window.history.pushState` to change URL parameter
+- Allows sharing language-specific links
+- Example: `https://yoursite.com/?lang=en` vs `https://yoursite.com/?lang=zh`
 
 ### Accessibility Notes
 - All interactive elements (buttons, links) have hover and focus states
