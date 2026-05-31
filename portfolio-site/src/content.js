@@ -53,7 +53,14 @@ export const content = {
     },
     lab: {
       title: "实验室",
-      description: "这里放一些还在路上的探索——用 AI 把想法快速试出来的地方。"
+      description: "这里放一些还在路上的探索——用 AI 把想法快速试出来的地方。",
+      projects: [
+        {
+          name: "滑雪小程序",
+          tag: "小程序",
+          description: "内容补充中"
+        }
+      ]
     },
     contact: {
       title: "联系我",
@@ -120,7 +127,14 @@ export const content = {
     },
     lab: {
       title: "Lab",
-      description: "Experiments still in progress — where I use AI to quickly test ideas into something real."
+      description: "Experiments still in progress — where I use AI to quickly test ideas into something real.",
+      projects: [
+        {
+          name: "Ski Mini-Program",
+          tag: "Mini Program",
+          description: "Coming soon"
+        }
+      ]
     },
     contact: {
       title: "Contact",

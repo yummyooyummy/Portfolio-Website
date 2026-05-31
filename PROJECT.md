@@ -105,16 +105,16 @@ export const content = {
 - [x] 更新真实联系方式（邮箱 `zhengyuqingsherry@gmail.com` / LinkedIn `linkedin.com/in/yuqing-zheng` / GitHub `github.com/yummyooyummy`,Footer 与 Contact 两处都已替换）
 - [x] Work 新增"王者荣耀世界 Honor of Kings World"并置顶（腾讯天美三年半经历,含 fullDescription 长文案,中英双语；无 github 字段）
 - [x] 将 Ski Mini-Program 从 Work 移除（Work 最终保留 3 个：王者荣耀世界 / 点宇宙 / 签署应用）
-- [x] 替换 Lab 引言文案（"还在路上的探索——用 AI 把想法快速试出来的地方"），Lab 当前为纯文字结构,卡片列表待引入
+- [x] 替换 Lab 引言文案（"还在路上的探索——用 AI 把想法快速试出来的地方"）
+- [x] Lab 改造为支持项目卡片列表（`content.lab` 增加 `projects` 数组,中英双语；`Lab.jsx` 在 description 下方 `.map()` 渲染卡片网格,样式与 Work 一致——同样的圆角/边框/内边距/响应式 3 列网格,移除 GitHub 链接和"查看详情"链接,无 hover shadow,且对 `projects` 缺失/空数组做了兜底）
+- [x] 滑雪小程序作为第一张占位卡片加入 Lab（中文"滑雪小程序 · 小程序 · 内容补充中" / 英文"Ski Mini-Program · Mini Program · Coming soon"）
 
 ### 🚧 进行中
 - [ ] 无
 
 ### 📋 待办
 - [ ] 替换真实简历 PDF（`public/cv.pdf`）
-- [ ] Lab 改造为支持项目卡片列表（当前只有 `lab.title` + `lab.description` 两个字段,Lab.jsx 直接渲染 description；如要展示滑雪等"内容补充中"卡片,需扩展 content schema 并改组件）
-- [ ] 把 Ski Mini-Program 以卡片形式加入 Lab（结构落地后）
-- [ ] 视觉细节调整和优化（Work 新卡片布局、王者荣耀世界长描述需在浏览器中视觉验证)
+- [ ] 视觉细节调整和优化（Work 新卡片布局、王者荣耀世界长描述、Lab 单卡片显示效果需在浏览器中视觉验证）
 - [ ] 添加项目详情页（Work 卡片的"查看详情"链接,长内容已存在 `fullDescription` 字段中)
 - [ ] 部署到 Vercel
 - [ ] 配置自定义域名（可选）
@@ -124,10 +124,9 @@ export const content = {
 
 ### 待办事项
 1. **简历文件：** `public/cv.pdf` 是占位文件，需要上传真实简历
-2. **Lab 卡片化：** Lab 当前只有 `title` + `description` 两段纯文字（`Lab.jsx` 直接渲染居中文案）;若要承接"滑雪小程序"等"内容补充中"卡片,需要扩展 `content.lab` 增加 `projects` 数组并改造 `Lab.jsx` 渲染
-3. **Ski Mini-Program 落地：** 已从 Work 移除,Lab 结构就绪后以卡片形式加入
-4. **项目详情：** Work 板块的"查看详情"链接目前是禁用状态，未来可扩展为独立详情页
-5. **部署上线：** 完成内容替换后部署到 Vercel
+2. **Lab 卡片真实内容：** 滑雪小程序当前是"内容补充中"占位卡片,后续补真实文案；如有更多 Lab 项目可继续追加到 `content.lab.projects` 数组
+3. **项目详情：** Work 板块的"查看详情"链接目前是禁用状态，未来可扩展为独立详情页
+4. **部署上线：** 完成内容替换后部署到 Vercel
 
 ### 已知问题
 - 无重大问题
@@ -209,4 +208,4 @@ git push origin main
 ---
 
 **最后更新：** 2026-06-01  
-**项目状态：** 开发中（Work 已重整：王者荣耀世界置顶 + 滑雪移出;Lab 引言已替换,卡片化结构待引入;cv.pdf / 部署待办)
+**项目状态：** 开发中（Work 已重整：王者荣耀世界置顶 + 滑雪移出;Lab 已支持卡片列表,滑雪以"内容补充中"占位卡片入驻;cv.pdf / 部署待办)
