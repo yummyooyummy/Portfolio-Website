@@ -1,6 +1,7 @@
 export const content = {
   zh: {
     nav: {
+      name: '郑雨晴',
       about: '关于',
       work: '作品',
       lab: '实验室',
@@ -61,11 +62,12 @@ export const content = {
       linkedin: "LinkedIn"
     },
     footer: {
-      copyright: "© 2026 [填你的名字]. Built with AI."
+      copyright: "© 2026 郑雨晴. Built with AI."
     }
   },
   en: {
     nav: {
+      name: 'Yuqing Zheng',
       about: 'About',
       work: 'Work',
       lab: 'Lab',
@@ -126,7 +128,7 @@ export const content = {
       linkedin: "LinkedIn"
     },
     footer: {
-      copyright: "© 2026 [填你的名字]. Built with AI."
+      copyright: "© 2026 Yuqing Zheng. Built with AI."
     }
   }
 };

@@ -7,7 +7,7 @@ export default function Footer({ content }) {
         </p>
         <div className="flex justify-center gap-4 text-sm">
           <a
-            href="mailto:placeholder@example.com"
+            href="mailto:zhengyuqingsherry@gmail.com"
             className="text-purple hover:underline focus:outline-none focus:ring-2 focus:ring-purple"
           >
             {content.contact.email}
@@ -21,7 +21,7 @@ export default function Footer({ content }) {
             {content.contact.github}
           </a>
           <a
-            href="https://linkedin.com/in/placeholder"
+            href="https://www.linkedin.com/in/yuqing-zheng"
             target="_blank"
             rel="noopener noreferrer"
             className="text-purple hover:underline focus:outline-none focus:ring-2 focus:ring-purple"

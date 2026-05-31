@@ -15,7 +15,7 @@ export default function Navbar({ content, lang, onLanguageChange }) {
     <nav className="fixed top-0 left-0 right-0 bg-white shadow-sm z-50 h-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-8 h-full flex items-center justify-between">
         {/* Logo/Name */}
-        <div className="font-bold text-lg">[填你的名字]</div>
+        <div className="font-bold text-lg">{content.nav.name}</div>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">

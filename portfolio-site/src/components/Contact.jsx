@@ -19,7 +19,7 @@ export default function Contact({ content }) {
         <h2 className="text-4xl sm:text-5xl font-bold mb-8">{content.contact.cta}</h2>
         <div className="flex flex-wrap justify-center gap-6 text-lg">
           <a
-            href="mailto:placeholder@example.com"
+            href="mailto:zhengyuqingsherry@gmail.com"
             className="text-purple hover:underline focus:outline-none focus:ring-2 focus:ring-purple"
           >
             {content.contact.email}
@@ -33,7 +33,7 @@ export default function Contact({ content }) {
             {content.contact.github}
           </a>
           <a
-            href="https://linkedin.com/in/placeholder"
+            href="https://www.linkedin.com/in/yuqing-zheng"
             target="_blank"
             rel="noopener noreferrer"
             className="text-purple hover:underline focus:outline-none focus:ring-2 focus:ring-purple"

@@ -101,28 +101,27 @@ export const content = {
 - [x] 本地开发环境运行正常
 - [x] Git 仓库初始化并推送到 GitHub
 - [x] 替换 Hero / Stats / About / Work 真实文案（中英双语；Stats 改为 4 项、移动端 2 列 / 桌面端 4 列；About 支持多段；Work 卡片接入 GitHub 链接,前两个项目已挂上,Ski 项目内容待补)
+- [x] 替换真实姓名为"郑雨晴 / Yuqing Zheng"（Navbar / Footer / index.html title & meta；Navbar 由硬编码改为读取 `content.nav.name`,实现 i18n）
+- [x] 更新真实联系方式（邮箱 `zhengyuqingsherry@gmail.com` / LinkedIn `linkedin.com/in/yuqing-zheng` / GitHub `github.com/yummyooyummy`,Footer 与 Contact 两处都已替换）
 
 ### 🚧 进行中
 - [ ] 无
 
 ### 📋 待办
-- [ ] 替换真实姓名（`src/components/Navbar.jsx` 第 18 行 + `index.html` / `PROJECT.md` 中的 `[填你的名字]`）
-- [ ] 更新真实联系方式（邮箱、LinkedIn）
 - [ ] 替换真实简历 PDF（`public/cv.pdf`）
 - [ ] 补充第 3 个项目（Ski Mini-Program）的真实文案
 - [ ] 视觉细节调整和优化（4 列 Stats / Work 新卡片布局需在浏览器中视觉验证)
 - [ ] 添加项目详情页（Work 卡片的"查看详情"链接,长内容已存在 `fullDescription` 字段中)
 - [ ] 部署到 Vercel
 - [ ] 配置自定义域名（可选）
-- [ ] SEO 优化（meta 标签、Open Graph）
+- [ ] SEO 优化（OG 标签 / Twitter Card,基础 title + description 已写)
 
 ## 6. 待办与已知问题
 
 ### 待办事项
-1. **内容替换：** 所有占位文案需要替换为真实内容
-2. **简历文件：** `public/cv.pdf` 是占位文件，需要上传真实简历
-3. **联系方式：** 邮箱和 LinkedIn 链接需要更新
-4. **项目详情：** Work 板块的"查看详情"链接目前是禁用状态，未来可扩展为独立详情页
+1. **简历文件：** `public/cv.pdf` 是占位文件，需要上传真实简历
+2. **Ski 项目：** 第 3 个 Work 卡片(Ski Mini-Program) 内容仍是占位,待补
+3. **项目详情：** Work 板块的"查看详情"链接目前是禁用状态，未来可扩展为独立详情页
 5. **部署上线：** 完成内容替换后部署到 Vercel
 
 ### 已知问题
@@ -205,4 +204,4 @@ git push origin main
 ---
 
 **最后更新：** 2026-06-01  
-**项目状态：** 开发中（核心文案已替换，姓名 / 联系方式 / 简历 / Ski 项目内容待补)
+**项目状态：** 开发中（核心文案、姓名、联系方式已替换;cv.pdf / Ski 项目内容 / 部署待办)
