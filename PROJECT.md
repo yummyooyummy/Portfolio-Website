@@ -11,7 +11,7 @@
 - **样式方案：** Tailwind CSS v3.4.0
 - **动画库：** Framer Motion
 - **部署方式：** 计划使用 Vercel
-- **语言切换：** 通过 URL 参数控制（`?lang=zh` / `?lang=en`）
+- **语言切换：** 通过路径前缀控制（中文 `/` / 英文 `/en/`,旧 `?lang=en` 在 Vercel 上 308 重定向到 `/en/`）
 
 ## 3. 项目结构
 
@@ -108,12 +108,15 @@ export const content = {
 - [x] 替换 Lab 引言文案（"还在路上的探索——用 AI 把想法快速试出来的地方"）
 - [x] Lab 改造为支持项目卡片列表（`content.lab` 增加 `projects` 数组,中英双语；`Lab.jsx` 在 description 下方 `.map()` 渲染卡片网格,样式与 Work 一致——同样的圆角/边框/内边距/响应式 3 列网格,移除 GitHub 链接和"查看详情"链接,无 hover shadow,且对 `projects` 缺失/空数组做了兜底）
 - [x] 滑雪小程序作为第一张占位卡片加入 Lab（中文"滑雪小程序 · 小程序 · 内容补充中" / 英文"Ski Mini-Program · Mini Program · Coming soon"）
+- [x] 语言切换由 query string `?lang=` 改为路径前缀（中文 `/`、英文 `/en/`）：`App.jsx` 用 `useState` 初始化时读 `pathname.startsWith('/en')`,`useEffect` 同步 `document.documentElement.lang`；`Navbar.jsx` 语言切换由 button 改为 `<a href>` 链接（支持右键新标签页,SEO 友好,带 `hrefLang` 属性）；新增 `portfolio-site/vercel.json`：SPA fallback rewrite 让 `/en/` 等路径刷新不 404 + `/?lang=en` 308 永久重定向到 `/en/` 平滑迁移老链接。**这是 SSG 改造的第 1 步,纯路由重构,未引入预渲染。**
 
 ### 🚧 进行中
 - [ ] 无
 
 ### 📋 待办
 - [ ] 替换真实简历 PDF（`public/cv.pdf`）
+- [ ] **SSG 第 2 步**：接入 vite-react-ssg,把 `/` 和 `/en/` 编译为真正的静态 HTML（当前是路径就绪但仍是 CSR 兜底）
+- [ ] **SSG 第 3 步**：Vercel 部署后用 curl / OG 预览 / Google Search Console URL Inspection 验证两个语言版本的预渲染产物
 - [ ] 视觉细节调整和优化（Work 新卡片布局、王者荣耀世界长描述、Lab 单卡片显示效果需在浏览器中视觉验证）
 - [ ] 添加项目详情页（Work 卡片的"查看详情"链接,长内容已存在 `fullDescription` 字段中)
 - [ ] 部署到 Vercel
@@ -208,4 +211,4 @@ git push origin main
 ---
 
 **最后更新：** 2026-06-01  
-**项目状态：** 开发中（Work 已重整：王者荣耀世界置顶 + 滑雪移出;Lab 已支持卡片列表,滑雪以"内容补充中"占位卡片入驻;cv.pdf / 部署待办)
+**项目状态：** 开发中（Work / Lab 内容已落地;语言切换已切到路径前缀 `/` + `/en/`;SSG 第 1 步完成,2-3 步待续;cv.pdf / 部署待办)

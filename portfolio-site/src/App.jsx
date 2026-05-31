@@ -9,40 +9,23 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import { content } from './content';
 
+function detectLangFromPath() {
+  if (typeof window === 'undefined') return 'zh';
+  return window.location.pathname.startsWith('/en') ? 'en' : 'zh';
+}
+
 function App() {
-  const [lang, setLang] = useState('zh');
+  const [lang] = useState(detectLangFromPath);
 
-  // Read language from URL parameter on mount
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const urlLang = params.get('lang');
-    if (urlLang === 'en') {
-      setLang('en');
-    } else {
-      setLang('zh');
-    }
-  }, []);
-
-  // Toggle language and update URL
-  const handleLanguageChange = () => {
-    const newLang = lang === 'zh' ? 'en' : 'zh';
-    setLang(newLang);
-
-    // Update URL parameter
-    const url = new URL(window.location);
-    url.searchParams.set('lang', newLang);
-    window.history.pushState({}, '', url);
-  };
+    document.documentElement.lang = lang;
+  }, [lang]);
 
   const currentContent = content[lang];
 
   return (
     <div className="min-h-screen">
-      <Navbar
-        content={currentContent}
-        lang={lang}
-        onLanguageChange={handleLanguageChange}
-      />
+      <Navbar content={currentContent} lang={lang} />
       <Hero content={currentContent} />
       <Stats content={currentContent} />
       <About content={currentContent} />

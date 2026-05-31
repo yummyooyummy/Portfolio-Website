@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function Navbar({ content, lang, onLanguageChange }) {
+export default function Navbar({ content, lang }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const scrollToSection = (sectionId) => {
@@ -10,6 +10,8 @@ export default function Navbar({ content, lang, onLanguageChange }) {
       setIsMenuOpen(false);
     }
   };
+
+  const otherLangHref = lang === 'zh' ? '/en/' : '/';
 
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white shadow-sm z-50 h-16">
@@ -46,13 +48,14 @@ export default function Navbar({ content, lang, onLanguageChange }) {
         </div>
 
         {/* Language Toggle */}
-        <button
-          onClick={onLanguageChange}
+        <a
+          href={otherLangHref}
           className="text-gray-600 hover:text-purple transition-colors cursor-pointer focus:outline-none focus:ring-2 focus:ring-purple px-2 py-1"
           aria-label="Toggle language"
+          hrefLang={lang === 'zh' ? 'en' : 'zh'}
         >
           {lang === 'zh' ? 'EN' : '中'}
-        </button>
+        </a>
 
         {/* Mobile Hamburger */}
         <button

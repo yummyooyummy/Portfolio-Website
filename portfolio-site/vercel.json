@@ -1,0 +1,15 @@
+{
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ],
+  "redirects": [
+    {
+      "source": "/",
+      "has": [
+        { "type": "query", "key": "lang", "value": "en" }
+      ],
+      "destination": "/en/",
+      "permanent": true
+    }
+  ]
+}
