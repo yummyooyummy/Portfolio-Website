@@ -18,22 +18,28 @@
 ```
 portfolio-site/                    # 主项目目录
 ├── src/
-│   ├── components/               # React 组件
+│   ├── pages/                   # 页面组件（多页架构）
+│   │   ├── HomePage.jsx         # 主页（目录式概览）
+│   │   └── AboutPage.jsx        # 关于页
+│   ├── components/               # 可复用组件
 │   │   ├── Navbar.jsx           # 固定顶部导航 + 语言切换按钮
 │   │   ├── Hero.jsx             # 首屏大标题 + CTA 按钮
-│   │   ├── Stats.jsx            # 三个数据亮点展示
+│   │   ├── Stats.jsx            # 四个数据亮点展示
 │   │   ├── About.jsx            # 关于我 / 个人介绍
 │   │   ├── Work.jsx             # 项目作品展示（3个卡片）
 │   │   ├── Lab.jsx              # 实验室板块
 │   │   ├── Contact.jsx          # 联系方式
 │   │   └── Footer.jsx           # 页脚
 │   ├── content.js               # 🔑 中英文案集中管理（content.zh / content.en）
-│   ├── App.jsx                  # 主应用组件 + 语言状态管理
-│   ├── main.jsx                 # 入口文件
+│   ├── entry-server.jsx         # SSR 入口（预渲染用）
+│   ├── main.jsx                 # 客户端入口（hydration）
+│   ├── App.jsx                  # [已废弃] 单页应用组件
 │   └── index.css                # 全局样式 + Tailwind 导入
 ├── public/
 │   └── cv.pdf                   # 简历文件（待替换真实简历）
 ├── index.html                   # HTML 模板
+├── prerender.mjs                # 预渲染脚本（生成静态 HTML）
+├── vercel.json                  # Vercel 路由配置
 ├── tailwind.config.js           # Tailwind 配置（Inter 字体 + 紫色主题）
 ├── postcss.config.js            # PostCSS 配置
 └── package.json                 # 依赖管理
@@ -110,26 +116,28 @@ export const content = {
 - [x] 滑雪小程序作为第一张占位卡片加入 Lab（中文"滑雪小程序 · 小程序 · 内容补充中" / 英文"Ski Mini-Program · Mini Program · Coming soon"）
 - [x] 语言切换由 query string `?lang=` 改为路径前缀（中文 `/`、英文 `/en/`）：`App.jsx` 用 `useState` 初始化时读 `pathname.startsWith('/en')`,`useEffect` 同步 `document.documentElement.lang`；`Navbar.jsx` 语言切换由 button 改为 `<a href>` 链接（支持右键新标签页,SEO 友好,带 `hrefLang` 属性）；新增 `portfolio-site/vercel.json`：SPA fallback rewrite 让 `/en/` 等路径刷新不 404 + `/?lang=en` 308 永久重定向到 `/en/` 平滑迁移老链接。**这是 SSG 改造的第 1 步,纯路由重构,未引入预渲染。**
 - [x] **SSG 第 2 步:手写 prerender 脚本**（方案 B,放弃 vite-react-ssg——它最新版 peer 不支持 vite 8 + 多路由模式强依赖 react-router,对两路由项目过度设计）：新增 `src/entry-server.jsx`（用 `renderToString` 把 App 渲成字符串）；`App.jsx` 加可选 `initialLang` prop,SSR 时由脚本注入,CSR 时回退到 pathname 检测；`main.jsx` 由 `createRoot` 改为 `hydrateRoot` 复用 SSR 输出；新增 `prerender.mjs`：build 后对 `/` 和 `/en/` 各调一次 `render(lang)`,注入到 dist/index.html 模板的 `<div id="root">`,改 `<html lang>` 为 zh/en,加 `<link rel="alternate" hreflang>` 互指（zh / en / x-default 三条）,产物分别写到 `dist/index.html` 和 `dist/en/index.html`,清理临时 `dist-ssr/`；`package.json` 的 `build` 脚本扩展为 `vite build && vite build --ssr ... && node prerender.mjs`,Vercel 的 `npm run build` / output `dist` 不变。预渲染后 HTML 从 0.79KB 涨到 ~10KB,均含真实中英文内容（"郑雨晴 / 设计师 / 王者荣耀 / 点宇宙 / 实验室"、"Yuqing Zheng / Designer / Honor of Kings / Genesis / Lab"）,搜索引擎和 OG / Twitter Card 抓取器现在能直接读到完整渲染内容。
+- [x] **多页重构第 1 步:主页+关于页架构**（从单页滚动改为多页面架构的基础改造）：重构 `entry-server.jsx` 为 `render(lang, route)` 形式,支持按路由参数渲染不同页面组件；新建 `src/pages/HomePage.jsx`（目录式主页,含 Hero + Stats + 4 个导航卡片）和 `src/pages/AboutPage.jsx`（关于页,含 Stats + About）；改造 `prerender.mjs` 路由表从 2 条扩展到 4 条（`/` `/en/` `/about` `/en/about`）,每个路由注入对应的 hreflang 标签；调整 `vercel.json` 删除全局 rewrite,依赖 Vercel 默认行为让真实文件优先；更新 `Navbar.jsx` 导航从锚点滚动改为页面跳转（`<a href>`）,语言切换支持"当前路径+语言前缀"（在 `/about` 点 EN 跳到 `/en/about`）；更新 `main.jsx` 客户端 hydration 支持路由检测。验证通过：构建成功生成 4 个 HTML（`dist/index.html` `dist/en/index.html` `dist/about/index.html` `dist/en/about/index.html`）,各页面 `<html lang>` 正确（zh/en）,中英文内容正确渲染,hreflang 标签正确,本地预览所有页面可访问且刷新不 404。
 
 ### 🚧 进行中
-- [ ] 无
+- [ ] **多页重构第 2 步**：作品列表页 + 项目详情页（`/work` + `/work/[项目]`）
+- [ ] **多页重构第 3 步**：实验室 + AI 实践 + 联系页（`/lab` `/ai` `/contact`）
+- [ ] **多页重构第 4 步**：SEO 优化与收尾（独立 title/meta、面包屑导航、Lighthouse 验证）
 
 ### 📋 待办
 - [ ] 替换真实简历 PDF（`public/cv.pdf`）
-- [ ] **SSG 第 3 步**：Vercel 部署后用 curl / OG 预览 / Google Search Console URL Inspection 验证两个语言版本的预渲染产物在线上可访问、搜索引擎抓取无误
-- [ ] 视觉细节调整和优化（Work 新卡片布局、王者荣耀世界长描述、Lab 单卡片显示效果需在浏览器中视觉验证）
-- [ ] 添加项目详情页（Work 卡片的"查看详情"链接,长内容已存在 `fullDescription` 字段中)
-- [ ] 部署到 Vercel
+- [ ] 视觉细节调整和优化（主页导航卡片、关于页布局需在浏览器中视觉验证）
+- [ ] 完成多页重构第 2/3/4 步（work/lab/ai/contact 页面 + 项目详情页 + SEO 优化）
+- [ ] 部署到 Vercel 并验证所有页面在线上可访问
 - [ ] 配置自定义域名（可选）
-- [ ] SEO 优化（OG 标签 / Twitter Card,基础 title + description 已写)
+- [ ] SEO 优化（每页独立 title/meta、OG 标签 / Twitter Card）
 
 ## 6. 待办与已知问题
 
 ### 待办事项
 1. **简历文件：** `public/cv.pdf` 是占位文件，需要上传真实简历
-2. **Lab 卡片真实内容：** 滑雪小程序当前是"内容补充中"占位卡片,后续补真实文案；如有更多 Lab 项目可继续追加到 `content.lab.projects` 数组
-3. **项目详情：** Work 板块的"查看详情"链接目前是禁用状态，未来可扩展为独立详情页
-4. **部署上线：** 完成内容替换后部署到 Vercel
+2. **多页重构：** 当前仅完成主页和关于页（第 1 步），还需完成 work/lab/ai/contact 页面和项目详情页（第 2/3/4 步）
+3. **视觉验证：** 主页导航卡片和关于页布局需在浏览器中验证视觉效果
+4. **部署上线：** 完成多页重构后部署到 Vercel
 
 ### 已知问题
 - 无重大问题
@@ -210,5 +218,5 @@ git push origin main
 
 ---
 
-**最后更新：** 2026-06-01  
-**项目状态：** 开发中（SSG 第 1+2 步完成,`/` 和 `/en/` 已是含完整内容的预渲染静态 HTML,SEO/OG 抓取就绪;Vercel 在线验证待办;cv.pdf / 简历替换待办)
+**最后更新：** 2026-06-02  
+**项目状态：** 开发中（多页重构第 1 步完成：主页+关于页架构已就绪，生成 4 个预渲染 HTML，路由/语言切换/hydration 验证通过；第 2/3/4 步待实施）
