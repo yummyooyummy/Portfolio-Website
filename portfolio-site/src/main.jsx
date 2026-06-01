@@ -13,8 +13,12 @@ function detectRoute() {
   const path = window.location.pathname;
   // Remove /en/ prefix if present
   const cleanPath = path.startsWith('/en/') ? path.slice(3) : path;
-  // Remove trailing slash except for root
-  return cleanPath === '' ? '/' : cleanPath.replace(/\/$/, '');
+  // Normalize: /en/ becomes empty string, convert to /
+  if (cleanPath === '' || cleanPath === '/') {
+    return '/';
+  }
+  // Remove trailing slash for other paths
+  return cleanPath.replace(/\/$/, '');
 }
 
 const ROUTES = {
