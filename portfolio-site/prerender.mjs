@@ -10,26 +10,39 @@ const template = readFileSync(resolve(distDir, 'index.html'), 'utf-8');
 const { render } = await import(resolve(ssrDir, 'entry-server.js'));
 
 const ROUTES = [
-  { path: '/', lang: 'zh', outFile: resolve(distDir, 'index.html') },
-  { path: '/en/', lang: 'en', outFile: resolve(distDir, 'en/index.html') },
+  { path: '/', route: '/', lang: 'zh', outFile: resolve(distDir, 'index.html') },
+  { path: '/en/', route: '/', lang: 'en', outFile: resolve(distDir, 'en/index.html') },
+  { path: '/about', route: '/about', lang: 'zh', outFile: resolve(distDir, 'about/index.html') },
+  { path: '/en/about', route: '/about', lang: 'en', outFile: resolve(distDir, 'en/about/index.html') },
 ];
 
-const HREFLANG_TAGS = `
-    <link rel="alternate" hreflang="zh" href="/" />
-    <link rel="alternate" hreflang="en" href="/en/" />
-    <link rel="alternate" hreflang="x-default" href="/" />`;
+function getHreflangTags(route) {
+  const hreflangMap = {
+    '/': { zh: '/', en: '/en/' },
+    '/about': { zh: '/about', en: '/en/about' },
+  };
 
-for (const route of ROUTES) {
-  const appHtml = render(route.lang);
+  const urls = hreflangMap[route];
+  if (!urls) return '';
+
+  return `
+    <link rel="alternate" hreflang="zh" href="${urls.zh}" />
+    <link rel="alternate" hreflang="en" href="${urls.en}" />
+    <link rel="alternate" hreflang="x-default" href="${urls.zh}" />`;
+}
+
+for (const routeConfig of ROUTES) {
+  const appHtml = render(routeConfig.lang, routeConfig.route);
+  const hreflangTags = getHreflangTags(routeConfig.route);
 
   let html = template
-    .replace('<html lang="zh">', `<html lang="${route.lang}">`)
+    .replace('<html lang="zh">', `<html lang="${routeConfig.lang}">`)
     .replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`)
-    .replace('</head>', `${HREFLANG_TAGS}\n  </head>`);
+    .replace('</head>', `${hreflangTags}\n  </head>`);
 
-  mkdirSync(dirname(route.outFile), { recursive: true });
-  writeFileSync(route.outFile, html, 'utf-8');
-  console.log(`prerendered ${route.path} -> ${route.outFile.replace(distDir, 'dist')}`);
+  mkdirSync(dirname(routeConfig.outFile), { recursive: true });
+  writeFileSync(routeConfig.outFile, html, 'utf-8');
+  console.log(`prerendered ${routeConfig.path} -> ${routeConfig.outFile.replace(distDir, 'dist')}`);
 }
 
 rmSync(ssrDir, { recursive: true, force: true });

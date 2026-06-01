@@ -11,7 +11,16 @@ export default function Navbar({ content, lang }) {
     }
   };
 
-  const otherLangHref = lang === 'zh' ? '/en/' : '/';
+  // Get current path and construct language toggle URL
+  const getCurrentPath = () => {
+    if (typeof window === 'undefined') return '/';
+    const path = window.location.pathname;
+    // Remove /en/ prefix if present
+    return path.startsWith('/en/') ? path.slice(3) : path;
+  };
+
+  const currentPath = getCurrentPath();
+  const otherLangHref = lang === 'zh' ? `/en${currentPath}` : currentPath || '/';
 
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white shadow-sm z-50 h-16">
@@ -21,30 +30,30 @@ export default function Navbar({ content, lang }) {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
-          <button
-            onClick={() => scrollToSection('about')}
+          <a
+            href={lang === 'zh' ? '/about' : '/en/about'}
             className="text-gray-700 hover:text-purple transition-colors focus:outline-none focus:ring-2 focus:ring-purple"
           >
             {content.nav.about}
-          </button>
-          <button
-            onClick={() => scrollToSection('work')}
+          </a>
+          <a
+            href={lang === 'zh' ? '/work' : '/en/work'}
             className="text-gray-700 hover:text-purple transition-colors focus:outline-none focus:ring-2 focus:ring-purple"
           >
             {content.nav.work}
-          </button>
-          <button
-            onClick={() => scrollToSection('lab')}
+          </a>
+          <a
+            href={lang === 'zh' ? '/lab' : '/en/lab'}
             className="text-gray-700 hover:text-purple transition-colors focus:outline-none focus:ring-2 focus:ring-purple"
           >
             {content.nav.lab}
-          </button>
-          <button
-            onClick={() => scrollToSection('contact')}
+          </a>
+          <a
+            href={lang === 'zh' ? '/contact' : '/en/contact'}
             className="text-gray-700 hover:text-purple transition-colors focus:outline-none focus:ring-2 focus:ring-purple"
           >
             {content.nav.contact}
-          </button>
+          </a>
         </div>
 
         {/* Language Toggle */}
@@ -73,30 +82,30 @@ export default function Navbar({ content, lang }) {
       {isMenuOpen && (
         <div className="md:hidden bg-white border-t border-gray-200 animate-slideDown">
           <div className="flex flex-col py-4">
-            <button
-              onClick={() => scrollToSection('about')}
+            <a
+              href={lang === 'zh' ? '/about' : '/en/about'}
               className="px-4 py-4 text-gray-700 hover:bg-gray-50 hover:text-purple transition-colors text-left"
             >
               {content.nav.about}
-            </button>
-            <button
-              onClick={() => scrollToSection('work')}
+            </a>
+            <a
+              href={lang === 'zh' ? '/work' : '/en/work'}
               className="px-4 py-4 text-gray-700 hover:bg-gray-50 hover:text-purple transition-colors text-left"
             >
               {content.nav.work}
-            </button>
-            <button
-              onClick={() => scrollToSection('lab')}
+            </a>
+            <a
+              href={lang === 'zh' ? '/lab' : '/en/lab'}
               className="px-4 py-4 text-gray-700 hover:bg-gray-50 hover:text-purple transition-colors text-left"
             >
               {content.nav.lab}
-            </button>
-            <button
-              onClick={() => scrollToSection('contact')}
+            </a>
+            <a
+              href={lang === 'zh' ? '/contact' : '/en/contact'}
               className="px-4 py-4 text-gray-700 hover:bg-gray-50 hover:text-purple transition-colors text-left"
             >
               {content.nav.contact}
-            </button>
+            </a>
           </div>
         </div>
       )}
