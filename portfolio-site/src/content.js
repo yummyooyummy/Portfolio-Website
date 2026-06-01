@@ -28,12 +28,14 @@ export const content = {
       title: "作品",
       projects: [
         {
+          slug: "honor-of-kings",
           name: "王者荣耀世界 Honor of Kings World",
           tag: "腾讯天美 · 游戏交互设计",
           description: "基于《王者荣耀》IP 的开放世界动作角色扮演游戏(2026 年上市)。负责战斗 UI 与多个玩法系统的交互设计。",
           fullDescription: "我在腾讯天美工作室的三年半里,担任这款大型开放世界游戏的交互设计师,负责大量核心界面与系统的交互设计。\n\n战斗层面,我负责了战斗 UI 的整体设计,包括血条、游戏内 HUD、技能盘等玩家高频交互的核心模块。系统层面,我设计了家园、宠物、成就、副本等多个玩法系统的交互流程。\n\n这段经历让我在一个工业级的大型项目中,系统打磨了从需求到落地的完整交互设计能力,以及在复杂系统、跨部门协作下做设计决策的能力。"
         },
         {
+          slug: "genesis",
           name: "点宇宙 Genesis",
           tag: "微信小游戏",
           description: "粒子合成 × 宇宙演化。从夸克到奇点,一个人走完全程。",
@@ -41,6 +43,7 @@ export const content = {
           github: "https://github.com/yummyooyummy/genesis-game"
         },
         {
+          slug: "signing-app",
           name: "衍生品投资签署应用",
           tag: "Web 应用",
           description: "一条专属链接,让客户在手机上完成合同签署,结果自动归档。",
@@ -102,12 +105,14 @@ export const content = {
       title: "Work",
       projects: [
         {
+          slug: "honor-of-kings",
           name: "Honor of Kings: World",
           tag: "Tencent TiMi · Game Interaction Design",
           description: "An open-world action RPG built on the Honor of Kings IP (released 2026). Led battle UI and the interaction design of multiple gameplay systems.",
           fullDescription: "Over three and a half years at Tencent's TiMi Studio, I worked as an interaction designer on this large-scale open-world game, responsible for the interaction design of many core interfaces and systems.\n\nOn the combat side, I led the design of the battle UI — health bars, in-game HUD, and the skill wheel, the high-frequency modules players touch constantly. On the systems side, I designed the interaction flows for multiple gameplay systems, including the home, pet, achievement, and dungeon systems.\n\nWorking on an industrial-scale project sharpened my end-to-end interaction design — from requirements to shipping — and my ability to make design decisions inside complex systems and cross-team collaboration."
         },
         {
+          slug: "genesis",
           name: "Genesis",
           tag: "WeChat Mini Game",
           description: "Particle fusion meets cosmic evolution — from quark to singularity, built solo.",
@@ -115,6 +120,7 @@ export const content = {
           github: "https://github.com/yummyooyummy/genesis-game"
         },
         {
+          slug: "signing-app",
           name: "Derivatives Signing App",
           tag: "Web App",
           description: "One private link lets a client sign a contract on their phone — auto-archived.",

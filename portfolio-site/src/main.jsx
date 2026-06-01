@@ -3,6 +3,8 @@ import { hydrateRoot } from 'react-dom/client'
 import './index.css'
 import HomePage from './pages/HomePage.jsx'
 import AboutPage from './pages/AboutPage.jsx'
+import WorkPage from './pages/WorkPage.jsx'
+import ProjectDetail from './pages/ProjectDetail.jsx'
 import { content } from './content.js'
 
 function detectLangFromPath() {
@@ -24,11 +26,23 @@ function detectRoute() {
 const ROUTES = {
   '/': HomePage,
   '/about': AboutPage,
+  '/work': WorkPage,
 };
 
 const lang = detectLangFromPath();
 const route = detectRoute();
-const PageComponent = ROUTES[route];
+
+let PageComponent;
+let props = {};
+
+// Handle project detail routes
+if (route.startsWith('/work/')) {
+  const slug = route.replace('/work/', '');
+  PageComponent = ProjectDetail;
+  props = { slug };
+} else {
+  PageComponent = ROUTES[route];
+}
 
 if (!PageComponent) {
   console.error(`Unknown route: ${route}`);
@@ -38,7 +52,7 @@ if (!PageComponent) {
   hydrateRoot(
     document.getElementById('root'),
     <StrictMode>
-      <PageComponent content={currentContent} lang={lang} />
+      <PageComponent content={currentContent} lang={lang} {...props} />
     </StrictMode>,
   );
 }
