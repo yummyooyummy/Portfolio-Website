@@ -20,7 +20,9 @@ portfolio-site/                    # 主项目目录
 ├── src/
 │   ├── pages/                   # 页面组件（多页架构）
 │   │   ├── HomePage.jsx         # 主页（目录式概览）
-│   │   └── AboutPage.jsx        # 关于页
+│   │   ├── AboutPage.jsx        # 关于页
+│   │   ├── WorkPage.jsx         # 作品列表页
+│   │   └── ProjectDetail.jsx    # 项目详情页
 │   ├── components/               # 可复用组件
 │   │   ├── Navbar.jsx           # 固定顶部导航 + 语言切换按钮
 │   │   ├── Hero.jsx             # 首屏大标题 + CTA 按钮
@@ -117,9 +119,9 @@ export const content = {
 - [x] 语言切换由 query string `?lang=` 改为路径前缀（中文 `/`、英文 `/en/`）：`App.jsx` 用 `useState` 初始化时读 `pathname.startsWith('/en')`,`useEffect` 同步 `document.documentElement.lang`；`Navbar.jsx` 语言切换由 button 改为 `<a href>` 链接（支持右键新标签页,SEO 友好,带 `hrefLang` 属性）；新增 `portfolio-site/vercel.json`：SPA fallback rewrite 让 `/en/` 等路径刷新不 404 + `/?lang=en` 308 永久重定向到 `/en/` 平滑迁移老链接。**这是 SSG 改造的第 1 步,纯路由重构,未引入预渲染。**
 - [x] **SSG 第 2 步:手写 prerender 脚本**（方案 B,放弃 vite-react-ssg——它最新版 peer 不支持 vite 8 + 多路由模式强依赖 react-router,对两路由项目过度设计）：新增 `src/entry-server.jsx`（用 `renderToString` 把 App 渲成字符串）；`App.jsx` 加可选 `initialLang` prop,SSR 时由脚本注入,CSR 时回退到 pathname 检测；`main.jsx` 由 `createRoot` 改为 `hydrateRoot` 复用 SSR 输出；新增 `prerender.mjs`：build 后对 `/` 和 `/en/` 各调一次 `render(lang)`,注入到 dist/index.html 模板的 `<div id="root">`,改 `<html lang>` 为 zh/en,加 `<link rel="alternate" hreflang>` 互指（zh / en / x-default 三条）,产物分别写到 `dist/index.html` 和 `dist/en/index.html`,清理临时 `dist-ssr/`；`package.json` 的 `build` 脚本扩展为 `vite build && vite build --ssr ... && node prerender.mjs`,Vercel 的 `npm run build` / output `dist` 不变。预渲染后 HTML 从 0.79KB 涨到 ~10KB,均含真实中英文内容（"郑雨晴 / 设计师 / 王者荣耀 / 点宇宙 / 实验室"、"Yuqing Zheng / Designer / Honor of Kings / Genesis / Lab"）,搜索引擎和 OG / Twitter Card 抓取器现在能直接读到完整渲染内容。
 - [x] **多页重构第 1 步:主页+关于页架构**（从单页滚动改为多页面架构的基础改造）：重构 `entry-server.jsx` 为 `render(lang, route)` 形式,支持按路由参数渲染不同页面组件；新建 `src/pages/HomePage.jsx`（目录式主页,含 Hero + Stats + 4 个导航卡片）和 `src/pages/AboutPage.jsx`（关于页,含 Stats + About）；改造 `prerender.mjs` 路由表从 2 条扩展到 4 条（`/` `/en/` `/about` `/en/about`）,每个路由注入对应的 hreflang 标签；调整 `vercel.json` 删除全局 rewrite,依赖 Vercel 默认行为让真实文件优先；更新 `Navbar.jsx` 导航从锚点滚动改为页面跳转（`<a href>`）,语言切换支持"当前路径+语言前缀"（在 `/about` 点 EN 跳到 `/en/about`）；更新 `main.jsx` 客户端 hydration 支持路由检测。验证通过：构建成功生成 4 个 HTML（`dist/index.html` `dist/en/index.html` `dist/about/index.html` `dist/en/about/index.html`）,各页面 `<html lang>` 正确（zh/en）,中英文内容正确渲染,hreflang 标签正确,本地预览所有页面可访问且刷新不 404。
+- [x] **多页重构第 2 步:作品列表+项目详情页**：在 `content.js` 为每个项目添加 `slug` 字段（honor-of-kings / genesis / signing-app）；新建 `src/pages/WorkPage.jsx`（作品列表页,展示三个项目卡片,可点击跳转详情页）和 `src/pages/ProjectDetail.jsx`（项目详情页,显示完整 fullDescription + GitHub 链接 + 返回按钮）；更新 `entry-server.jsx` 和 `main.jsx` 支持 `/work` 和 `/work/[slug]` 路由；扩展 `prerender.mjs` 路由表新增 8 条路由（work 列表页 + 3 个项目详情页 × 中英文）。验证通过：构建成功生成 12 个 HTML（原有 4 个 + 新增 8 个）,作品列表页包含三个项目卡片且链接指向详情页,详情页包含完整描述、返回链接、GitHub 链接（王者荣耀无）,语言切换正确（`/work` 点 EN → `/en/work`, `/work/genesis` 点 EN → `/en/work/genesis`）,hreflang 标签正确,本地预览所有页面可访问且刷新不 404。
 
 ### 🚧 进行中
-- [ ] **多页重构第 2 步**：作品列表页 + 项目详情页（`/work` + `/work/[项目]`）
 - [ ] **多页重构第 3 步**：实验室 + AI 实践 + 联系页（`/lab` `/ai` `/contact`）
 - [ ] **多页重构第 4 步**：SEO 优化与收尾（独立 title/meta、面包屑导航、Lighthouse 验证）
 
@@ -219,4 +221,4 @@ git push origin main
 ---
 
 **最后更新：** 2026-06-02  
-**项目状态：** 开发中（多页重构第 1 步完成：主页+关于页架构已就绪，生成 4 个预渲染 HTML，路由/语言切换/hydration 验证通过；第 2/3/4 步待实施）
+**项目状态：** 开发中（多页重构第 1+2 步完成：主页+关于页+作品列表+项目详情页已就绪，生成 12 个预渲染 HTML，路由/语言切换/详情页跳转验证通过；第 3/4 步待实施）
