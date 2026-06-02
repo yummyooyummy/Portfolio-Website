@@ -120,9 +120,9 @@ export const content = {
 - [x] **SSG 第 2 步:手写 prerender 脚本**（方案 B,放弃 vite-react-ssg——它最新版 peer 不支持 vite 8 + 多路由模式强依赖 react-router,对两路由项目过度设计）：新增 `src/entry-server.jsx`（用 `renderToString` 把 App 渲成字符串）；`App.jsx` 加可选 `initialLang` prop,SSR 时由脚本注入,CSR 时回退到 pathname 检测；`main.jsx` 由 `createRoot` 改为 `hydrateRoot` 复用 SSR 输出；新增 `prerender.mjs`：build 后对 `/` 和 `/en/` 各调一次 `render(lang)`,注入到 dist/index.html 模板的 `<div id="root">`,改 `<html lang>` 为 zh/en,加 `<link rel="alternate" hreflang>` 互指（zh / en / x-default 三条）,产物分别写到 `dist/index.html` 和 `dist/en/index.html`,清理临时 `dist-ssr/`；`package.json` 的 `build` 脚本扩展为 `vite build && vite build --ssr ... && node prerender.mjs`,Vercel 的 `npm run build` / output `dist` 不变。预渲染后 HTML 从 0.79KB 涨到 ~10KB,均含真实中英文内容（"郑雨晴 / 设计师 / 王者荣耀 / 点宇宙 / 实验室"、"Yuqing Zheng / Designer / Honor of Kings / Genesis / Lab"）,搜索引擎和 OG / Twitter Card 抓取器现在能直接读到完整渲染内容。
 - [x] **多页重构第 1 步:主页+关于页架构**（从单页滚动改为多页面架构的基础改造）：重构 `entry-server.jsx` 为 `render(lang, route)` 形式,支持按路由参数渲染不同页面组件；新建 `src/pages/HomePage.jsx`（目录式主页,含 Hero + Stats + 4 个导航卡片）和 `src/pages/AboutPage.jsx`（关于页,含 Stats + About）；改造 `prerender.mjs` 路由表从 2 条扩展到 4 条（`/` `/en/` `/about` `/en/about`）,每个路由注入对应的 hreflang 标签；调整 `vercel.json` 删除全局 rewrite,依赖 Vercel 默认行为让真实文件优先；更新 `Navbar.jsx` 导航从锚点滚动改为页面跳转（`<a href>`）,语言切换支持"当前路径+语言前缀"（在 `/about` 点 EN 跳到 `/en/about`）；更新 `main.jsx` 客户端 hydration 支持路由检测。验证通过：构建成功生成 4 个 HTML（`dist/index.html` `dist/en/index.html` `dist/about/index.html` `dist/en/about/index.html`）,各页面 `<html lang>` 正确（zh/en）,中英文内容正确渲染,hreflang 标签正确,本地预览所有页面可访问且刷新不 404。
 - [x] **多页重构第 2 步:作品列表+项目详情页**：在 `content.js` 为每个项目添加 `slug` 字段（honor-of-kings / genesis / signing-app）；新建 `src/pages/WorkPage.jsx`（作品列表页,展示三个项目卡片,可点击跳转详情页）和 `src/pages/ProjectDetail.jsx`（项目详情页,显示完整 fullDescription + GitHub 链接 + 返回按钮）；更新 `entry-server.jsx` 和 `main.jsx` 支持 `/work` 和 `/work/[slug]` 路由；扩展 `prerender.mjs` 路由表新增 8 条路由（work 列表页 + 3 个项目详情页 × 中英文）。验证通过：构建成功生成 12 个 HTML（原有 4 个 + 新增 8 个）,作品列表页包含三个项目卡片且链接指向详情页,详情页包含完整描述、返回链接、GitHub 链接（王者荣耀无）,语言切换正确（`/work` 点 EN → `/en/work`, `/work/genesis` 点 EN → `/en/work/genesis`）,hreflang 标签正确,本地预览所有页面可访问且刷新不 404。
+- [x] **多页重构第 3 步:实验室+AI实践+联系页**：在 `content.js` 新增 AI 导航项（中文"AI 实践"/英文"AI Practice"）和 AI 页面内容（占位文案"内容整理中"/"Coming soon"）；新建 `src/pages/LabPage.jsx`（实验室页,复用 Lab 组件）、`src/pages/AI.jsx`（AI 实践页,占位内容）、`src/pages/ContactPage.jsx`（联系页,复用 Contact 组件）；更新 `Navbar.jsx` 在桌面版和移动版导航中新增 AI 导航项；更新 `HomePage.jsx` 主页导航卡片从 4 个扩展为 5 个（关于/作品/实验室/AI/联系）,布局改为 `lg:grid-cols-5`；更新 `entry-server.jsx` 和 `main.jsx` 新增 `/lab` `/ai` `/contact` 路由；扩展 `prerender.mjs` 路由表新增 6 条路由（lab/ai/contact × 中英文）,每条注入正确 hreflang 标签。验证通过：构建成功生成 18 个 HTML（原有 12 个 + 新增 6 个）,中文页面包含"实验室/AI 实践/让我们聊聊"标题、英文页面包含"Lab/AI Practice/Let's talk"标题,hreflang 标签正确,导航栏包含所有 5 个导航项,本地预览所有页面可访问且导航跳转正常。
 
 ### 🚧 进行中
-- [ ] **多页重构第 3 步**：实验室 + AI 实践 + 联系页（`/lab` `/ai` `/contact`）
 - [ ] **多页重构第 4 步**：SEO 优化与收尾（独立 title/meta、面包屑导航、Lighthouse 验证）
 
 ### 📋 待办
@@ -221,4 +221,4 @@ git push origin main
 ---
 
 **最后更新：** 2026-06-02  
-**项目状态：** 开发中（多页重构第 1+2 步完成：主页+关于页+作品列表+项目详情页已就绪，生成 12 个预渲染 HTML，路由/语言切换/详情页跳转验证通过；第 3/4 步待实施）
+**项目状态：** 开发中（多页重构第 1+2+3 步完成：主页+关于页+作品列表+项目详情页+实验室+AI实践+联系页已就绪，生成 18 个预渲染 HTML，所有页面路由/导航/语言切换验证通过；第 4 步待实施）
