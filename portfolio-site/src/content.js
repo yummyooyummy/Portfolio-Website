@@ -5,6 +5,7 @@ export const content = {
       about: '关于',
       work: '作品',
       lab: '实验室',
+      ai: 'AI 实践',
       contact: '联系'
     },
     hero: {
@@ -65,6 +66,10 @@ export const content = {
         }
       ]
     },
+    ai: {
+      title: "AI 实践",
+      description: "内容整理中"
+    },
     contact: {
       title: "联系我",
       cta: "让我们聊聊。",
@@ -82,6 +87,7 @@ export const content = {
       about: 'About',
       work: 'Work',
       lab: 'Lab',
+      ai: 'AI Practice',
       contact: 'Contact'
     },
     hero: {
@@ -141,6 +147,10 @@ export const content = {
           description: "Coming soon"
         }
       ]
+    },
+    ai: {
+      title: "AI Practice",
+      description: "Coming soon"
     },
     contact: {
       title: "Contact",

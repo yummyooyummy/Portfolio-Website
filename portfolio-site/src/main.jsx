@@ -5,6 +5,9 @@ import HomePage from './pages/HomePage.jsx'
 import AboutPage from './pages/AboutPage.jsx'
 import WorkPage from './pages/WorkPage.jsx'
 import ProjectDetail from './pages/ProjectDetail.jsx'
+import LabPage from './pages/LabPage.jsx'
+import AI from './pages/AI.jsx'
+import ContactPage from './pages/ContactPage.jsx'
 import { content } from './content.js'
 
 function detectLangFromPath() {
@@ -27,6 +30,9 @@ const ROUTES = {
   '/': HomePage,
   '/about': AboutPage,
   '/work': WorkPage,
+  '/lab': LabPage,
+  '/ai': AI,
+  '/contact': ContactPage,
 };
 
 const lang = detectLangFromPath();

@@ -13,7 +13,7 @@ export default function HomePage({ content, lang }) {
       {/* Quick navigation section */}
       <section className="py-12 sm:py-20 px-4 sm:px-8">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
             <a
               href={lang === 'zh' ? '/about' : '/en/about'}
               className="bg-white border border-gray-200 p-6 rounded-lg hover:shadow-lg transition-shadow"
@@ -41,6 +41,16 @@ export default function HomePage({ content, lang }) {
               <h3 className="text-xl font-bold mb-2">{content.nav.lab}</h3>
               <p className="text-gray-600 text-sm">
                 {lang === 'zh' ? '探索实验性项目' : 'Explore experimental projects'}
+              </p>
+            </a>
+
+            <a
+              href={lang === 'zh' ? '/ai' : '/en/ai'}
+              className="bg-white border border-gray-200 p-6 rounded-lg hover:shadow-lg transition-shadow"
+            >
+              <h3 className="text-xl font-bold mb-2">{content.nav.ai}</h3>
+              <p className="text-gray-600 text-sm">
+                {lang === 'zh' ? 'AI 驱动的产品实践' : 'AI-driven product practice'}
               </p>
             </a>
 

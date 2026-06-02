@@ -49,6 +49,12 @@ export default function Navbar({ content, lang }) {
             {content.nav.lab}
           </a>
           <a
+            href={lang === 'zh' ? '/ai' : '/en/ai'}
+            className="text-gray-700 hover:text-purple transition-colors focus:outline-none focus:ring-2 focus:ring-purple"
+          >
+            {content.nav.ai}
+          </a>
+          <a
             href={lang === 'zh' ? '/contact' : '/en/contact'}
             className="text-gray-700 hover:text-purple transition-colors focus:outline-none focus:ring-2 focus:ring-purple"
           >
@@ -99,6 +105,12 @@ export default function Navbar({ content, lang }) {
               className="px-4 py-4 text-gray-700 hover:bg-gray-50 hover:text-purple transition-colors text-left"
             >
               {content.nav.lab}
+            </a>
+            <a
+              href={lang === 'zh' ? '/ai' : '/en/ai'}
+              className="px-4 py-4 text-gray-700 hover:bg-gray-50 hover:text-purple transition-colors text-left"
+            >
+              {content.nav.ai}
             </a>
             <a
               href={lang === 'zh' ? '/contact' : '/en/contact'}

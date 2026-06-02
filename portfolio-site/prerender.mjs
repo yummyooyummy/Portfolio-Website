@@ -31,6 +31,18 @@ const ROUTES = [
 
   { path: '/work/signing-app', route: '/work/signing-app', lang: 'zh', outFile: resolve(distDir, 'work/signing-app/index.html') },
   { path: '/en/work/signing-app', route: '/work/signing-app', lang: 'en', outFile: resolve(distDir, 'en/work/signing-app/index.html') },
+
+  // Lab pages
+  { path: '/lab', route: '/lab', lang: 'zh', outFile: resolve(distDir, 'lab/index.html') },
+  { path: '/en/lab', route: '/lab', lang: 'en', outFile: resolve(distDir, 'en/lab/index.html') },
+
+  // AI pages
+  { path: '/ai', route: '/ai', lang: 'zh', outFile: resolve(distDir, 'ai/index.html') },
+  { path: '/en/ai', route: '/ai', lang: 'en', outFile: resolve(distDir, 'en/ai/index.html') },
+
+  // Contact pages
+  { path: '/contact', route: '/contact', lang: 'zh', outFile: resolve(distDir, 'contact/index.html') },
+  { path: '/en/contact', route: '/contact', lang: 'en', outFile: resolve(distDir, 'en/contact/index.html') },
 ];
 
 function getHreflangTags(route) {
@@ -41,6 +53,9 @@ function getHreflangTags(route) {
     '/work/honor-of-kings': { zh: '/work/honor-of-kings', en: '/en/work/honor-of-kings' },
     '/work/genesis': { zh: '/work/genesis', en: '/en/work/genesis' },
     '/work/signing-app': { zh: '/work/signing-app', en: '/en/work/signing-app' },
+    '/lab': { zh: '/lab', en: '/en/lab' },
+    '/ai': { zh: '/ai', en: '/en/ai' },
+    '/contact': { zh: '/contact', en: '/en/contact' },
   };
 
   const urls = hreflangMap[route];
