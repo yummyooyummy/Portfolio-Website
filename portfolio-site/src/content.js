@@ -169,7 +169,40 @@ export const content = {
     },
     ai: {
       title: "AI 实践",
-      description: "内容整理中"
+      label: "AI 实践",
+      heading: "和 AI 一起,把想法做出来",
+      intro: [
+        "AI 让执行的成本无限趋近于零。一个想法,可以在几小时内成为一个可用的产品,被验证、被推翻、被重做——试错不再昂贵。",
+        "但当执行不再是瓶颈,判断就成了唯一的瓶颈。AI 能生成无数个方案,却无法替我分辨哪一个是对的。设计与审美的判断,决定了 AI 的速度最终通向一件好作品,还是一堆平庸的产出。",
+        "工具会不断更替,而方法沉淀下来:从构想到落地的这套流程,是我真正稳定的能力。工具只是其中可被替换的变量。",
+        "于是,那些曾经停留在脑子里、停留在原型里的想法和设计,如今能被一件件做出来。这是 AI 给我的,也是我对它的回答。"
+      ],
+      workflow: {
+        title: "我的工作流程",
+        roleLabel: "我的角色",
+        stages: [
+          { num: "01", title: "构想", doing: "与 AI 一同发散思路、预判风险,定义问题。", role: "看得更广,想得更早" },
+          { num: "02", title: "定义", doing: "高效产出产品设计文档与开发流程文档。", role: "把想法变成可执行的规格" },
+          { num: "03", title: "设计", doing: "Figma 主导,穿插 Claude Design、Figma Make 迭代;Midjourney、Google Flow 出图。", role: "把控视觉与交互质量" },
+          { num: "04", title: "构建", doing: "Cursor 与 Claude Code 将设计落地为真实代码。", role: "像审视交付一样,逐屏校验" },
+          { num: "05", title: "打磨", doing: "与 Claude、Claude Code 持续对话、相互校正。", role: "判断,在每一步" }
+        ]
+      },
+      comparison: {
+        title: "有 AI 之后",
+        tradHeader: "传统方式 · 一个团队 · 数周到数月",
+        aiHeader: "用 AI · 我一人 · 几天到一两周",
+        tradLabel: "传统方式",
+        aiLabel: "用 AI(我)",
+        rows: [
+          { name: "调研梳理", trad: "3–5 天", ai: "约 1 小时" },
+          { name: "文档", trad: "3–5 天", ai: "1–2 小时" },
+          { name: "界面设计", trad: "1–2 周", ai: "数小时–1 天" },
+          { name: "开发落地", trad: "数周(需工程师)", ai: "数天" },
+          { name: "上线", trad: "止步原型", ai: "走通上线" }
+        ],
+        summary: "差别不只在更快,更在我多走完了「开发 → 上线」这一整段。"
+      }
     },
     contact: {
       title: "联系我",
@@ -372,7 +405,40 @@ export const content = {
     },
     ai: {
       title: "AI Practice",
-      description: "Coming soon"
+      label: "AI Practice",
+      heading: "Building ideas, together with AI",
+      intro: [
+        "AI is driving the cost of execution toward zero. An idea can become a usable product in a matter of hours — validated, discarded, rebuilt. Trial and error is no longer expensive.",
+        "But once execution stops being the bottleneck, judgment becomes the only one. AI can generate endless options; it can't tell me which one is right. Design and taste decide whether AI's speed leads to something good, or just a pile of mediocre output.",
+        "Tools keep changing; the method stays. The process from concept to launch is the capability that's actually stable. The tools are just the replaceable variable inside it.",
+        "So the ideas and designs that used to live only in my head, or stall at the prototype stage, now get built — one by one. That's what AI gives me, and it's my answer to it."
+      ],
+      workflow: {
+        title: "How I work",
+        roleLabel: "My role",
+        stages: [
+          { num: "01", title: "Conceive", doing: "Brainstorm and anticipate risks alongside AI, and define the problem.", role: "See wider, think earlier" },
+          { num: "02", title: "Define", doing: "Produce product design docs and development-flow docs, fast.", role: "Turn ideas into executable specs" },
+          { num: "03", title: "Design", doing: "Figma-led, iterating with Claude Design and Figma Make; imagery from Midjourney and Google Flow.", role: "Own the visual and interaction quality" },
+          { num: "04", title: "Build", doing: "Cursor and Claude Code turn the design into real code.", role: "Review screen by screen, like inspecting a delivery" },
+          { num: "05", title: "Refine", doing: "An ongoing dialogue with Claude and Claude Code, correcting each other.", role: "Judgment, at every step" }
+        ]
+      },
+      comparison: {
+        title: "With AI",
+        tradHeader: "Traditional · A team · Weeks to months",
+        aiHeader: "With AI · Just me · Days to a week or two",
+        tradLabel: "Traditional",
+        aiLabel: "With AI (me)",
+        rows: [
+          { name: "Research", trad: "3–5 days", ai: "~1 hour" },
+          { name: "Docs", trad: "3–5 days", ai: "1–2 hours" },
+          { name: "UI design", trad: "1–2 weeks", ai: "Hours – 1 day" },
+          { name: "Development", trad: "Weeks (needs engineers)", ai: "Days" },
+          { name: "Launch", trad: "Stops at prototype", ai: "Goes live" }
+        ],
+        summary: "The difference isn't just speed — it's that I also complete the whole \"build → launch\" stretch."
+      }
     },
     contact: {
       title: "Contact",

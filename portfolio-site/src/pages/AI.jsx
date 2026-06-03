@@ -3,30 +3,80 @@ import { useRef } from 'react';
 import { useInView } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import AIWorkflow from '../components/AIWorkflow';
+import AIComparison from '../components/AIComparison';
 
 export default function AI({ content, lang }) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.1, margin: "-50px" });
+  const a = content.ai;
+
+  const topRef = useRef(null);
+  const topInView = useInView(topRef, { once: true, amount: 0.1, margin: '-50px' });
+  const flowRef = useRef(null);
+  const flowInView = useInView(flowRef, { once: true, amount: 0.1, margin: '-50px' });
+  const compRef = useRef(null);
+  const compInView = useInView(compRef, { once: true, amount: 0.1, margin: '-50px' });
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-dark-bg">
       <Navbar content={content} lang={lang} />
+
+      {/* 1. Opinion: label + heading + four paragraphs (same top structure as About) */}
       <motion.section
-        ref={ref}
+        ref={topRef}
         initial={{ opacity: 0, y: 20 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+        animate={topInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
-        className="pt-16 py-12 sm:py-20 px-4 sm:px-8"
+        className="px-4 sm:px-8 pt-hero-top pb-section bg-dark-bg"
       >
-        <div className="max-w-6xl mx-auto">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-4xl font-bold mb-6">{content.ai.title}</h2>
-            <p className="text-lg text-gray-600">
-              {content.ai.description}
-            </p>
+        <div className="max-w-content mx-auto">
+          <p className="text-sm uppercase tracking-wider text-dark-text-secondary mb-6 font-normal">
+            {a.label}
+          </p>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-medium leading-110 tracking-tighter-custom text-dark-text mb-10 max-w-2xl">
+            {a.heading}
+          </h1>
+          <div className="space-y-6 max-w-2xl">
+            {a.intro.map((para, i) => (
+              <p key={i} className="text-base sm:text-lg text-dark-text-secondary leading-relaxed">
+                {para}
+              </p>
+            ))}
           </div>
         </div>
       </motion.section>
+
+      {/* 2. Workflow: small title + five-stage timeline */}
+      <motion.section
+        ref={flowRef}
+        initial={{ opacity: 0, y: 20 }}
+        animate={flowInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
+        className="px-4 sm:px-8 py-section border-t border-dark-border bg-dark-bg"
+      >
+        <div className="max-w-content mx-auto">
+          <h2 className="text-2xl sm:text-3xl font-medium text-dark-text mb-16 leading-tight">
+            {a.workflow.title}
+          </h2>
+          <AIWorkflow workflow={a.workflow} />
+        </div>
+      </motion.section>
+
+      {/* 3. Efficiency comparison: small title + symmetric bar chart */}
+      <motion.section
+        ref={compRef}
+        initial={{ opacity: 0, y: 20 }}
+        animate={compInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
+        className="px-4 sm:px-8 py-section border-t border-dark-border bg-dark-bg"
+      >
+        <div className="max-w-content mx-auto">
+          <h2 className="text-2xl sm:text-3xl font-medium text-dark-text mb-16 leading-tight">
+            {a.comparison.title}
+          </h2>
+          <AIComparison comparison={a.comparison} />
+        </div>
+      </motion.section>
+
       <Footer content={content} />
     </div>
   );
