@@ -2,28 +2,156 @@ import { motion } from 'framer-motion';
 import { useRef } from 'react';
 import { useInView } from 'framer-motion';
 
-export default function About({ content }) {
+export default function About({ content, lang }) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.1, margin: "-50px" });
+  const isInView = useInView(ref, { once: true, amount: 0.05, margin: "-50px" });
+
+  const a = content.about;
+
+  // Per-language heading sizing (Chinese a touch smaller — denser glyphs)
+  const headingSize = lang === 'zh'
+    ? 'text-3xl sm:text-4xl md:text-[2.625rem]'
+    : 'text-3xl sm:text-4xl md:text-5xl';
 
   return (
-    <motion.section
-      id="about"
+    <motion.div
       ref={ref}
       initial={{ opacity: 0, y: 20 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
-      className="py-12 sm:py-20 px-4 sm:px-8"
+      className="bg-dark-bg"
     >
-      <div className="max-w-3xl mx-auto">
-        <h2 className="text-4xl font-bold mb-8">{content.about.title}</h2>
-        <p className="text-lg text-gray-700 mb-6 leading-relaxed whitespace-pre-line">
-          {content.about.bio}
-        </p>
-        <p className="text-lg text-gray-600 mt-6">
-          {content.about.experience}
-        </p>
-      </div>
-    </motion.section>
+      {/* 1. Intro: label + heading + paragraph + photo (page top, no top border) */}
+      <section id="about" className="px-4 sm:px-8 pb-section">
+        <div className="max-w-content mx-auto">
+          <p className="text-sm uppercase tracking-wider text-dark-text-secondary mb-6 font-normal">
+            {a.label}
+          </p>
+          <h1 className={`${headingSize} font-medium leading-110 tracking-tighter-custom text-dark-text mb-8 max-w-2xl`}>
+            {a.heading}
+          </h1>
+          <p className="text-base sm:text-lg text-dark-text-secondary leading-relaxed whitespace-pre-line mb-12">
+            {a.intro}
+          </p>
+
+          {/* Photo placeholder — wide, rounded */}
+          <div className="aspect-[16/10] bg-dark-card border border-dark-border rounded-card overflow-hidden flex items-center justify-center">
+            <span className="text-dark-text-secondary text-sm opacity-50">
+              {lang === 'zh' ? '照片占位' : 'Photo'}
+            </span>
+          </div>
+        </div>
+      </section>
+
+      {/* 2. Experience */}
+      <section className="px-4 sm:px-8 py-section border-t border-dark-border">
+        <div className="max-w-content mx-auto">
+          <h2 className="text-2xl sm:text-3xl font-medium text-dark-text mb-12 leading-tight">
+            {a.experienceTitle}
+          </h2>
+          <div className="divide-y divide-dark-border">
+            {a.experiences.map((exp, index) => (
+              <div key={index} className="flex gap-5 py-10 first:pt-0 last:pb-0">
+                {/* Logo placeholder */}
+                <span className="w-12 h-12 rounded-xl bg-dark-card border border-dark-border flex-shrink-0" aria-hidden="true" />
+                <div className="flex-grow">
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <h3 className="text-lg font-bold text-dark-text leading-snug">
+                        {exp.org}
+                      </h3>
+                      {exp.role && (
+                        <p className="text-lg font-bold text-dark-text leading-snug">
+                          {exp.role}
+                        </p>
+                      )}
+                    </div>
+                    <span className="text-sm text-dark-text-secondary font-normal flex-shrink-0 mt-1">
+                      {exp.period}
+                    </span>
+                  </div>
+                  <p className="text-base text-dark-text-secondary leading-relaxed mt-4">
+                    {exp.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Education */}
+      <section className="px-4 sm:px-8 py-section border-t border-dark-border">
+        <div className="max-w-content mx-auto">
+          <h2 className="text-2xl sm:text-3xl font-medium text-dark-text mb-12 leading-tight">
+            {a.educationTitle}
+          </h2>
+          <div className="space-y-8">
+            {a.education.map((edu, index) => (
+              <div key={index} className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+                <div>
+                  <h3 className="text-lg font-medium text-dark-text">
+                    {edu.school}
+                  </h3>
+                  <p className="text-base text-dark-text-secondary font-normal">
+                    {edu.degree} · {edu.field}
+                  </p>
+                </div>
+                <span className="text-sm text-dark-text-secondary font-normal flex-shrink-0">
+                  {edu.period}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Tool stack — large icon on top, name below */}
+      <section className="px-4 sm:px-8 py-section border-t border-dark-border">
+        <div className="max-w-content mx-auto">
+          <h2 className="text-2xl sm:text-3xl font-medium text-dark-text mb-4 leading-tight">
+            {a.toolsTitle}
+          </h2>
+          <p className="text-base text-dark-text-secondary leading-relaxed mb-12 max-w-2xl">
+            {a.toolsDesc}
+          </p>
+          <div className="flex flex-wrap gap-x-8 gap-y-10">
+            {a.tools.map((tool, index) => (
+              <div key={index} className="flex flex-col items-center gap-3 w-20">
+                {/* Icon placeholder — large rounded square */}
+                <span className="w-16 h-16 rounded-2xl bg-dark-card border border-dark-border flex-shrink-0" aria-hidden="true" />
+                <span className="text-sm text-dark-text-secondary font-normal text-center leading-snug">
+                  {tool}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Off the clock */}
+      <section className="px-4 sm:px-8 py-section border-t border-dark-border">
+        <div className="max-w-content mx-auto">
+          <h2 className="text-2xl sm:text-3xl font-medium text-dark-text mb-4 leading-tight">
+            {a.offClockTitle}
+          </h2>
+          <p className="text-base sm:text-lg text-dark-text-secondary leading-relaxed mb-12 max-w-2xl">
+            {a.offClockText}
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {[0, 1, 2].map((i) => (
+              <div
+                key={i}
+                className="aspect-[4/5] bg-dark-card border border-dark-border rounded-card overflow-hidden flex items-center justify-center"
+              >
+                <span className="text-dark-text-secondary text-sm opacity-50">
+                  {lang === 'zh' ? '图片占位' : 'Image'}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </motion.div>
   );
 }

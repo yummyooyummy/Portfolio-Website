@@ -1,40 +1,43 @@
+import { motion } from 'framer-motion';
+import { useRef } from 'react';
+import { useInView } from 'framer-motion';
 import Navbar from '../components/Navbar';
+import ProjectCard from '../components/ProjectCard';
+import TwoColumnIntro from '../components/TwoColumnIntro';
+import LabIntro from '../components/LabIntro';
 import Footer from '../components/Footer';
 
 export default function WorkPage({ content, lang }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.1, margin: "-50px" });
+
+  const projects = content.work.projects;
+
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-dark-bg">
       <Navbar content={content} lang={lang} />
 
-      {/* Add top spacing to account for fixed navbar */}
-      <div className="pt-16">
-        <section className="py-12 sm:py-20 px-4 sm:px-8">
-          <div className="max-w-6xl mx-auto">
-            <h1 className="text-4xl font-bold mb-12 text-center">{content.work.title}</h1>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-              {content.work.projects.map((project, index) => (
-                <a
-                  key={index}
-                  href={lang === 'zh' ? `/work/${project.slug}` : `/en/work/${project.slug}`}
-                  className="bg-white border border-gray-200 p-6 rounded-lg hover:shadow-lg transition-shadow flex flex-col"
-                >
-                  <h2 className="text-xl font-bold mb-1">{project.name}</h2>
-                  {project.tag && (
-                    <p className="text-xs uppercase tracking-wider text-gray-500 mb-3">{project.tag}</p>
-                  )}
-                  <p className="text-gray-600 mb-4 flex-grow">{project.description}</p>
-                  <div className="flex items-center gap-4 mt-auto">
-                    <span className="text-purple hover:underline">
-                      {content.work.viewDetails}
-                    </span>
-                  </div>
-                </a>
-              ))}
-            </div>
+      {/* Project cards section - starts directly after navbar, uses global section spacing */}
+      <motion.section
+        ref={ref}
+        initial={{ opacity: 0, y: 20 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
+        className="px-4 sm:px-8 pt-hero-top pb-section bg-dark-bg"
+      >
+        <div className="max-w-content mx-auto">
+          {/* 3 project cards (reusing ProjectCard component) */}
+          <div className="space-y-20">
+            {projects.map((project, index) => (
+              <ProjectCard key={index} project={project} lang={lang} />
+            ))}
           </div>
-        </section>
-      </div>
+        </div>
+      </motion.section>
 
+      {/* Bottom section: reuse homepage modules below Select work */}
+      <TwoColumnIntro content={content} lang={lang} />
+      <LabIntro content={content} lang={lang} />
       <Footer content={content} />
     </div>
   );
