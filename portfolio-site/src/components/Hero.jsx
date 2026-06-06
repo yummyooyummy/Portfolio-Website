@@ -21,7 +21,7 @@ export default function Hero({ content, lang }) {
       initial={{ opacity: 0, y: 20 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
-      className="bg-dark-bg px-4 sm:px-8 pt-hero-top pb-section"
+      className="bg-dark-bg px-6 sm:px-8 pt-hero-top pb-section"
     >
       <div className="max-w-content mx-auto">
         {/* Headline */}

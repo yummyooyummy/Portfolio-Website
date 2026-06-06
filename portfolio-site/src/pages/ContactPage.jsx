@@ -21,7 +21,7 @@ export default function ContactPage({ content, lang }) {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="px-4 sm:px-8 pb-section bg-dark-bg"
+          className="px-6 sm:px-8 pb-section bg-dark-bg"
         >
           <div className="max-w-content mx-auto">
           {/* Label + heading + intro (same structure as About page top) */}
@@ -56,12 +56,12 @@ export default function ContactPage({ content, lang }) {
       </div>
 
       {/* Divider section - separates description from contact section */}
-      <div className="px-4 sm:px-8 py-divider border-t border-dark-border bg-dark-bg">
+      <div className="px-6 sm:px-8 py-divider border-t border-dark-border bg-dark-bg">
         <div className="max-w-content mx-auto"></div>
       </div>
 
       {/* Contact methods section */}
-      <div className="px-4 sm:px-8 pb-section bg-dark-bg">
+      <div className="px-6 sm:px-8 pb-section bg-dark-bg">
         <div className="max-w-content mx-auto">
           {/* Closing text - centered */}
           <p className="text-[0.9375rem] text-dark-text-secondary mb-12 text-center">

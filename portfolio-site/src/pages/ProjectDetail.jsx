@@ -25,7 +25,7 @@ export default function ProjectDetail({ content, lang, slug }) {
 
       {/* Add top spacing to account for fixed navbar */}
       <div className="pt-16">
-        <section className="py-12 sm:py-20 px-4 sm:px-8">
+        <section className="py-12 sm:py-20 px-6 sm:px-8">
           <div className="max-w-4xl mx-auto">
             {/* Back link */}
             <a

@@ -14,7 +14,7 @@ export default function Lab({ content }) {
       initial={{ opacity: 0, y: 20 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
-      className="py-12 sm:py-20 px-4 sm:px-8"
+      className="py-12 sm:py-20 px-6 sm:px-8"
     >
       <div className="max-w-6xl mx-auto">
         <div className="max-w-2xl mx-auto text-center">

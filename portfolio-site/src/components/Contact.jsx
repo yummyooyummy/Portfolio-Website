@@ -13,7 +13,7 @@ export default function Contact({ content }) {
       initial={{ opacity: 0, y: 20 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
-      className="py-12 sm:py-20 px-4 sm:px-8 bg-gray-50"
+      className="py-12 sm:py-20 px-6 sm:px-8 bg-gray-50"
     >
       <div className="max-w-2xl mx-auto text-center">
         <h2 className="text-4xl sm:text-5xl font-bold mb-8">{content.contact.cta}</h2>

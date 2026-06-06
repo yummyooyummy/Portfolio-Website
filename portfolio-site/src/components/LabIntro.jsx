@@ -12,7 +12,7 @@ export default function LabIntro({ content, lang }) {
       initial={{ opacity: 0, y: 20 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
-      className="py-section px-4 sm:px-8 bg-dark-bg border-t border-dark-border"
+      className="py-section px-6 sm:px-8 bg-dark-bg border-t border-dark-border"
     >
       <div className="max-w-content mx-auto">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium text-dark-text mb-6 leading-tight">

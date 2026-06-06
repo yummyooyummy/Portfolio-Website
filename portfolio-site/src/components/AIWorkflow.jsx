@@ -51,9 +51,9 @@ export default function AIWorkflow({ workflow }) {
 
   return (
     <div className="relative">
-      {/* 贯穿竖线:严格居中 */}
+      {/* 贯穿竖线:移动端在最左侧 pl-6,桌面端居中 */}
       <svg
-        className="absolute top-0 bottom-0 left-1/2 -translate-x-px w-0.5 h-full"
+        className="absolute top-0 bottom-0 left-6 md:left-1/2 md:-translate-x-px w-0.5 h-full"
         preserveAspectRatio="none"
         viewBox="0 0 2 100"
         aria-hidden="true"
@@ -61,22 +61,22 @@ export default function AIWorkflow({ workflow }) {
         <line x1="1" y1="0" x2="1" y2="100" stroke={GRAY} strokeWidth="2" vectorEffect="non-scaling-stroke" />
       </svg>
 
-      {/* 五个阶段,紧凑间距 */}
+      {/* 五个阶段,移动端单列、桌面端左右交替 */}
       <div className="space-y-12 md:space-y-16">
         {stages.map((s, i) => {
-          const right = i % 2 === 0; // 01/03/05 在右,02/04 在左
+          const right = i % 2 === 0; // 01/03/05 在右,02/04 在左(仅桌面端)
 
           return (
             <div
               key={s.num}
               className="relative md:grid md:grid-cols-2 md:gap-x-0"
             >
-              {/* 圆圈节点:坐在竖线上,垂直居中整个阶段高度,确保和横线在同一水平线 */}
-              <div className="hidden md:flex absolute z-10 left-1/2 -translate-x-1/2 top-0 h-full items-start pt-8">
+              {/* 圆圈节点:移动端在左侧竖线上,桌面端在中间竖线上 */}
+              <div className="absolute z-10 left-6 md:left-1/2 -translate-x-1/2 top-0 flex items-start pt-8">
                 <CircleNode />
               </div>
 
-              {/* 连接横线 + 小圆点:从圆圈边缘引出,与圆圈中心对齐(top-8 + translate-y 微调到圆心高度) */}
+              {/* 连接横线 + 小圆点:仅桌面端显示 */}
               <div
                 className={`hidden md:flex absolute z-10 top-8 translate-y-2 items-center ${
                   right ? 'left-1/2 translate-x-4' : 'right-1/2 -translate-x-4'
@@ -85,13 +85,13 @@ export default function AIWorkflow({ workflow }) {
                 <Connector dir={right ? 'right' : 'left'} />
               </div>
 
-              {/* 内容块:左右对称对齐(右侧左对齐、左侧右对齐) */}
+              {/* 内容块:移动端全部靠左(pl-20 在竖线右侧),桌面端左右交替 */}
               <div
-                className={
+                className={`pl-20 md:pl-0 ${
                   right
                     ? 'md:col-start-2 md:pl-24 md:text-left'
                     : 'md:col-start-1 md:row-start-1 md:pr-24 md:text-right'
-                }
+                }`}
               >
                 {/* 大号编号(醒目) */}
                 <div className="text-6xl md:text-7xl font-bold tracking-tighter text-dark-text leading-none mb-3">
@@ -108,7 +108,7 @@ export default function AIWorkflow({ workflow }) {
                   {s.doing}
                 </p>
 
-                {/* 我的角色(两段式:灰色前缀 + 暖白内容,对齐方式跟随父容器) */}
+                {/* 我的角色(两段式:移动端左对齐,桌面端根据位置调整) */}
                 <div className={`text-[0.9375rem] md:text-[0.9375rem] flex items-start gap-2 ${right ? '' : 'md:justify-end'}`}>
                   <span className="text-dark-text-secondary font-normal flex-shrink-0">
                     {workflow.roleLabel}

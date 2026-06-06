@@ -22,7 +22,7 @@ export default function About({ content, lang }) {
       className="bg-dark-bg"
     >
       {/* 1. Intro: label + heading + paragraph + photo (page top, no top border) */}
-      <section id="about" className="px-4 sm:px-8 pb-section">
+      <section id="about" className="px-6 sm:px-8 pb-section">
         <div className="max-w-content mx-auto">
           <p className="text-sm uppercase tracking-wider text-dark-text-secondary mb-6 font-normal">
             {a.label}
@@ -44,7 +44,7 @@ export default function About({ content, lang }) {
       </section>
 
       {/* 2. Experience */}
-      <section className="px-4 sm:px-8 py-section border-t border-dark-border">
+      <section className="px-6 sm:px-8 py-section border-t border-dark-border">
         <div className="max-w-content mx-auto">
           <h2 className="text-2xl sm:text-3xl font-medium text-dark-text mb-12 leading-tight">
             {a.experienceTitle}
@@ -81,7 +81,7 @@ export default function About({ content, lang }) {
       </section>
 
       {/* 3. Education */}
-      <section className="px-4 sm:px-8 py-section border-t border-dark-border">
+      <section className="px-6 sm:px-8 py-section border-t border-dark-border">
         <div className="max-w-content mx-auto">
           <h2 className="text-2xl sm:text-3xl font-medium text-dark-text mb-4 leading-tight">
             {a.educationTitle}
@@ -110,7 +110,7 @@ export default function About({ content, lang }) {
       </section>
 
       {/* 4. Tool stack — large icon on top, name below */}
-      <section className="px-4 sm:px-8 py-section border-t border-dark-border">
+      <section className="px-6 sm:px-8 py-section border-t border-dark-border">
         <div className="max-w-content mx-auto">
           <h2 className="text-2xl sm:text-3xl font-medium text-dark-text mb-4 leading-tight">
             {a.toolsTitle}
@@ -133,7 +133,7 @@ export default function About({ content, lang }) {
       </section>
 
       {/* 5. Off the clock */}
-      <section className="px-4 sm:px-8 py-section border-t border-dark-border">
+      <section className="px-6 sm:px-8 py-section border-t border-dark-border">
         <div className="max-w-content mx-auto">
           <h2 className="text-2xl sm:text-3xl font-medium text-dark-text mb-4 leading-tight">
             {a.offClockTitle}

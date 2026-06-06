@@ -26,7 +26,7 @@ export default function AI({ content, lang }) {
         initial={{ opacity: 0, y: 20 }}
         animate={topInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
-        className="px-4 sm:px-8 pt-page-top pb-section bg-dark-bg"
+        className="px-6 sm:px-8 pt-page-top pb-section bg-dark-bg"
       >
         <div className="max-w-content mx-auto">
           <p className="text-sm uppercase tracking-wider text-dark-text-secondary mb-6 font-normal">
@@ -51,7 +51,7 @@ export default function AI({ content, lang }) {
         initial={{ opacity: 0, y: 20 }}
         animate={flowInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
-        className="px-4 sm:px-8 py-section border-t border-dark-border bg-dark-bg"
+        className="px-6 sm:px-8 py-section border-t border-dark-border bg-dark-bg"
       >
         <div className="max-w-content mx-auto">
           <h2 className="text-2xl sm:text-3xl font-medium text-dark-text mb-16 leading-tight">
@@ -67,7 +67,7 @@ export default function AI({ content, lang }) {
         initial={{ opacity: 0, y: 20 }}
         animate={compInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
-        className="px-4 sm:px-8 py-section border-t border-dark-border bg-dark-bg"
+        className="px-6 sm:px-8 py-section border-t border-dark-border bg-dark-bg"
       >
         <div className="max-w-content mx-auto">
           <h2 className="text-2xl sm:text-3xl font-medium text-dark-text mb-16 leading-tight">

@@ -15,7 +15,7 @@ export default function Stats({ content }) {
       initial={{ opacity: 0, y: 20 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
-      className="py-16 sm:py-24 px-4 sm:px-8 bg-dark-bg"
+      className="py-16 sm:py-24 px-6 sm:px-8 bg-dark-bg"
     >
       <div className="max-w-content mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

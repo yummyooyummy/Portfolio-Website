@@ -21,7 +21,7 @@ export default function TwoColumnIntro({ content, lang }) {
       initial={{ opacity: 0, y: 20 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
-      className="py-section px-4 sm:px-8 bg-dark-bg border-t border-dark-border"
+      className="py-section px-6 sm:px-8 bg-dark-bg border-t border-dark-border"
     >
       <div className="max-w-content mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">

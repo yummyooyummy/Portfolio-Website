@@ -36,7 +36,7 @@ export default function Navbar({ content, lang }) {
 
   return (
     <nav className="fixed top-0 left-0 right-0 bg-dark-bg border-b border-dark-border z-50 h-16">
-      <div className="max-w-content mx-auto px-4 sm:px-8 h-full flex items-center justify-between">
+      <div className="max-w-content mx-auto px-6 sm:px-8 h-full flex items-center justify-between">
         {/* Logo/Name — avatar placeholder + name, links to home */}
         <a
           href={lang === 'zh' ? '/' : '/en/'}

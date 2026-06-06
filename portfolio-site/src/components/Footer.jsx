@@ -1,6 +1,6 @@
 export default function Footer({ content }) {
   return (
-    <footer className="py-12 px-4 sm:px-8 border-t border-dark-border bg-dark-bg">
+    <footer className="py-12 px-6 sm:px-8 border-t border-dark-border bg-dark-bg">
       <div className="max-w-content mx-auto text-center">
         <div className="flex justify-center gap-6 mb-6">
           {/* WeChat - placeholder icon, no link yet */}

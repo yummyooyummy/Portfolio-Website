@@ -22,7 +22,7 @@ export default function LabPage({ content, lang }) {
         initial={{ opacity: 0, y: 20 }}
         animate={topInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 0 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
-        className="px-4 sm:px-8 pt-page-top pb-section bg-dark-bg"
+        className="px-6 sm:px-8 pt-page-top pb-section bg-dark-bg"
       >
         <div className="max-w-content mx-auto">
           <p className="text-sm uppercase tracking-wider text-dark-text-secondary mb-6 font-normal">
@@ -38,7 +38,7 @@ export default function LabPage({ content, lang }) {
       </motion.section>
 
       {/* Projects list - same structure as AI page sections with divider */}
-      <section className="px-4 sm:px-8 py-section border-t border-dark-border bg-dark-bg">
+      <section className="px-6 sm:px-8 py-section border-t border-dark-border bg-dark-bg">
         <div className="max-w-content mx-auto">
           {l.projects.map((project, index) => {
             const projectRef = useRef(null);
