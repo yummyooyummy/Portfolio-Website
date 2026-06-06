@@ -1,4 +1,4 @@
-// 五阶段工作流时间轴(照参考图A:紧凑、圆点/横线/小圆点水平对齐首尾相接、左右对称)
+// 六阶段工作流时间轴(照参考图A:紧凑、圆点/横线/小圆点水平对齐首尾相接、左右对称)
 // 黑白灰极简:暖白(编号/标题/角色)、灰(做法/竖线/圆环/连接线)
 // 关键对齐:节点圆环、横线、末端小圆点在同一水平线上无缝连接;左右内容对称(右侧左对齐、左侧右对齐)
 const WHITE = 'rgb(245, 245, 244)';
@@ -61,10 +61,10 @@ export default function AIWorkflow({ workflow }) {
         <line x1="1" y1="0" x2="1" y2="100" stroke={GRAY} strokeWidth="2" vectorEffect="non-scaling-stroke" />
       </svg>
 
-      {/* 五个阶段,移动端单列、桌面端左右交替 */}
+      {/* 六个阶段,移动端单列、桌面端左右交替 */}
       <div className="space-y-12 md:space-y-16">
         {stages.map((s, i) => {
-          const right = i % 2 === 0; // 01/03/05 在右,02/04 在左(仅桌面端)
+          const right = i % 2 === 0; // 01/03/05 在右,02/04/06 在左(仅桌面端)
 
           return (
             <div
@@ -103,18 +103,18 @@ export default function AIWorkflow({ workflow }) {
                   {s.title}
                 </h3>
 
+                {/* 我的角色(在长描述上方):"我的角色:"用近白高光，冒号后用灰色 */}
+                <div className={`text-[0.9375rem] md:text-[0.9375rem] mb-3 leading-relaxed ${right ? '' : 'md:flex md:justify-end'}`}>
+                  <div className={right ? '' : 'md:text-right'}>
+                    <span className="text-dark-text font-normal">{workflow.roleLabel}:</span>
+                    <span className="text-dark-text-secondary font-normal">{s.role}</span>
+                  </div>
+                </div>
+
                 {/* 做法描述(灰色,多行) */}
-                <p className="text-[0.9375rem] md:text-[0.9375rem] text-dark-text-secondary leading-relaxed mb-3">
+                <p className="text-[0.9375rem] md:text-[0.9375rem] text-dark-text-secondary leading-relaxed">
                   {s.doing}
                 </p>
-
-                {/* 我的角色(两段式:移动端左对齐,桌面端根据位置调整) */}
-                <div className={`text-[0.9375rem] md:text-[0.9375rem] flex items-start gap-2 ${right ? '' : 'md:justify-end'}`}>
-                  <span className="text-dark-text-secondary font-normal flex-shrink-0">
-                    {workflow.roleLabel}
-                  </span>
-                  <span className="text-dark-text font-medium">{s.role}</span>
-                </div>
               </div>
             </div>
           );

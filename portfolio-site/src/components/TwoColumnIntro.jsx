@@ -8,8 +8,8 @@ export default function TwoColumnIntro({ content, lang }) {
 
   // Extract first sentence from about.bio for preview
   const aboutPreview = lang === 'zh'
-    ? '我是郑雨晴，一名交互设计师。交互设计科班出身，在腾讯做了三年半游戏交互设计。'
-    : 'I\'m Yuqing Zheng, an interaction designer. Formally trained in interaction design, I spent three and a half years designing game interactions at Tencent.';
+    ? '一个交互设计师的来路：从纯艺术的底子，到大厂的历练，再到今天独立用 AI 落地产品。'
+    : 'The path of an interaction designer — from a fine-art foundation, through years inside a big tech company, to building products independently with AI today.';
 
   const aiPreview = lang === 'zh'
     ? '研究主流 AI 工具，用 AI 做自己的设计探索，把脑子里的产品一个个真正做出来。'

@@ -4,17 +4,26 @@ import { useInView } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import AIWorkflow from '../components/AIWorkflow';
-import AIComparison from '../components/AIComparison';
 
 export default function AI({ content, lang }) {
   const a = content.ai;
+
+  // 解析段落中的加粗标记 **text**
+  const parseParagraph = (text) => {
+    const parts = text.split(/(\*\*[^*]+\*\*)/g);
+    return parts.map((part, i) => {
+      if (part.startsWith('**') && part.endsWith('**')) {
+        const boldText = part.slice(2, -2);
+        return <strong key={i} className="text-dark-text font-semibold">{boldText}</strong>;
+      }
+      return part;
+    });
+  };
 
   const topRef = useRef(null);
   const topInView = useInView(topRef, { once: true, amount: 0.1, margin: '-50px' });
   const flowRef = useRef(null);
   const flowInView = useInView(flowRef, { once: true, amount: 0.1, margin: '-50px' });
-  const compRef = useRef(null);
-  const compInView = useInView(compRef, { once: true, amount: 0.1, margin: '-50px' });
 
   return (
     <div className="min-h-screen bg-dark-bg">
@@ -38,14 +47,14 @@ export default function AI({ content, lang }) {
           <div className="space-y-6">
             {a.intro.map((para, i) => (
               <p key={i} className="text-[0.9375rem] text-dark-text-secondary leading-relaxed">
-                {para}
+                {parseParagraph(para)}
               </p>
             ))}
           </div>
         </div>
       </motion.section>
 
-      {/* 2. Workflow: small title + five-stage timeline */}
+      {/* 2. Workflow: small title + six-stage timeline */}
       <motion.section
         ref={flowRef}
         initial={{ opacity: 0, y: 20 }}
@@ -58,22 +67,6 @@ export default function AI({ content, lang }) {
             {a.workflow.title}
           </h2>
           <AIWorkflow workflow={a.workflow} />
-        </div>
-      </motion.section>
-
-      {/* 3. Efficiency comparison: small title + symmetric bar chart */}
-      <motion.section
-        ref={compRef}
-        initial={{ opacity: 0, y: 20 }}
-        animate={compInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-        transition={{ duration: 0.6, ease: 'easeOut' }}
-        className="px-6 sm:px-8 py-section border-t border-dark-border bg-dark-bg"
-      >
-        <div className="max-w-content mx-auto">
-          <h2 className="text-2xl sm:text-3xl font-medium text-dark-text mb-16 leading-tight">
-            {a.comparison.title}
-          </h2>
-          <AIComparison comparison={a.comparison} />
         </div>
       </motion.section>
 
