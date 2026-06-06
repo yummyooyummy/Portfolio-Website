@@ -57,7 +57,7 @@ export default function ContactPage({ content, lang }) {
         {/* Short divider - separates description from contact section */}
         <div className="px-6 sm:px-8 bg-dark-bg">
           <div className="max-w-content mx-auto">
-            <div className="border-t border-dark-border my-12"></div>
+            <div className="border-t border-dark-border my-[3.4375rem]"></div>
           </div>
         </div>
 
