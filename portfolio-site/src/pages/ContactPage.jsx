@@ -21,7 +21,7 @@ export default function ContactPage({ content, lang }) {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="px-6 sm:px-8 pb-section bg-dark-bg"
+          className="px-6 sm:px-8 bg-dark-bg"
         >
           <div className="max-w-content mx-auto">
           {/* Label + heading + intro (same structure as About page top) */}
@@ -31,7 +31,7 @@ export default function ContactPage({ content, lang }) {
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-medium leading-110 tracking-tighter-custom text-dark-text mb-8 max-w-2xl">
             {c.heading}
           </h1>
-          <p className="text-[0.9375rem] sm:text-[0.9375rem] text-dark-text-secondary leading-relaxed mb-16">
+          <p className="text-[0.9375rem] sm:text-[0.9375rem] text-dark-text-secondary leading-relaxed mb-8">
             {c.intro}
           </p>
 
@@ -53,16 +53,17 @@ export default function ContactPage({ content, lang }) {
           </p>
           </div>
         </motion.section>
-      </div>
 
-      {/* Divider section - separates description from contact section */}
-      <div className="px-6 sm:px-8 py-divider border-t border-dark-border bg-dark-bg">
-        <div className="max-w-content mx-auto"></div>
-      </div>
+        {/* Short divider - separates description from contact section */}
+        <div className="px-6 sm:px-8 bg-dark-bg">
+          <div className="max-w-content mx-auto">
+            <div className="border-t border-dark-border my-12"></div>
+          </div>
+        </div>
 
-      {/* Contact methods section */}
-      <div className="px-6 sm:px-8 pb-section bg-dark-bg">
-        <div className="max-w-content mx-auto">
+        {/* Contact methods section */}
+        <div className="px-6 sm:px-8 pb-section bg-dark-bg">
+          <div className="max-w-content mx-auto">
           {/* Closing text - centered */}
           <p className="text-[0.9375rem] text-dark-text-secondary mb-12 text-center">
             {c.closingText}
@@ -101,6 +102,7 @@ export default function ContactPage({ content, lang }) {
             >
               linkedin.com/in/yuqing-zheng
             </a>
+          </div>
           </div>
         </div>
       </div>

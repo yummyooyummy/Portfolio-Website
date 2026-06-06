@@ -38,11 +38,11 @@ export default {
         // 导航栏到主页首屏第一行字的专用顶部间距(仅主页 Hero 使用)
         'hero-top': '15rem',
         // 导航栏到内页首行内容的顶部间距(About/Work/Lab/AI/Contact 页使用)
-        // 从 12rem 提升到 14rem (224px),确保固定导航栏下方有充足视觉留白
-        'page-top': '13.5rem',
+        // 调整为 8.75rem (140px),在 13rem 和 14rem 之间找到更舒适的平衡
+        'page-top': '8.75rem',
         // 分割线上下间距(Lab 页引导段下分割线、项目间分割线等都用这个统一配置)
-        // 当前 4rem,想调大/调小只改这一个值
-        'divider': '4rem',
+        // 从 3rem (48px) 调整为 2.5rem (40px),让间距更紧凑
+        'divider': '2.5rem',
       },
       boxShadow: {
         'card-subtle': '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1)',

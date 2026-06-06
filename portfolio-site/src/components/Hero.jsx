@@ -35,7 +35,7 @@ export default function Hero({ content, lang }) {
         </p>
 
         {/* Button row + social icons */}
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 mb-10">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 mb-20">
           <div className="flex flex-col sm:flex-row gap-4">
             <a
               href={lang === 'zh' ? '/contact' : '/en/contact'}
