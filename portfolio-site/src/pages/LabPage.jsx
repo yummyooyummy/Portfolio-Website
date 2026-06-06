@@ -20,9 +20,9 @@ export default function LabPage({ content, lang }) {
       <motion.section
         ref={topRef}
         initial={{ opacity: 0, y: 20 }}
-        animate={topInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+        animate={topInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 0 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
-        className="px-4 sm:px-8 pt-hero-top bg-dark-bg"
+        className="px-4 sm:px-8 pt-page-top pb-section bg-dark-bg"
       >
         <div className="max-w-content mx-auto">
           <p className="text-sm uppercase tracking-wider text-dark-text-secondary mb-6 font-normal">
@@ -31,19 +31,14 @@ export default function LabPage({ content, lang }) {
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-medium leading-110 tracking-tighter-custom text-dark-text mb-8 max-w-2xl">
             {l.heading}
           </h1>
-          <p className="text-base sm:text-lg text-dark-text-secondary leading-relaxed max-w-2xl">
+          <p className="text-[0.9375rem] sm:text-[0.9375rem] text-dark-text-secondary leading-relaxed max-w-2xl">
             {l.intro}
           </p>
         </div>
       </motion.section>
 
-      {/* Divider after intro (using global divider spacing) */}
-      <div className="px-4 sm:px-8 py-divider bg-dark-bg">
-        <div className="max-w-content mx-auto border-t border-dark-border"></div>
-      </div>
-
-      {/* Projects list */}
-      <div className="px-4 sm:px-8 pb-section bg-dark-bg">
+      {/* Projects list - same structure as AI page sections with divider */}
+      <section className="px-4 sm:px-8 py-section border-t border-dark-border bg-dark-bg">
         <div className="max-w-content mx-auto">
           {l.projects.map((project, index) => {
             const projectRef = useRef(null);
@@ -64,17 +59,15 @@ export default function LabPage({ content, lang }) {
                   )}
                 </motion.div>
 
-                {/* Divider between projects (not after the last one) */}
+                {/* Divider between projects - same as AI page section dividers */}
                 {index < l.projects.length - 1 && (
-                  <div className="py-divider">
-                    <div className="border-t border-dark-border"></div>
-                  </div>
+                  <div className="border-t border-dark-border my-section"></div>
                 )}
               </div>
             );
           })}
         </div>
-      </div>
+      </section>
 
       <Footer content={content} />
     </div>

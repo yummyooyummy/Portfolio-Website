@@ -26,18 +26,18 @@ export default function AI({ content, lang }) {
         initial={{ opacity: 0, y: 20 }}
         animate={topInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
-        className="px-4 sm:px-8 pt-hero-top pb-section bg-dark-bg"
+        className="px-4 sm:px-8 pt-page-top pb-section bg-dark-bg"
       >
         <div className="max-w-content mx-auto">
           <p className="text-sm uppercase tracking-wider text-dark-text-secondary mb-6 font-normal">
             {a.label}
           </p>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-medium leading-110 tracking-tighter-custom text-dark-text mb-10 max-w-2xl">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-medium leading-110 tracking-tighter-custom text-dark-text mb-10">
             {a.heading}
           </h1>
-          <div className="space-y-6 max-w-2xl">
+          <div className="space-y-6">
             {a.intro.map((para, i) => (
-              <p key={i} className="text-base sm:text-lg text-dark-text-secondary leading-relaxed">
+              <p key={i} className="text-[0.9375rem] text-dark-text-secondary leading-relaxed">
                 {para}
               </p>
             ))}

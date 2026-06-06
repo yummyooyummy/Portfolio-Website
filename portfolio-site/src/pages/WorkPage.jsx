@@ -23,7 +23,7 @@ export default function WorkPage({ content, lang }) {
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
-        className="px-4 sm:px-8 pt-hero-top pb-section bg-dark-bg"
+        className="px-4 sm:px-8 pt-page-top pb-section bg-dark-bg"
       >
         <div className="max-w-content mx-auto">
           {/* 3 project cards (reusing ProjectCard component) */}

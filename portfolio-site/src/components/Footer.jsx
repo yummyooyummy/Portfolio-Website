@@ -45,7 +45,7 @@ export default function Footer({ content }) {
           </a>
         </div>
 
-        <p className="text-sm text-dark-text-secondary font-normal">
+        <p className="text-[0.9375rem] text-dark-text-secondary font-normal">
           {content.footer.copyright}
         </p>
       </div>

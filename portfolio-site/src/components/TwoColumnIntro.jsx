@@ -30,7 +30,7 @@ export default function TwoColumnIntro({ content, lang }) {
             <h2 className="text-3xl sm:text-4xl font-medium text-dark-text mb-6 leading-tight">
               {content.about.title}
             </h2>
-            <p className="text-base text-dark-text-secondary leading-relaxed mb-6">
+            <p className="text-[0.9375rem] text-dark-text-secondary leading-relaxed mb-6">
               {aboutPreview}
             </p>
             <a
@@ -49,7 +49,7 @@ export default function TwoColumnIntro({ content, lang }) {
             <h2 className="text-3xl sm:text-4xl font-medium text-dark-text mb-6 leading-tight">
               {content.ai.title}
             </h2>
-            <p className="text-base text-dark-text-secondary leading-relaxed mb-6">
+            <p className="text-[0.9375rem] text-dark-text-secondary leading-relaxed mb-6">
               {aiPreview}
             </p>
             <a

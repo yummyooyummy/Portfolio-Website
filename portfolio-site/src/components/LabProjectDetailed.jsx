@@ -68,7 +68,7 @@ export default function LabProjectDetailed({ project, lang }) {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-base text-dark-text hover:text-dark-text-secondary transition-colors focus:outline-none"
+                  className="text-[0.9375rem] text-dark-text hover:text-dark-text-secondary transition-colors focus:outline-none"
                 >
                   {link.label}
                 </a>

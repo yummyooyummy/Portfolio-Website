@@ -18,7 +18,7 @@ export default function LabIntro({ content, lang }) {
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium text-dark-text mb-6 leading-tight">
           {content.lab.title}
         </h2>
-        <p className="text-base text-dark-text-secondary leading-relaxed mb-6 max-w-2xl">
+        <p className="text-[0.9375rem] text-dark-text-secondary leading-relaxed mb-6 max-w-2xl">
           {content.lab.description}
         </p>
         <a

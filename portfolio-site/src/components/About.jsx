@@ -30,7 +30,7 @@ export default function About({ content, lang }) {
           <h1 className={`${headingSize} font-medium leading-110 tracking-tighter-custom text-dark-text mb-8 max-w-2xl`}>
             {a.heading}
           </h1>
-          <p className="text-base sm:text-lg text-dark-text-secondary leading-relaxed whitespace-pre-line mb-12">
+          <p className="text-[0.9375rem] sm:text-[0.9375rem] text-dark-text-secondary leading-relaxed whitespace-pre-line mb-12">
             {a.intro}
           </p>
 
@@ -66,11 +66,11 @@ export default function About({ content, lang }) {
                         </p>
                       )}
                     </div>
-                    <span className="text-sm text-dark-text-secondary font-normal flex-shrink-0 mt-1">
+                    <span className="text-[0.9375rem] text-dark-text-secondary font-normal flex-shrink-0 mt-1">
                       {exp.period}
                     </span>
                   </div>
-                  <p className="text-base text-dark-text-secondary leading-relaxed mt-4">
+                  <p className="text-[0.9375rem] text-dark-text-secondary leading-relaxed mt-4">
                     {exp.desc}
                   </p>
                 </div>
@@ -83,9 +83,12 @@ export default function About({ content, lang }) {
       {/* 3. Education */}
       <section className="px-4 sm:px-8 py-section border-t border-dark-border">
         <div className="max-w-content mx-auto">
-          <h2 className="text-2xl sm:text-3xl font-medium text-dark-text mb-12 leading-tight">
+          <h2 className="text-2xl sm:text-3xl font-medium text-dark-text mb-4 leading-tight">
             {a.educationTitle}
           </h2>
+          <p className="text-[0.9375rem] text-dark-text-secondary leading-relaxed mb-12 max-w-2xl">
+            {a.educationIntro}
+          </p>
           <div className="space-y-8">
             {a.education.map((edu, index) => (
               <div key={index} className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
@@ -93,11 +96,11 @@ export default function About({ content, lang }) {
                   <h3 className="text-lg font-medium text-dark-text">
                     {edu.school}
                   </h3>
-                  <p className="text-base text-dark-text-secondary font-normal">
+                  <p className="text-[0.9375rem] text-dark-text-secondary font-normal">
                     {edu.degree} · {edu.field}
                   </p>
                 </div>
-                <span className="text-sm text-dark-text-secondary font-normal flex-shrink-0">
+                <span className="text-[0.9375rem] text-dark-text-secondary font-normal flex-shrink-0">
                   {edu.period}
                 </span>
               </div>
@@ -112,7 +115,7 @@ export default function About({ content, lang }) {
           <h2 className="text-2xl sm:text-3xl font-medium text-dark-text mb-4 leading-tight">
             {a.toolsTitle}
           </h2>
-          <p className="text-base text-dark-text-secondary leading-relaxed mb-12 max-w-2xl">
+          <p className="text-[0.9375rem] text-dark-text-secondary leading-relaxed mb-12 max-w-2xl">
             {a.toolsDesc}
           </p>
           <div className="flex flex-wrap gap-x-8 gap-y-10">
@@ -120,7 +123,7 @@ export default function About({ content, lang }) {
               <div key={index} className="flex flex-col items-center gap-3 w-20">
                 {/* Icon placeholder — large rounded square */}
                 <span className="w-16 h-16 rounded-2xl bg-dark-card border border-dark-border flex-shrink-0" aria-hidden="true" />
-                <span className="text-sm text-dark-text-secondary font-normal text-center leading-snug">
+                <span className="text-[0.9375rem] text-dark-text-secondary font-normal text-center leading-snug">
                   {tool}
                 </span>
               </div>
@@ -135,7 +138,7 @@ export default function About({ content, lang }) {
           <h2 className="text-2xl sm:text-3xl font-medium text-dark-text mb-4 leading-tight">
             {a.offClockTitle}
           </h2>
-          <p className="text-base sm:text-lg text-dark-text-secondary leading-relaxed mb-12 max-w-2xl">
+          <p className="text-[0.9375rem] sm:text-[0.9375rem] text-dark-text-secondary leading-relaxed mb-12 max-w-2xl">
             {a.offClockText}
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">

@@ -34,10 +34,12 @@ export default {
       spacing: {
         // 全局统一的大区块上下内边距(主页各 section 都用 py-section)
         // 想调大/调小整站区块留白,只改这一个值即可
-        'section': '12rem',
-        // 导航栏到首屏第一行字的专用顶部间距(主页 Hero / About 顶部都用 pt-hero-top)
-        // 原值 10rem(pt-40),现调成 3 倍 = 30rem。想微调只改这一个值
+        'section': '8rem',
+        // 导航栏到主页首屏第一行字的专用顶部间距(仅主页 Hero 使用)
         'hero-top': '15rem',
+        // 导航栏到内页首行内容的顶部间距(About/Work/Lab/AI/Contact 页使用)
+        // 从 12rem 提升到 14rem (224px),确保固定导航栏下方有充足视觉留白
+        'page-top': '13.5rem',
         // 分割线上下间距(Lab 页引导段下分割线、项目间分割线等都用这个统一配置)
         // 当前 4rem,想调大/调小只改这一个值
         'divider': '4rem',

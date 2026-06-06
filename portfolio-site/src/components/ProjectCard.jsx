@@ -14,7 +14,7 @@ export default function ProjectCard({ project, lang }) {
       {/* Meta row: circular logo placeholder + source · tag */}
       <div className="flex items-center gap-3 mb-3">
         <span className="w-6 h-6 rounded-full bg-dark-card border border-dark-border flex-shrink-0" aria-hidden="true" />
-        <span className="text-sm text-dark-text-secondary font-normal">
+        <span className="text-[0.9375rem] text-dark-text-secondary font-normal">
           {project.source || project.tag}
         </span>
       </div>

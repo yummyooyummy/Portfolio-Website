@@ -27,7 +27,7 @@ export default function Stats({ content }) {
               <div className="text-5xl md:text-6xl font-medium text-dark-text mb-4 leading-tight">
                 {stat.number}
               </div>
-              <div className="text-base text-dark-text-secondary font-normal leading-relaxed">
+              <div className="text-[0.9375rem] text-dark-text-secondary font-normal leading-relaxed">
                 {stat.description}
               </div>
             </div>

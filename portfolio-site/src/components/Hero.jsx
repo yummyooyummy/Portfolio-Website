@@ -13,9 +13,7 @@ export default function Hero({ content, lang }) {
   const headlineSize = lang === 'zh'
     ? 'text-3xl sm:text-4xl md:text-[2.625rem]'
     : 'text-3xl sm:text-4xl md:text-5xl';
-  const subtitleSize = lang === 'zh'
-    ? 'text-base sm:text-lg'
-    : 'text-lg sm:text-xl';
+  const subtitleSize = 'text-[0.9375rem]'; // 15px, unified for zh/en
 
   return (
     <motion.section
@@ -106,7 +104,7 @@ export default function Hero({ content, lang }) {
               <div className="text-4xl md:text-5xl font-medium text-dark-text mb-4 leading-tight">
                 {stat.number}
               </div>
-              <div className="text-base text-dark-text-secondary font-normal leading-relaxed">
+              <div className="text-[0.9375rem] text-dark-text-secondary font-normal leading-relaxed">
                 {stat.description}
               </div>
             </div>

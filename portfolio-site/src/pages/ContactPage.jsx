@@ -14,14 +14,16 @@ export default function ContactPage({ content, lang }) {
     <div className="min-h-screen bg-dark-bg">
       <Navbar content={content} lang={lang} />
 
-      <motion.section
-        ref={ref}
-        initial={{ opacity: 0, y: 20 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-        transition={{ duration: 0.6, ease: 'easeOut' }}
-        className="px-4 sm:px-8 pt-hero-top pb-section bg-dark-bg"
-      >
-        <div className="max-w-content mx-auto">
+      {/* Top spacing accounts for fixed navbar (same structure as AboutPage) */}
+      <div className="pt-page-top">
+        <motion.section
+          ref={ref}
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          className="px-4 sm:px-8 pb-section bg-dark-bg"
+        >
+          <div className="max-w-content mx-auto">
           {/* Label + heading + intro (same structure as About page top) */}
           <p className="text-sm uppercase tracking-wider text-dark-text-secondary mb-6 font-normal">
             {c.label}
@@ -29,41 +31,53 @@ export default function ContactPage({ content, lang }) {
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-medium leading-110 tracking-tighter-custom text-dark-text mb-8 max-w-2xl">
             {c.heading}
           </h1>
-          <p className="text-base sm:text-lg text-dark-text-secondary leading-relaxed mb-16 max-w-2xl">
+          <p className="text-[0.9375rem] sm:text-[0.9375rem] text-dark-text-secondary leading-relaxed mb-16">
             {c.intro}
           </p>
 
           {/* Discussion topics heading */}
-          <h2 className="text-lg font-medium text-dark-text mb-8">
+          <h2 className="text-lg font-medium text-dark-text mb-4">
             {c.discussTitle}
           </h2>
 
-          {/* Three topic bullets */}
-          <div className="space-y-6 mb-16">
-            {c.topics.map((topic, index) => (
-              <div key={index}>
-                <span className="text-base font-bold text-dark-text">{topic.title}</span>
-                <span className="text-base text-dark-text-secondary"> {topic.desc}</span>
-              </div>
+          {/* Merged discussion paragraph with highlighted keywords */}
+          <p className="text-[0.9375rem] leading-relaxed">
+            {c.discussHighlights.map((segment, index) => (
+              <span
+                key={index}
+                className={segment.bold ? "font-bold text-dark-text" : "text-dark-text-secondary"}
+              >
+                {segment.text}
+              </span>
             ))}
+          </p>
           </div>
+        </motion.section>
+      </div>
 
-          {/* Closing text */}
-          <p className="text-sm text-dark-text-secondary mb-12">
+      {/* Divider section - separates description from contact section */}
+      <div className="px-4 sm:px-8 py-divider border-t border-dark-border bg-dark-bg">
+        <div className="max-w-content mx-auto"></div>
+      </div>
+
+      {/* Contact methods section */}
+      <div className="px-4 sm:px-8 pb-section bg-dark-bg">
+        <div className="max-w-content mx-auto">
+          {/* Closing text - centered */}
+          <p className="text-[0.9375rem] text-dark-text-secondary mb-12 text-center">
             {c.closingText}
           </p>
 
-          {/* WeChat QR code placeholder (line 59-64) */}
+          {/* WeChat QR code - centered */}
           <div className="flex flex-col items-center mb-12">
-            <div className="w-48 h-48 bg-dark-card border border-dark-border rounded-2xl flex items-center justify-center mb-4">
-              <span className="text-dark-text-secondary text-sm opacity-50">QR Code</span>
-            </div>
-            <p className="text-sm text-dark-text-secondary">
-              {c.wechatLabel}
-            </p>
+            <img
+              src="/wechat-qr.png"
+              alt="WeChat QR Code"
+              className="w-32 h-32 rounded-2xl opacity-80"
+            />
           </div>
 
-          {/* Social links row (line 68-88) */}
+          {/* Social links row - centered */}
           <div className="flex flex-wrap justify-center gap-6 text-sm">
             <a
               href="mailto:zhengyuqingsherry@gmail.com"
@@ -89,7 +103,7 @@ export default function ContactPage({ content, lang }) {
             </a>
           </div>
         </div>
-      </motion.section>
+      </div>
 
       <Footer content={content} />
     </div>

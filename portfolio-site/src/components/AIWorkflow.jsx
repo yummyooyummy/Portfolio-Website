@@ -1,37 +1,47 @@
-// 五阶段工作流时间轴。全站黑白灰体系:
-//   暖白 dark-text rgb(245,245,244) — 编号/标题/角色注解、圆心、侧点
-//   灰   dark-text-secondary rgb(168,162,158) — 做法描述、竖线、圆环、连接横线
-// SVG 负责图形(贯穿竖线、节点圆环+圆心、连接横线+侧点),文字用 HTML 保证换行与无障碍。
-// 响应式:< md 单列(竖线在左、内容在右,无左右交替);md+ 沿中线左右交替(01右/02左…)。
+// 五阶段工作流时间轴(照参考图A:紧凑、圆点/横线/小圆点水平对齐首尾相接、左右对称)
+// 黑白灰极简:暖白(编号/标题/角色)、灰(做法/竖线/圆环/连接线)
+// 关键对齐:节点圆环、横线、末端小圆点在同一水平线上无缝连接;左右内容对称(右侧左对齐、左侧右对齐)
 const WHITE = 'rgb(245, 245, 244)';
 const GRAY = 'rgb(168, 162, 158)';
 const BG = '#0c0a09';
 
-// 中线上的节点:深色底圆遮住竖线 + 灰色空心圆环 + 暖白实心圆心
-function Node() {
+// 竖线上的圆圈节点:深色底圆(遮竖线) + 灰色空心圆环 + 暖白实心圆心
+function CircleNode() {
   return (
-    <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true" className="block">
-      <circle cx="11" cy="11" r="9" fill={BG} />
-      <circle cx="11" cy="11" r="6.5" fill="none" stroke={GRAY} strokeWidth="1.5" />
-      <circle cx="11" cy="11" r="3" fill={WHITE} />
+    <svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true" className="block">
+      <circle cx="16" cy="16" r="14" fill={BG} />
+      <circle cx="16" cy="16" r="10" fill="none" stroke={GRAY} strokeWidth="2" />
+      <circle cx="16" cy="16" r="4" fill={WHITE} />
     </svg>
   );
 }
 
-// 连接横线 + 侧点(仅 md+ 显示)。dir: 'right' 指向右侧内容,'left' 指向左侧内容。
+// 从圆圈引出的横线 + 侧边小实心圆点(严格水平对齐)
 function Connector({ dir }) {
   const right = dir === 'right';
+  const lineLength = 48;
+  const dotRadius = 4;
+  const totalWidth = lineLength + dotRadius * 2;
+  const height = dotRadius * 2;
+
   return (
-    <svg width="44" height="10" viewBox="0 0 44 10" aria-hidden="true" className="block">
+    <svg width={totalWidth} height={height} viewBox={`0 0 ${totalWidth} ${height}`} aria-hidden="true" className="block">
+      {/* 横线:从圆环边缘(x=0或totalWidth)到小圆点中心 */}
       <line
-        x1={right ? 0 : 44}
-        y1="5"
-        x2={right ? 36 : 8}
-        y2="5"
+        x1={right ? 0 : totalWidth}
+        y1={dotRadius}
+        x2={right ? lineLength : dotRadius * 2}
+        y2={dotRadius}
         stroke={GRAY}
-        strokeWidth="1.5"
+        strokeWidth="2"
       />
-      <circle cx={right ? 40 : 4} cy="5" r="2.5" fill={WHITE} />
+      {/* 末端小实心圆点:圆心在 (dotRadius, dotRadius) 或 (totalWidth - dotRadius, dotRadius) */}
+      <circle
+        cx={right ? lineLength + dotRadius : dotRadius}
+        cy={dotRadius}
+        r={dotRadius}
+        fill={WHITE}
+      />
     </svg>
   );
 }
@@ -41,66 +51,70 @@ export default function AIWorkflow({ workflow }) {
 
   return (
     <div className="relative">
-      {/* 贯穿竖线:mobile 在左(x=10),md+ 居中 */}
+      {/* 贯穿竖线:严格居中 */}
       <svg
-        className="absolute top-0 bottom-0 left-[10px] -translate-x-1/2 md:left-1/2 w-px h-full"
+        className="absolute top-0 bottom-0 left-1/2 -translate-x-px w-0.5 h-full"
         preserveAspectRatio="none"
-        viewBox="0 0 1 100"
+        viewBox="0 0 2 100"
         aria-hidden="true"
       >
-        <line x1="0.5" y1="0" x2="0.5" y2="100" stroke={GRAY} strokeWidth="1" vectorEffect="non-scaling-stroke" />
+        <line x1="1" y1="0" x2="1" y2="100" stroke={GRAY} strokeWidth="2" vectorEffect="non-scaling-stroke" />
       </svg>
 
-      <div className="space-y-14 md:space-y-20">
+      {/* 五个阶段,紧凑间距 */}
+      <div className="space-y-12 md:space-y-16">
         {stages.map((s, i) => {
           const right = i % 2 === 0; // 01/03/05 在右,02/04 在左
 
           return (
             <div
               key={s.num}
-              className="relative pl-10 md:pl-0 md:grid md:grid-cols-2 md:gap-x-0"
+              className="relative md:grid md:grid-cols-2 md:gap-x-0"
             >
-              {/* 节点:坐在竖线上 */}
-              <span className="absolute z-10 left-[10px] -translate-x-1/2 top-0 md:left-1/2 md:top-1/2 md:-translate-y-1/2">
-                <Node />
-              </span>
+              {/* 圆圈节点:坐在竖线上,垂直居中整个阶段高度,确保和横线在同一水平线 */}
+              <div className="hidden md:flex absolute z-10 left-1/2 -translate-x-1/2 top-0 h-full items-start pt-8">
+                <CircleNode />
+              </div>
 
-              {/* 连接横线 + 侧点(md+ 才显示,指向内容侧) */}
-              <span
-                className={`hidden md:block absolute z-10 top-1/2 -translate-y-1/2 ${
-                  right ? 'left-1/2' : 'right-1/2'
+              {/* 连接横线 + 小圆点:从圆圈边缘引出,与圆圈中心对齐(top-8 + translate-y 微调到圆心高度) */}
+              <div
+                className={`hidden md:flex absolute z-10 top-8 translate-y-2 items-center ${
+                  right ? 'left-1/2 translate-x-4' : 'right-1/2 -translate-x-4'
                 }`}
               >
                 <Connector dir={right ? 'right' : 'left'} />
-              </span>
+              </div>
 
-              {/* 内容 */}
+              {/* 内容块:左右对称对齐(右侧左对齐、左侧右对齐) */}
               <div
                 className={
                   right
-                    ? 'md:col-start-2 md:pl-14'
-                    : 'md:col-start-1 md:row-start-1 md:pr-14 md:text-right'
+                    ? 'md:col-start-2 md:pl-24 md:text-left'
+                    : 'md:col-start-1 md:row-start-1 md:pr-24 md:text-right'
                 }
               >
-                <div className="text-4xl sm:text-5xl font-medium tracking-tighter-custom text-dark-text leading-none mb-3">
+                {/* 大号编号(醒目) */}
+                <div className="text-6xl md:text-7xl font-bold tracking-tighter text-dark-text leading-none mb-3">
                   {s.num}
                 </div>
-                <h3 className="text-xl font-medium text-dark-text mb-3 leading-snug">
+
+                {/* 阶段标题 */}
+                <h3 className="text-lg md:text-xl font-medium text-dark-text mb-3 leading-tight">
                   {s.title}
                 </h3>
-                <p className="text-base text-dark-text-secondary leading-relaxed mb-4">
+
+                {/* 做法描述(灰色,多行) */}
+                <p className="text-[0.9375rem] md:text-[0.9375rem] text-dark-text-secondary leading-relaxed mb-3">
                   {s.doing}
                 </p>
-                <p
-                  className={`text-sm text-dark-text font-medium flex items-baseline gap-2 ${
-                    right ? '' : 'md:justify-end'
-                  }`}
-                >
-                  <span className="text-dark-text-secondary font-normal">
+
+                {/* 我的角色(两段式:灰色前缀 + 暖白内容,对齐方式跟随父容器) */}
+                <div className={`text-[0.9375rem] md:text-[0.9375rem] flex items-start gap-2 ${right ? '' : 'md:justify-end'}`}>
+                  <span className="text-dark-text-secondary font-normal flex-shrink-0">
                     {workflow.roleLabel}
                   </span>
-                  <span>{s.role}</span>
-                </p>
+                  <span className="text-dark-text font-medium">{s.role}</span>
+                </div>
               </div>
             </div>
           );

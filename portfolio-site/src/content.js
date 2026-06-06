@@ -49,6 +49,7 @@ export const content = {
         }
       ],
       educationTitle: "教育背景",
+      educationIntro: "从纯艺术到交互设计,这条路给了我别人没有的底色——既有审美的根基,也有解决问题的方法。",
       education: [
         {
           degree: "硕士",
@@ -181,11 +182,11 @@ export const content = {
         title: "我的工作流程",
         roleLabel: "我的角色",
         stages: [
-          { num: "01", title: "构想", doing: "与 AI 一同发散思路、预判风险,定义问题。", role: "看得更广,想得更早" },
-          { num: "02", title: "定义", doing: "高效产出产品设计文档与开发流程文档。", role: "把想法变成可执行的规格" },
-          { num: "03", title: "设计", doing: "Figma 主导,穿插 Claude Design、Figma Make 迭代;Midjourney、Google Flow 出图。", role: "把控视觉与交互质量" },
-          { num: "04", title: "构建", doing: "Cursor 与 Claude Code 将设计落地为真实代码。", role: "像审视交付一样,逐屏校验" },
-          { num: "05", title: "打磨", doing: "与 Claude、Claude Code 持续对话、相互校正。", role: "判断,在每一步" }
+          { num: "01", title: "构想", doing: "每个项目动手前,我先和 AI 做一轮充分的发散——把模糊的念头展开成多个方向,借助 AI 快速预判每条路的风险和可行性,在更大的可能性里收敛出真正值得做的那一个。", role: "决定做什么,以及为什么做。" },
+          { num: "02", title: "定义", doing: "想清楚之后,我用 AI 高效产出两份关键文档——产品设计文档(理清功能、流程、边界)和开发流程文档(把设计拆成可执行的开发步骤)。这一步把脑子里的想法,变成严谨、可落地的规格。", role: "把模糊的想法,翻译成清晰的规格。" },
+          { num: "03", title: "设计", doing: "以 Figma 为主完成界面与交互设计,过程中穿插使用 Claude Design、Figma Make 快速生成和迭代界面方案,视觉素材则用 Midjourney、Google Flow 等 AI 工具生成。工具按需组合,服务于最终的设计质量。", role: "把控每一屏的视觉与交互质量。" },
+          { num: "04", title: "构建", doing: "通过 Cursor 连接 Claude Code,把设计稿一步步落地成真实可运行的代码。我不只是发指令,而是像审查开发交付一样,逐屏测试、记录问题、给出明确的修改方向。", role: "像审查交付一样,逐屏校验每个细节。" },
+          { num: "05", title: "打磨", doing: "整个过程不是一次成型,而是我与 Claude、Claude Code 持续对话、反复校正——发现问题、调整、再验证,直到产品真正成立、达到我满意的标准。", role: "做最终判断,对结果负责。" }
         ]
       },
       comparison: {
@@ -214,19 +215,14 @@ export const content = {
       heading: "一起做点东西",
       intro: "我相信好的设计应该被放在真正重要的问题上。我正在寻找下一个这样的机会——一个能把交互设计的深度,和借助 AI 独立把产品做出来的能力,都用上的地方。无论是成熟团队里的核心角色,还是从零起步的产品,我都愿意深入。",
       discussTitle: "可以聊聊这些方向:",
-      topics: [
-        {
-          title: "交互 / 产品设计",
-          desc: "从需求到落地的完整流程,大型产品的核心界面与系统交互。"
-        },
-        {
-          title: "AI 产品落地",
-          desc: "用 AI 把想法独立做成能跑通、能上线的真实产品。"
-        },
-        {
-          title: "远程 / 灵活合作",
-          desc: "也欢迎远程或项目制的合作方式。"
-        }
+      discussText: "交互 / 产品设计——从需求到落地的完整流程、大型产品的核心界面与系统交互;AI 产品落地——用 AI 把想法独立做成能跑通、能上线的真实产品;以及 远程 / 灵活合作——也欢迎远程或项目制的合作方式。",
+      discussHighlights: [
+        { text: "交互 / 产品设计", bold: true },
+        { text: "——从需求到落地的完整流程、大型产品的核心界面与系统交互;", bold: false },
+        { text: "AI 产品落地", bold: true },
+        { text: "——用 AI 把想法独立做成能跑通、能上线的真实产品;以及 ", bold: false },
+        { text: "远程 / 灵活合作", bold: true },
+        { text: "——也欢迎远程或项目制的合作方式。", bold: false }
       ],
       closingText: "扫码加我微信,或者通过下面的方式找到我。",
       wechatLabel: "扫码加我微信"
@@ -285,6 +281,7 @@ export const content = {
         }
       ],
       educationTitle: "Education",
+      educationIntro: "From pure art to interaction design — this path gave me something others don't have: both the foundation of aesthetics and the methodology to solve problems.",
       education: [
         {
           degree: "M.A.",
@@ -417,11 +414,11 @@ export const content = {
         title: "How I work",
         roleLabel: "My role",
         stages: [
-          { num: "01", title: "Conceive", doing: "Brainstorm and anticipate risks alongside AI, and define the problem.", role: "See wider, think earlier" },
-          { num: "02", title: "Define", doing: "Produce product design docs and development-flow docs, fast.", role: "Turn ideas into executable specs" },
-          { num: "03", title: "Design", doing: "Figma-led, iterating with Claude Design and Figma Make; imagery from Midjourney and Google Flow.", role: "Own the visual and interaction quality" },
-          { num: "04", title: "Build", doing: "Cursor and Claude Code turn the design into real code.", role: "Review screen by screen, like inspecting a delivery" },
-          { num: "05", title: "Refine", doing: "An ongoing dialogue with Claude and Claude Code, correcting each other.", role: "Judgment, at every step" }
+          { num: "01", title: "Conceive", doing: "Before starting any project, I do a thorough brainstorming round with AI — expanding vague ideas into multiple directions, quickly assessing the risks and feasibility of each path with AI's help, and converging on the one truly worth pursuing from a wider range of possibilities.", role: "Decide what to build, and why." },
+          { num: "02", title: "Define", doing: "Once the direction is clear, I use AI to efficiently produce two key documents — a product design doc (clarifying features, flows, and boundaries) and a development-flow doc (breaking the design into executable dev steps). This step translates the idea in my head into rigorous, actionable specs.", role: "Translate vague ideas into clear specs." },
+          { num: "03", title: "Design", doing: "I complete interface and interaction design primarily in Figma, with Claude Design and Figma Make woven in to rapidly generate and iterate UI options. Visual assets come from AI tools like Midjourney and Google Flow. Tools are combined as needed, all in service of final design quality.", role: "Own the visual and interaction quality of every screen." },
+          { num: "04", title: "Build", doing: "Using Cursor connected to Claude Code, I turn design files into real, runnable code step by step. I don't just issue commands — I review like inspecting a dev delivery: testing screen by screen, logging issues, giving clear directions for fixes.", role: "Review every detail like inspecting a delivery." },
+          { num: "05", title: "Refine", doing: "The whole process isn't one-shot. It's an ongoing dialogue between me, Claude, and Claude Code — spotting problems, adjusting, verifying again — until the product truly works and meets my standards.", role: "Make the final call and own the result." }
         ]
       },
       comparison: {
@@ -450,19 +447,14 @@ export const content = {
       heading: "Let's build something",
       intro: "I believe good design belongs on problems that actually matter. I'm looking for the next place to do that — somewhere that uses both the depth of interaction design and the ability to bring a product to life independently with AI. Whether it's a core role inside an established team or something built from zero, I'm in.",
       discussTitle: "Reach out if you want to discuss:",
-      topics: [
-        {
-          title: "Interaction / product design",
-          desc: "the full process from problem to launch, owning core interfaces and system interactions for large-scale products."
-        },
-        {
-          title: "Shipping with AI",
-          desc: "using AI to turn ideas into real, working products that actually launch."
-        },
-        {
-          title: "Remote / flexible work",
-          desc: "open to remote or project-based collaboration too."
-        }
+      discussText: "Interaction / product design—the full process from problem to launch, owning core interfaces and system interactions for large-scale products; Shipping with AI—using AI to turn ideas into real, working products that actually launch; and Remote / flexible work—open to remote or project-based collaboration too.",
+      discussHighlights: [
+        { text: "Interaction / product design", bold: true },
+        { text: "—the full process from problem to launch, owning core interfaces and system interactions for large-scale products; ", bold: false },
+        { text: "Shipping with AI", bold: true },
+        { text: "—using AI to turn ideas into real, working products that actually launch; and ", bold: false },
+        { text: "Remote / flexible work", bold: true },
+        { text: "—open to remote or project-based collaboration too.", bold: false }
       ],
       closingText: "Scan to connect on WeChat, or find me through the links below.",
       wechatLabel: "Scan to connect on WeChat"
