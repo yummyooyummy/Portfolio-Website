@@ -191,21 +191,6 @@ export const content = {
           { num: "05", title: "构建", doing: "通过 Cursor 连接 Claude Code，把设计稿一步步落地成真实可运行的代码。我不只是发指令，而是像审查开发交付一样——逐屏测试、记录问题、给出明确的修改方向，确保做出来的东西和设计稿一致。", role: "像审查交付一样，校验每个细节。" },
           { num: "06", title: "打磨", doing: "我习惯先做出一个最小可用的版本，让产品尽快真正跑起来——然后在真实使用里不断打磨，一点点补全细节、提升质感，把它从一个\"能用\"的雏形，养成一个完整、成熟、我真正满意的产品。", role: "让产品从能用，走到成熟。" }
         ]
-      },
-      comparison: {
-        title: "有 AI 之后",
-        tradHeader: "传统方式 · 一个团队 · 数周到数月",
-        aiHeader: "用 AI · 我一人 · 几天到一两周",
-        tradLabel: "传统方式",
-        aiLabel: "用 AI(我)",
-        rows: [
-          { name: "调研梳理", trad: "3–5 天", ai: "约 1 小时" },
-          { name: "文档", trad: "3–5 天", ai: "1–2 小时" },
-          { name: "界面设计", trad: "1–2 周", ai: "数小时–1 天" },
-          { name: "开发落地", trad: "数周(需工程师)", ai: "数天" },
-          { name: "上线", trad: "止步原型", ai: "走通上线" }
-        ],
-        summary: "差别不只在更快,更在我多走完了「开发 → 上线」这一整段。"
       }
     },
     contact: {
@@ -426,21 +411,6 @@ export const content = {
           { num: "05", title: "Build", doing: "Through Cursor connected to Claude Code, I bring the designs to life as real, working code. I don't just issue instructions — I review it like a development handoff: testing screen by screen, logging issues, giving clear directions for changes, making sure what ships matches the design.", role: "Review every detail like a delivery." },
           { num: "06", title: "Refine", doing: "I like to ship a minimum usable version first, getting the product actually running as soon as possible — then refine it through real use, filling in details and lifting the quality bit by bit, growing it from a usable prototype into a complete, mature product I'm truly satisfied with.", role: "Grow a product from usable to mature." }
         ]
-      },
-      comparison: {
-        title: "With AI",
-        tradHeader: "Traditional · A team · Weeks to months",
-        aiHeader: "With AI · Just me · Days to a week or two",
-        tradLabel: "Traditional",
-        aiLabel: "With AI (me)",
-        rows: [
-          { name: "Research", trad: "3–5 days", ai: "~1 hour" },
-          { name: "Docs", trad: "3–5 days", ai: "1–2 hours" },
-          { name: "UI design", trad: "1–2 weeks", ai: "Hours – 1 day" },
-          { name: "Development", trad: "Weeks (needs engineers)", ai: "Days" },
-          { name: "Launch", trad: "Stops at prototype", ai: "Goes live" }
-        ],
-        summary: "The difference isn't just speed — it's that I also complete the whole \"build → launch\" stretch."
       }
     },
     contact: {
