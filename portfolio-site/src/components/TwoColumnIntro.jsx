@@ -12,8 +12,8 @@ export default function TwoColumnIntro({ content, lang }) {
     : 'The path of an interaction designer — from a fine-art foundation, through years inside a big tech company, to building products independently with AI today.';
 
   const aiPreview = lang === 'zh'
-    ? '研究主流 AI 工具，用 AI 做自己的设计探索，把脑子里的产品一个个真正做出来。'
-    : 'Studying the major AI tools and using them for my own design experiments — actually building the products in my head.';
+    ? '我怎么和 AI 一起工作：从一个想法，到一个真正上线的产品。'
+    : 'How I work with AI — from an idea to a real, launched product.';
 
   return (
     <motion.section

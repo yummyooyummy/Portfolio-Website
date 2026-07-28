@@ -4,11 +4,20 @@ export default function ProjectCard({ project, lang }) {
       href={lang === 'zh' ? `/work/${project.slug}` : `/en/work/${project.slug}`}
       className="block group"
     >
-      {/* Clean image (placeholder), rounded, no overlay/text */}
+      {/* Clean image (real image if provided, placeholder otherwise), rounded, no overlay/text */}
       <div className="aspect-video bg-dark-card border border-dark-border rounded-card overflow-hidden flex items-center justify-center mb-5 group-hover:shadow-card-subtle transition-shadow">
-        <span className="text-dark-text-secondary text-lg font-medium opacity-60">
-          {project.name}
-        </span>
+        {project.image ? (
+          <img
+            src={project.image}
+            alt={project.name}
+            loading="lazy"
+            className="w-full h-full object-cover"
+          />
+        ) : (
+          <span className="text-dark-text-secondary text-lg font-medium opacity-60">
+            {project.name}
+          </span>
+        )}
       </div>
 
       {/* Meta row: circular logo placeholder + source · tag */}

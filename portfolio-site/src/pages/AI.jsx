@@ -67,6 +67,21 @@ export default function AI({ content, lang }) {
             {a.workflow.title}
           </h2>
           <AIWorkflow workflow={a.workflow} />
+
+          {/* Outro: link to Work page */}
+          {a.outro && (
+            <div className="mt-24 pt-10 border-t border-dark-border">
+              <p className="text-[0.9375rem] text-dark-text-secondary leading-relaxed">
+                {a.outro}{' '}
+                <a
+                  href={lang === 'zh' ? '/work' : '/en/work'}
+                  className="text-dark-text font-medium hover:text-dark-text-secondary transition-colors whitespace-nowrap"
+                >
+                  {a.outroCta}
+                </a>
+              </p>
+            </div>
+          )}
         </div>
       </motion.section>
 
