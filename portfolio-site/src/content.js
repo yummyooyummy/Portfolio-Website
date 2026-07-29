@@ -37,7 +37,7 @@ export const content = {
           org: "腾讯 · 天美工作室",
           role: "游戏交互设计师",
           period: "2021.11 – 2025.05",
-          desc: "以全职校招实习身份加入，半年后转正，在天美工作室担任游戏交互设计师三年半。负责大型开放世界游戏的 HUD，战斗、副本、地图、家园、宠物、钓鱼等多个核心玩法系统的交互设计，以及手机、PC、主机三端的操作设计——游戏交互信息密集、状态繁多，要把复杂的玩法梳理成顺手好用的体验，这段经历把我的交互硬功打磨得很扎实。从最初承接需求，到能独立主导核心模块、推动跨部门对齐与落地，我在大厂体系里完整走过了产品协作的全流程，也沉淀下一套可迁移的能力：规范化的设计方法、清晰表达和对齐设计决策的能力，以及在大型团队里把事情真正推动落地的协作力。"
+          desc: "以全职校招实习身份加入，半年后转正，在天美工作室担任游戏交互设计师三年半。负责大型开放世界游戏的 HUD，战斗、副本、地图、家园、宠物、钓鱼等多个核心玩法系统的交互设计，以及手机、PC、主机三端的操作设计——游戏交互信息密集、状态繁多，要把复杂的玩法梳理成顺手好用的体验，这段经历把我的交互硬功打磨得很扎实。\n\n从最初承接需求，到能独立主导核心模块、推动跨部门对齐与落地，我在大厂体系里完整走过了产品协作的全流程，也沉淀下一套可迁移的能力：规范化的设计方法、清晰表达和对齐设计决策的能力，以及在大型团队里把事情真正推动落地的协作力。"
         },
         {
           org: "北京大学信息技术高等研究院（杭州）",
@@ -141,20 +141,25 @@ export const content = {
           name: "新疆滑雪",
           subtitle: "滑雪社区小程序",
           fullName: "新疆滑雪 · 滑雪社区小程序",
-          techStack: "微信小程序、Vant UI、Figma",
-          description: "一款面向新疆雪场雪友的微信小程序，把实时雪况、社交互助、信任体系整合到一处。我负责完整的界面与交互设计——从信息架构、核心流程到每一个界面的视觉与交互细节，围绕\"雪友戴手套操作、戴雪镜阅读\"这个真实场景做轻量化设计。注意力有限、操作受限——这类极端场景下的交互约束，恰恰是我最感兴趣的设计问题。",
+          techStack: "微信小程序原生 · 微信云开发（云函数 + 云数据库）· Vant Weapp · Figma",
+          status: "界面设计已全部完成（Figma）· 功能开发完成约一半，持续推进中",
+          description: "一个完整的独立项目：从产品定义、全部界面与交互设计，到小程序前端和云函数后端的开发，都由我一个人完成。产品面向新疆雪场的雪友，把实时雪况、社区互助（找搭子 / 拼车 / 转让 / 求助）、私信，和作为核心差异化的信任体系整合到一处——目前已有 5 个 Tab、25+ 个页面、12+ 个云函数。整套设计围绕\"雪友戴手套操作、戴雪镜阅读\"这个真实场景展开：注意力有限、操作受限，这类极端场景下的交互约束，恰恰是我最感兴趣的设计问题。",
           keyFeatures: [
             {
-              title: "场景化交互",
+              title: "极端场景的交互设计",
               desc: "所有按钮最小 44px、放大可点区域、震动反馈、滑雪板加载动画——每个细节都为\"戴手套、戴雪镜\"的真实滑雪场景服务。"
+            },
+            {
+              title: "信任体系设计",
+              desc: "信用分、等级、勋章三个维度整合成一套可视化信任体系，贯穿社区卡片、私信、个人主页——用设计引导陌生雪友之间的良性互助。"
             },
             {
               title: "实时雪况系统",
               desc: "用颜色标签（绿/黄/红/橙）即时传达缆车排队、路况、雪道开放、能见度等状态，一眼可读，降低决策成本。"
             },
             {
-              title: "信任体系设计",
-              desc: "把等级、勋章、信用分整合成一套可视化的信任体系，引导社区里的良性互助行为。"
+              title: "独立全栈实现",
+              desc: "从 Figma 设计稿，到小程序页面、云函数后端与数据库，整个产品的每一层都由我自己写——包括完整的私信系统和内容发布流程。"
             }
           ],
           links: []
@@ -203,14 +208,24 @@ export const content = {
       ],
       workflow: {
         title: "我的工作流程",
-        roleLabel: "我的角色",
+        roleLabel: "我的角色：",
         stages: [
-          { num: "01", title: "洞察", doing: "动手之前，我先用 AI 快速把一个领域摸透——调研市场、拆解竞品、梳理目标用户的真实需求与痛点。AI 让原本要花几天的调研压缩到几小时，而从一堆信息里看出哪些是真问题、哪些只是噪音，靠的是设计师的洞察。", role: "分辨真正值得解决的问题。" },
-          { num: "02", title: "构想", doing: "想清楚要解决什么之后，我和 AI 做一轮充分的发散——把模糊的念头展开成多个方向，借助 AI 快速预判每条路的风险和可行性，再在更大的可能性里，收敛出真正值得做的那一个。", role: "决定做什么，以及为什么做。" },
-          { num: "03", title: "定义", doing: "我用 AI 高效产出两份关键文档——产品设计文档（理清功能、流程、边界）和开发流程文档（把设计拆成可执行的步骤）。这一步把脑子里的想法变成严谨、可落地的规格，也让后面的每一步都有据可依。", role: "把模糊的想法，翻译成清晰的规格。" },
-          { num: "04", title: "设计", doing: "以 Figma 为主完成界面与交互设计，过程中穿插 Claude Design、Figma Make 快速生成和迭代方案，视觉素材用 Midjourney、Google Flow 等生成。工具按需组合，但每一屏最终的视觉与交互质量，由我把关。", role: "把控每一屏的质感。" },
-          { num: "05", title: "构建", doing: "通过 Cursor 连接 Claude Code，把设计稿一步步落地成真实可运行的代码。我不只是发指令，而是像审查开发交付一样——逐屏测试、记录问题、给出明确的修改方向，确保做出来的东西和设计稿一致。", role: "像审查交付一样，校验每个细节。" },
-          { num: "06", title: "打磨", doing: "我习惯先做出一个最小可用的版本，让产品尽快真正跑起来——然后在真实使用里不断打磨，一点点补全细节、提升质感，把它从一个\"能用\"的雏形，养成一个完整、成熟、我真正满意的产品。", role: "让产品从能用，走到成熟。" }
+          { num: "01", title: "洞察", doing: "动手之前，先用 AI 把一个领域快速摸透——市场、竞品、用户的真实痛点。调研从几天压缩到几小时，但从一堆信息里分出真问题和噪音，靠的还是设计师的眼睛。", role: "分辨真正值得解决的问题。" },
+          { num: "02", title: "构想", doing: "和 AI 做一轮充分的发散，把模糊的念头展开成多个方向，快速预判每条路的风险与可行性，再收敛出真正值得做的那一个。", role: "决定做什么，以及为什么做。" },
+          { num: "03", title: "定义", doing: "用 AI 产出两份关键文档：产品设计文档理清功能与边界，开发流程文档把设计拆成可执行的步骤。想法从这里开始变得严谨、可落地。", role: "把模糊的想法，翻译成清晰的规格。" },
+          { num: "04", title: "设计", doing: "以 Figma 为主完成界面与交互设计，穿插 Claude、Figma Make、Midjourney 等工具快速生成和迭代。工具按需组合，质量由我把关。", role: "把控每一屏的质感。" },
+          { num: "05", title: "构建", doing: "通过 Claude Code 把设计稿落成真实可运行的代码。我不只发指令——逐屏测试、记录问题、给出明确的修改方向，直到做出来的和设计稿一致。", role: "像审查交付一样，校验每个细节。" },
+          { num: "06", title: "打磨", doing: "先做出最小可用的版本让产品真正跑起来，再在真实使用里一点点补全细节、提升质感，把\"能用\"养成\"成熟\"。", role: "让产品从能用，走到成熟。" }
+        ]
+      },
+      lessons: {
+        title: "和 AI 相处，我学到的几件事",
+        items: [
+          { num: "01", punch: "“AI 说‘已完成’的时候，往往什么都没发生。”", exp: "它会非常自信地汇报“已修复”，而屏幕上一个像素都没变。我从不看它的汇报，只看实际渲染出来的结果——逐屏验收，是我和 AI 协作的第一纪律。" },
+          { num: "02", punch: "“给它一个正确的例子，胜过十个形容词。”", exp: "让它“把间距调得更协调”，它能来回改四遍都不对；让它“照这个已经正确的页面搬”，一次就对。AI 不缺能力，缺参照。" },
+          { num: "03", punch: "“与其期待它聪明，不如把任务拆到它不需要聪明。”", exp: "一次只给一件事、说清边界和验收标准，它就很少让我失望。大多数“AI 不行”，其实是任务没拆好。" },
+          { num: "04", punch: "“方案可以让它出十个，选哪个永远是我的事。”", exp: "生成是便宜的，选择是贵的。越是关键的判断，越不能外包给 AI。" },
+          { num: "05", punch: "“变化的不只是效率，是所有权。”", exp: "在大厂，我是产品流水线上的一环；现在，AI 给了我整条流水线。它没有取代我的工作，而是把一个完整的产品，还给了我一个人。" }
         ]
       },
       outro: "这套流程做出来的东西，都在作品页。",
@@ -225,13 +240,17 @@ export const content = {
       label: "联系",
       heading: "一起做点东西",
       intro: "我相信好的设计应该被放在真正重要的问题上。我正在寻找下一个这样的机会——一个能把交互设计的深度，和借助 AI 独立把产品做出来的能力，都用上的地方。无论是成熟团队里的核心角色，还是从零起步的产品，我都愿意深入。比起被动接收需求，我更习惯主动把问题想透、把事情推进到结果。如果你正在寻找一位既能深入设计、也能独立落地的设计师，欢迎与我聊聊。",
+      status: "正在看新机会",
+      statusDetail: "base 南京 / 上海",
       discussTitle: "可以聊聊这些方向：",
-      discussText: "交互 / 产品设计——从需求到落地的完整流程、复杂系统的核心界面与交互；AI 产品——从产品定义，到借助 AI 独立做出真实上线产品的完整实践。此外，远程与项目制的合作方式，我也保持开放。",
+      discussText: "交互 / 产品设计——从需求到落地的完整流程、复杂系统的核心界面与交互；AI 产品——从产品定义，到借助 AI 独立做出真实上线产品的完整实践；复杂系统与多端体验——信息密集、状态繁多的产品，以及同一套体验在不同设备与输入方式下的操作设计。此外，远程与项目制的合作方式，我也保持开放。",
       discussHighlights: [
         { text: "交互 / 产品设计", bold: true },
         { text: "——从需求到落地的完整流程、复杂系统的核心界面与交互；", bold: false },
         { text: "AI 产品", bold: true },
-        { text: "——从产品定义，到借助 AI 独立做出真实上线产品的完整实践。此外，远程与项目制的合作方式，我也保持开放。", bold: false }
+        { text: "——从产品定义，到借助 AI 独立做出真实上线产品的完整实践；", bold: false },
+        { text: "复杂系统与多端体验", bold: true },
+        { text: "——信息密集、状态繁多的产品，以及同一套体验在不同设备与输入方式下的操作设计。此外，远程与项目制的合作方式，我也保持开放。", bold: false }
       ],
       closingText: "扫码加我微信，或者通过下面的方式找到我。",
       wechatLabel: "扫码加我微信"
@@ -278,7 +297,7 @@ export const content = {
           org: "Tencent · TiMi Studio",
           role: "Game Interaction Designer",
           period: "Nov 2021 – May 2025",
-          desc: "Joined as a full-time campus-recruitment intern, converted after six months, and spent three and a half years as a game interaction designer at TiMi Studio. I owned the HUD, the interaction design for multiple core gameplay systems — combat, dungeons, map, home, pets, fishing — and the input design across mobile, PC, and console in a large-scale open-world game. Game interaction is dense with information and states; turning complex mechanics into smooth, usable experiences sharpened my interaction fundamentals. From taking requirements early on to independently leading core modules and driving cross-team alignment and delivery, I went through the full product-collaboration cycle inside a major organization and built a transferable skill set: structured design methods, the ability to clearly articulate and align design decisions, and the capacity to actually push things to completion inside a large team."
+          desc: "Joined as a full-time campus-recruitment intern, converted after six months, and spent three and a half years as a game interaction designer at TiMi Studio. I owned the HUD, the interaction design for multiple core gameplay systems — combat, dungeons, map, home, pets, fishing — and the input design across mobile, PC, and console in a large-scale open-world game. Game interaction is dense with information and states; turning complex mechanics into smooth, usable experiences sharpened my interaction fundamentals.\n\nFrom taking requirements early on to independently leading core modules and driving cross-team alignment and delivery, I went through the full product-collaboration cycle inside a major organization and built a transferable skill set: structured design methods, the ability to clearly articulate and align design decisions, and the capacity to actually push things to completion inside a large team."
         },
         {
           org: "Peking University IT Institute (Hangzhou)",
@@ -382,20 +401,25 @@ export const content = {
           name: "Xinjiang Ski",
           subtitle: "A Skiing Community Mini-Program",
           fullName: "Xinjiang Ski — A Skiing Community Mini-Program",
-          techStack: "WeChat Mini-Program, Vant UI, Figma",
-          description: "A WeChat mini-program built for skiers at Xinjiang's ski resorts, bringing real-time slope conditions, social matching, and a trust system into one place. I owned the full interface and interaction design — from information architecture and core flows down to the visual and interaction details of every screen, designing around a real constraint: skiers operating with gloves on and reading through goggles. Limited attention, restricted operation — interaction design under extreme conditions like these is exactly the kind of problem that interests me most.",
+          techStack: "Native WeChat Mini-Program · WeChat CloudBase (cloud functions + database) · Vant Weapp · Figma",
+          status: "All interface design complete (Figma) · development roughly half done, in progress",
+          description: "A complete independent project: from product definition and every screen of interface and interaction design, to the mini-program frontend and cloud-function backend — all built by me alone. Made for skiers at Xinjiang's resorts, it brings together real-time slope conditions, community mutual help (partner matching / carpooling / resale / requests), private messaging, and a trust system as its core differentiator — currently 5 tabs, 25+ pages, and 12+ cloud functions. The whole design is built around a real constraint: skiers operating with gloves on and reading through goggles. Limited attention, restricted operation — interaction design under extreme conditions like these is exactly the kind of problem that interests me most.",
           keyFeatures: [
             {
-              title: "Scenario-driven interaction",
+              title: "Interaction design for extreme conditions",
               desc: "44px minimum tap targets, enlarged hit areas, haptic feedback, a ski-board loading animation — every detail serves the real on-slope context of gloves and goggles."
+            },
+            {
+              title: "Trust-system design",
+              desc: "credit score, levels, and badges combined into one visual trust framework, woven through community cards, messaging, and profiles — design that encourages healthy mutual help between strangers."
             },
             {
               title: "Real-time conditions system",
               desc: "color-coded labels (green / yellow / red / orange) communicate lift queues, road status, slope openings, and visibility at a glance, lowering the cost of every decision."
             },
             {
-              title: "Trust-system design",
-              desc: "levels, badges, and a credit score combined into one visual trust framework that encourages healthy mutual help across the community."
+              title: "Independent full-stack build",
+              desc: "from Figma designs to mini-program pages, cloud functions, and the database — every layer written by me, including a complete private-messaging system and content-publishing flow."
             }
           ],
           links: []
@@ -444,14 +468,24 @@ export const content = {
       ],
       workflow: {
         title: "How I work",
-        roleLabel: "My role",
+        roleLabel: "My role: ",
         stages: [
-          { num: "01", title: "Discover", doing: "Before building anything, I use AI to get the lay of a field fast — researching the market, breaking down competitors, mapping the real needs and pain points of target users. AI compresses days of research into hours; seeing which are real problems and which are just noise comes down to a designer's insight.", role: "Tell which problems are worth solving." },
-          { num: "02", title: "Ideate", doing: "Once I'm clear on what to solve, I run a round of wide divergence with AI — opening a vague notion into multiple directions, using AI to quickly gauge the risk and feasibility of each, then converging on the one truly worth doing.", role: "Decide what to build, and why." },
-          { num: "03", title: "Define", doing: "I use AI to efficiently produce two key documents — a product design doc (clarifying features, flows, boundaries) and a development plan (breaking the design into executable steps). This turns what's in my head into a rigorous, buildable spec, and gives every later step something to stand on.", role: "Turn a fuzzy idea into a clear spec." },
-          { num: "04", title: "Design", doing: "I design interfaces and interactions primarily in Figma, weaving in Claude Design and Figma Make to quickly generate and iterate, and tools like Midjourney and Google Flow for visual assets. Tools combine as needed — but the final visual and interaction quality of every screen is on me.", role: "Own the quality of every screen." },
-          { num: "05", title: "Build", doing: "Through Cursor connected to Claude Code, I bring the designs to life as real, working code. I don't just issue instructions — I review it like a development handoff: testing screen by screen, logging issues, giving clear directions for changes, making sure what ships matches the design.", role: "Review every detail like a delivery." },
-          { num: "06", title: "Refine", doing: "I like to ship a minimum usable version first, getting the product actually running as soon as possible — then refine it through real use, filling in details and lifting the quality bit by bit, growing it from a usable prototype into a complete, mature product I'm truly satisfied with.", role: "Grow a product from usable to mature." }
+          { num: "01", title: "Discover", doing: "Before building, I use AI to map a field fast — market, competitors, users' real pain points. Research shrinks from days to hours, but telling real problems from noise still takes a designer's eye.", role: "Tell which problems are worth solving." },
+          { num: "02", title: "Ideate", doing: "A round of wide divergence with AI: opening a vague notion into multiple directions, quickly gauging the risk and feasibility of each, then converging on the one worth doing.", role: "Decide what to build, and why." },
+          { num: "03", title: "Define", doing: "With AI I produce two key documents: a product design doc that pins down features and boundaries, and a development plan that breaks the design into executable steps. This is where an idea becomes rigorous and buildable.", role: "Turn a fuzzy idea into a clear spec." },
+          { num: "04", title: "Design", doing: "Interfaces and interactions designed primarily in Figma, with Claude, Figma Make, and Midjourney woven in to generate and iterate fast. Tools combine as needed; quality stays my call.", role: "Own the quality of every screen." },
+          { num: "05", title: "Build", doing: "Claude Code turns the designs into real, working code. I don't just issue instructions — I test screen by screen, log issues, give precise directions, until what's built matches what was designed.", role: "Review every detail like a delivery." },
+          { num: "06", title: "Refine", doing: "Ship a minimum usable version first and get it truly running, then refine through real use — filling in details, lifting the quality, growing \"usable\" into \"mature.\"", role: "Grow a product from usable to mature." }
+        ]
+      },
+      lessons: {
+        title: "A few things I've learned working with AI",
+        items: [
+          { num: "01", punch: "“When AI says ‘done,’ often nothing has happened.”", exp: "It reports “fixed” with complete confidence while not a single pixel has changed. I never trust the report — only what actually renders, screen by screen. That's rule one of working together." },
+          { num: "02", punch: "“One correct example beats ten adjectives.”", exp: "Ask it to “make the spacing feel better” and it misses four times in a row; tell it to “copy this page that's already right” and it lands at once. AI doesn't lack ability — it lacks reference." },
+          { num: "03", punch: "“Don't expect it to be smart. Break the task down until it doesn't need to be.”", exp: "One thing at a time, clear boundaries, clear acceptance criteria — and it rarely lets me down. Most “AI can't do it” is really “the task wasn't broken down.”" },
+          { num: "04", punch: "“It can generate ten options. Choosing is forever my job.”", exp: "Generation is cheap; choice is expensive. The more critical the judgment, the less it can be outsourced." },
+          { num: "05", punch: "“What changed isn't just speed — it's ownership.”", exp: "At a big company, I was one link in the production line; now AI hands me the whole line. It didn't take my work away. It gave a whole product back to one person." }
         ]
       },
       outro: "Everything this process produces lives on the Work page.",
@@ -466,13 +500,17 @@ export const content = {
       label: "Contact",
       heading: "Let's build something",
       intro: "I believe good design belongs on problems that truly matter. I'm looking for my next opportunity like that — a place that calls on both the depth of interaction design and the ability to independently build products with AI. Whether it's a core role within an established team or a product starting from scratch, I'm ready to dive in. Rather than waiting for requirements to come to me, I tend to think problems through and push things toward real results. If you're looking for a designer who can both go deep in design and ship independently, I'd love to talk.",
+      status: "Open to new opportunities",
+      statusDetail: "Based in Nanjing / Shanghai",
       discussTitle: "Reach out if you want to discuss:",
-      discussText: "Interaction / product design — the full process from problem to launch, core interfaces and interactions for complex systems; AI products — from product definition to independently shipping real, launched products with AI. Beyond that, I'm open to remote and project-based collaboration as well.",
+      discussText: "Interaction / product design — the full process from problem to launch, core interfaces and interactions for complex systems; AI products — from product definition to independently shipping real, launched products with AI; complex systems and multi-platform experiences — information-dense, state-heavy products, and how one experience adapts across devices and input methods. Beyond that, I'm open to remote and project-based collaboration as well.",
       discussHighlights: [
         { text: "Interaction / product design", bold: true },
         { text: " — the full process from problem to launch, core interfaces and interactions for complex systems; ", bold: false },
         { text: "AI products", bold: true },
-        { text: " — from product definition to independently shipping real, launched products with AI. Beyond that, I'm open to remote and project-based collaboration as well.", bold: false }
+        { text: " — from product definition to independently shipping real, launched products with AI; ", bold: false },
+        { text: "complex systems and multi-platform experiences", bold: true },
+        { text: " — information-dense, state-heavy products, and how one experience adapts across devices and input methods. Beyond that, I'm open to remote and project-based collaboration as well.", bold: false }
       ],
       closingText: "Scan to connect on WeChat, or find me through the links below.",
       wechatLabel: "Scan to connect on WeChat"

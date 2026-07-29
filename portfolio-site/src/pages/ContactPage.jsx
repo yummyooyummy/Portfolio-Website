@@ -31,6 +31,21 @@ export default function ContactPage({ content, lang }) {
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-medium leading-110 tracking-tighter-custom text-dark-text mb-8 max-w-2xl">
             {c.heading}
           </h1>
+
+          {/* Status pill: breathing green dot + availability info */}
+          {c.status && (
+            <div className="inline-flex items-center gap-2.5 border border-dark-border rounded-full px-4 py-2 mb-10">
+              <span className="relative flex w-2 h-2" aria-hidden="true">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-40"></span>
+                <span className="relative inline-flex rounded-full w-2 h-2 bg-green-400"></span>
+              </span>
+              <span className="text-sm leading-none">
+                <span className="text-dark-text">{c.status}</span>
+                <span className="text-dark-text-secondary"> · {c.statusDetail}</span>
+              </span>
+            </div>
+          )}
+
           <p className="text-[0.9375rem] sm:text-[0.9375rem] text-dark-text-secondary leading-relaxed mb-8">
             {c.intro}
           </p>

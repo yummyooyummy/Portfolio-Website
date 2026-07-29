@@ -1,65 +1,96 @@
 export default function LabProjectDetailed({ project, lang }) {
+  const zh = lang === 'zh';
+  const labels = {
+    project: zh ? '项目' : 'Project',
+    status: zh ? '状态' : 'Status',
+    tech: zh ? '技术栈' : 'Tech stack',
+    desc: zh ? '项目介绍' : 'Description',
+    features: zh ? '核心亮点' : 'Key features',
+    links: zh ? '链接' : 'Links'
+  };
+
   return (
     <div className="space-y-8">
-      {/* Large image placeholder (line 4-8) */}
+      {/* Large image (real if provided, placeholder otherwise) */}
       <div className="aspect-video bg-dark-card border border-dark-border rounded-card overflow-hidden flex items-center justify-center">
-        <span className="text-dark-text-secondary text-lg font-medium opacity-60">
-          {project.name}
-        </span>
+        {project.image ? (
+          <img
+            src={project.image}
+            alt={project.name}
+            loading="lazy"
+            className="w-full h-full object-cover"
+          />
+        ) : (
+          <span className="text-dark-text-secondary text-lg font-medium opacity-60">
+            {project.name}
+          </span>
+        )}
       </div>
 
       {/* Content: left labels, right content */}
       <div className="space-y-8">
-        {/* PROJECT */}
+        {/* 项目 */}
         <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
           <div className="text-sm uppercase tracking-wider text-dark-text-secondary font-normal">
-            Project
+            {labels.project}
           </div>
           <div className="sm:col-span-3 text-base text-dark-text font-medium">
             {project.fullName}
           </div>
         </div>
 
-        {/* TECH STACK */}
+        {/* 状态 (optional) */}
+        {project.status && (
+          <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
+            <div className="text-sm uppercase tracking-wider text-dark-text-secondary font-normal">
+              {labels.status}
+            </div>
+            <div className="sm:col-span-3 text-[0.9375rem] text-dark-text-secondary leading-relaxed">
+              {project.status}
+            </div>
+          </div>
+        )}
+
+        {/* 技术栈 */}
         <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
           <div className="text-sm uppercase tracking-wider text-dark-text-secondary font-normal">
-            Tech stack
+            {labels.tech}
           </div>
-          <div className="sm:col-span-3 text-base text-dark-text leading-relaxed">
+          <div className="sm:col-span-3 text-[0.9375rem] text-dark-text-secondary leading-relaxed">
             {project.techStack}
           </div>
         </div>
 
-        {/* DESCRIPTION */}
+        {/* 项目介绍 */}
         <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
           <div className="text-sm uppercase tracking-wider text-dark-text-secondary font-normal">
-            Description
+            {labels.desc}
           </div>
-          <div className="sm:col-span-3 text-base text-dark-text leading-relaxed">
+          <div className="sm:col-span-3 text-[0.9375rem] text-dark-text-secondary leading-relaxed">
             {project.description}
           </div>
         </div>
 
-        {/* KEY FEATURES */}
+        {/* 核心亮点 */}
         <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
           <div className="text-sm uppercase tracking-wider text-dark-text-secondary font-normal">
-            Key features
+            {labels.features}
           </div>
           <div className="sm:col-span-3 space-y-4">
             {project.keyFeatures.map((feature, index) => (
-              <div key={index} className="text-base text-dark-text leading-relaxed">
-                <span className="font-bold">{feature.title}:</span>
-                <span> {feature.desc}</span>
+              <div key={index} className="text-[0.9375rem] leading-relaxed">
+                <span className="font-medium text-dark-text">{feature.title}</span>
+                <span className="text-dark-text-secondary"> —— {feature.desc}</span>
               </div>
             ))}
           </div>
         </div>
 
-        {/* LINKS (only show if links array is not empty) */}
+        {/* 链接 (only show if links array is not empty) */}
         {project.links && project.links.length > 0 && (
           <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
             <div className="text-sm uppercase tracking-wider text-dark-text-secondary font-normal">
-              Links
+              {labels.links}
             </div>
             <div className="sm:col-span-3 flex flex-wrap gap-4">
               {project.links.map((link, index) => (

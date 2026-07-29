@@ -4,6 +4,7 @@ import { useInView } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import AIWorkflow from '../components/AIWorkflow';
+import AILessons from '../components/AILessons';
 
 export default function AI({ content, lang }) {
   const a = content.ai;
@@ -67,23 +68,42 @@ export default function AI({ content, lang }) {
             {a.workflow.title}
           </h2>
           <AIWorkflow workflow={a.workflow} />
+        </div>
+      </motion.section>
+
+      {/* 3. Lessons: creed cards in an auto-scrolling band */}
+      {a.lessons && (
+        <section className="py-section border-t border-dark-border bg-dark-bg overflow-hidden">
+          <div className="px-6 sm:px-8">
+            <div className="max-w-content mx-auto">
+              <h2 className="text-2xl sm:text-3xl font-medium text-dark-text mb-14 leading-tight">
+                {a.lessons.title}
+              </h2>
+            </div>
+            {/* 滚动带比正文更宽(破格),但保留页面左右留白 */}
+            <div className="max-w-[72rem] mx-auto">
+              <AILessons lessons={a.lessons} />
+            </div>
+          </div>
 
           {/* Outro: link to Work page */}
           {a.outro && (
-            <div className="mt-24 pt-10 border-t border-dark-border">
-              <p className="text-[0.9375rem] text-dark-text-secondary leading-relaxed">
-                {a.outro}{' '}
-                <a
-                  href={lang === 'zh' ? '/work' : '/en/work'}
-                  className="text-dark-text font-medium hover:text-dark-text-secondary transition-colors whitespace-nowrap"
-                >
-                  {a.outroCta}
-                </a>
-              </p>
+            <div className="px-6 sm:px-8">
+              <div className="max-w-content mx-auto mt-20 pt-10 border-t border-dark-border">
+                <p className="text-[0.9375rem] text-dark-text-secondary leading-relaxed">
+                  {a.outro}{' '}
+                  <a
+                    href={lang === 'zh' ? '/work' : '/en/work'}
+                    className="text-dark-text font-medium hover:text-dark-text-secondary transition-colors whitespace-nowrap"
+                  >
+                    {a.outroCta}
+                  </a>
+                </p>
+              </div>
             </div>
           )}
-        </div>
-      </motion.section>
+        </section>
+      )}
 
       <Footer content={content} />
     </div>

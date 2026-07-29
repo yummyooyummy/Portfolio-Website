@@ -11,7 +11,7 @@ export default function LabProjectSimple({ project, lang }) {
       {/* Only PROJECT row */}
       <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
         <div className="text-sm uppercase tracking-wider text-dark-text-secondary font-normal">
-          Project
+          {lang === 'zh' ? '项目' : 'Project'}
         </div>
         <div className="sm:col-span-3 text-base text-dark-text font-medium">
           {project.fullName}

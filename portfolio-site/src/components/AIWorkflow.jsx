@@ -51,25 +51,24 @@ export default function AIWorkflow({ workflow }) {
 
   return (
     <div className="relative">
-      {/* 贯穿竖线:移动端在最左侧 pl-6,桌面端居中 */}
-      <svg
-        className="absolute top-0 bottom-0 left-6 md:left-1/2 md:-translate-x-px w-0.5 h-full"
-        preserveAspectRatio="none"
-        viewBox="0 0 2 100"
+      {/* 贯穿竖线:移动端在最左侧 pl-6,桌面端居中;两端渐隐避免生硬戳出 */}
+      <div
+        className="absolute top-0 bottom-0 left-6 md:left-1/2 md:-translate-x-px w-0.5"
+        style={{
+          background: `linear-gradient(to bottom, transparent 0px, ${GRAY} 56px, ${GRAY} calc(100% - 160px), transparent 100%)`
+        }}
         aria-hidden="true"
-      >
-        <line x1="1" y1="0" x2="1" y2="100" stroke={GRAY} strokeWidth="2" vectorEffect="non-scaling-stroke" />
-      </svg>
+      />
 
-      {/* 六个阶段,移动端单列、桌面端左右交替 */}
-      <div className="space-y-12 md:space-y-16">
+      {/* 六个阶段,移动端单列、桌面端左右交替;桌面端相邻阶段用负边距交错咬合,时间轴更紧凑 */}
+      <div className="space-y-12 md:space-y-0">
         {stages.map((s, i) => {
           const right = i % 2 === 0; // 01/03/05 在右,02/04/06 在左(仅桌面端)
 
           return (
             <div
               key={s.num}
-              className="relative md:grid md:grid-cols-2 md:gap-x-0"
+              className={`relative md:grid md:grid-cols-2 md:gap-x-0 ${i > 0 ? 'md:-mt-28' : ''}`}
             >
               {/* 圆圈节点:移动端在左侧竖线上,桌面端在中间竖线上 */}
               <div className="absolute z-10 left-6 md:left-1/2 -translate-x-1/2 top-0 flex items-start pt-8">
@@ -78,7 +77,7 @@ export default function AIWorkflow({ workflow }) {
 
               {/* 连接横线 + 小圆点:仅桌面端显示 */}
               <div
-                className={`hidden md:flex absolute z-10 top-8 translate-y-2 items-center ${
+                className={`hidden md:flex absolute z-10 top-11 items-center ${
                   right ? 'left-1/2 translate-x-4' : 'right-1/2 -translate-x-4'
                 }`}
               >
@@ -106,7 +105,7 @@ export default function AIWorkflow({ workflow }) {
                 {/* 我的角色(在长描述上方):"我的角色:"用近白高光，冒号后用灰色 */}
                 <div className={`text-[0.9375rem] md:text-[0.9375rem] mb-3 leading-relaxed ${right ? '' : 'md:flex md:justify-end'}`}>
                   <div className={right ? '' : 'md:text-right'}>
-                    <span className="text-dark-text font-normal">{workflow.roleLabel}:</span>
+                    <span className="text-dark-text font-normal">{workflow.roleLabel}</span>
                     <span className="text-dark-text-secondary font-normal">{s.role}</span>
                   </div>
                 </div>

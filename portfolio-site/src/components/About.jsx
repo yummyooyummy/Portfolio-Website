@@ -27,7 +27,7 @@ export default function About({ content, lang }) {
           <p className="text-sm uppercase tracking-wider text-dark-text-secondary mb-6 font-normal">
             {a.label}
           </p>
-          <h1 className={`${headingSize} font-medium leading-110 tracking-tighter-custom text-dark-text mb-8 max-w-2xl`}>
+          <h1 className={`${headingSize} font-medium leading-110 tracking-tighter-custom text-dark-text mb-8`}>
             {a.heading}
           </h1>
           <p className="text-[0.9375rem] sm:text-[0.9375rem] text-dark-text-secondary leading-relaxed whitespace-pre-line mb-12">
@@ -75,7 +75,7 @@ export default function About({ content, lang }) {
                           {exp.org}
                         </h3>
                         {exp.role && (
-                          <p className="text-lg font-bold text-dark-text leading-snug">
+                          <p className="text-[0.9375rem] text-dark-text-secondary font-normal leading-snug mt-1">
                             {exp.role}
                           </p>
                         )}
@@ -84,7 +84,7 @@ export default function About({ content, lang }) {
                         {exp.period}
                       </span>
                     </div>
-                    <p className="text-[0.9375rem] text-dark-text-secondary leading-relaxed mt-4">
+                    <p className="text-[0.9375rem] text-dark-text-secondary leading-relaxed mt-4 whitespace-pre-line">
                       {exp.desc}
                     </p>
                   </div>
@@ -105,21 +105,34 @@ export default function About({ content, lang }) {
             {a.educationIntro}
           </p>
           <div className="space-y-8">
-            {a.education.map((edu, index) => (
-              <div key={index} className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
-                <div>
-                  <h3 className="text-lg font-medium text-dark-text">
-                    {edu.school}
-                  </h3>
-                  <p className="text-[0.9375rem] text-dark-text-secondary font-normal">
-                    {edu.degree} · {edu.field}
-                  </p>
+            {a.education.map((edu, index) => {
+              const eduLogoMap = { 0: '/edu-uts.png', 1: '/edu-mcmaster.png' };
+              return (
+                <div key={index} className="flex gap-5">
+                  {/* 校徽方块,白底铺满,与经历区 logo 同一视觉语言 */}
+                  <div className="w-16 h-16 rounded-xl bg-dark-card border border-dark-border flex-shrink-0 overflow-hidden">
+                    <img
+                      src={eduLogoMap[index]}
+                      alt={edu.school}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="flex-grow flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+                    <div>
+                      <h3 className="text-lg font-medium text-dark-text">
+                        {edu.school}
+                      </h3>
+                      <p className="text-[0.9375rem] text-dark-text-secondary font-normal">
+                        {edu.degree} · {edu.field}
+                      </p>
+                    </div>
+                    <span className="text-[0.9375rem] text-dark-text-secondary font-normal flex-shrink-0">
+                      {edu.period}
+                    </span>
+                  </div>
                 </div>
-                <span className="text-[0.9375rem] text-dark-text-secondary font-normal flex-shrink-0">
-                  {edu.period}
-                </span>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -151,16 +164,16 @@ export default function About({ content, lang }) {
               };
 
               return (
-                <div key={index} className="flex flex-col items-center gap-3">
-                  {/* Icon 图片 — large rounded square */}
-                  <div className="w-16 h-16 rounded-2xl bg-dark-card border border-dark-border flex-shrink-0 overflow-hidden">
+                <div key={index} className="flex flex-col items-center gap-3 group">
+                  {/* Icon 图片 — 铺满圆角方块 */}
+                  <div className="w-16 h-16 rounded-2xl bg-dark-card border border-dark-border flex-shrink-0 overflow-hidden transition-all duration-300 group-hover:-translate-y-1 group-hover:border-stone-500">
                     <img
                       src={iconMap[tool]}
                       alt={tool}
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <span className="text-[0.9375rem] text-dark-text-secondary font-normal text-center leading-snug">
+                  <span className="text-[0.9375rem] text-dark-text-secondary font-normal text-center leading-snug transition-colors duration-300 group-hover:text-dark-text">
                     {tool}
                   </span>
                 </div>
@@ -180,18 +193,20 @@ export default function About({ content, lang }) {
             {a.offClockText}
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {['/life-skiing.png', '/life-painting.png', '/life-pottery.png'].map((imgSrc, i) => (
-              <div
-                key={i}
-                className="aspect-[4/5] bg-dark-card border border-dark-border rounded-card overflow-hidden"
-              >
-                <img
-                  src={imgSrc}
-                  alt={lang === 'zh' ? ['滑雪', '画画', '陶艺'][i] : ['Skiing', 'Painting', 'Pottery'][i]}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            ))}
+            {['/life-skiing.png', '/life-painting.png', '/life-pottery.png'].map((imgSrc, i) => {
+              const caption = lang === 'zh' ? ['滑雪', '画画', '陶艺'][i] : ['Skiing', 'Painting', 'Pottery'][i];
+              return (
+                <div key={i} className="group">
+                  <div className="aspect-[4/5] bg-dark-card border border-dark-border rounded-card overflow-hidden">
+                    <img
+                      src={imgSrc}
+                      alt={caption}
+                      className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
+                    />
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
