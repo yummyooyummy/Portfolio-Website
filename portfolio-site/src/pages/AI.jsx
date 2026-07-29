@@ -46,7 +46,7 @@ export default function AI({ content, lang }) {
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-medium leading-110 tracking-tighter-custom text-dark-text mb-10">
             {a.heading}
           </h1>
-          <div className="space-y-6">
+          <div className="space-y-8 sm:space-y-6">
             {a.intro.map((para, i) => (
               <p key={i} className="text-[0.9375rem] text-dark-text-secondary leading-relaxed">
                 {parseParagraph(para)}

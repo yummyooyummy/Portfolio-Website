@@ -173,7 +173,7 @@ export default function About({ content, lang }) {
           <p className="text-[0.9375rem] sm:text-[0.9375rem] text-dark-text-secondary leading-relaxed mb-12">
             {a.offClockText}
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div className="grid grid-cols-3 gap-3 sm:gap-6">
             {['/life-skiing.png', '/life-painting.png', '/life-pottery.png'].map((imgSrc, i) => {
               const caption = lang === 'zh' ? ['滑雪', '画画', '陶艺'][i] : ['Skiing', 'Painting', 'Pottery'][i];
               return (

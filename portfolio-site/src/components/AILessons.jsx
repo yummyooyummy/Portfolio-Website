@@ -44,6 +44,7 @@ export default function AILessons({ lessons }) {
   const pausedRef = useRef(false);
   const draggingRef = useRef(false);
   const dragState = useRef({ startX: 0, startScroll: 0 });
+  const posRef = useRef(0); // 浮点累计位置:手机端 scrollLeft 只支持整数,直接累加小数会被吞掉
 
   useEffect(() => {
     const track = trackRef.current;
@@ -52,8 +53,11 @@ export default function AILessons({ lessons }) {
     const tick = () => {
       const half = track.scrollWidth / 2;
       if (!pausedRef.current && !draggingRef.current && half > 0) {
-        track.scrollLeft += SPEED;
-        if (track.scrollLeft >= half) track.scrollLeft -= half;
+        // 用户手动滚动过则重新对齐
+        if (Math.abs(track.scrollLeft - posRef.current) > 2) posRef.current = track.scrollLeft;
+        posRef.current += SPEED;
+        if (posRef.current >= half) posRef.current -= half;
+        track.scrollLeft = posRef.current;
       }
       raf = requestAnimationFrame(tick);
     };
@@ -63,11 +67,12 @@ export default function AILessons({ lessons }) {
 
   const onPointerDown = (e) => {
     draggingRef.current = true;
+    if (e.pointerType !== 'mouse') return; // 触屏用原生滚动,只暂停自动播放
     dragState.current = { startX: e.clientX, startScroll: trackRef.current.scrollLeft };
     trackRef.current.setPointerCapture(e.pointerId);
   };
   const onPointerMove = (e) => {
-    if (!draggingRef.current) return;
+    if (!draggingRef.current || e.pointerType !== 'mouse') return;
     const track = trackRef.current;
     const half = track.scrollWidth / 2;
     track.scrollLeft = dragState.current.startScroll - (e.clientX - dragState.current.startX);
