@@ -4,6 +4,7 @@ import { useInView } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import LabProjectDetailed from '../components/LabProjectDetailed';
 import LabProjectSimple from '../components/LabProjectSimple';
+import PageEndNav from '../components/PageEndNav';
 import Footer from '../components/Footer';
 
 export default function LabPage({ content, lang }) {
@@ -64,6 +65,7 @@ export default function LabPage({ content, lang }) {
         </div>
       </section>
 
+      <PageEndNav lang={lang} page="lab" />
       <Footer content={content} />
     </div>
   );

@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useRef } from 'react';
 import { useInView } from 'framer-motion';
 import Navbar from '../components/Navbar';
+import PageEndNav from '../components/PageEndNav';
 import Footer from '../components/Footer';
 
 export default function ContactPage({ content, lang }) {
@@ -122,6 +123,7 @@ export default function ContactPage({ content, lang }) {
         </div>
       </div>
 
+      <PageEndNav lang={lang} page="contact" />
       <Footer content={content} />
     </div>
   );

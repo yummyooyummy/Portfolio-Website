@@ -1,3 +1,11 @@
+// 解析文案中的 **高光** 标记
+const parseBold = (text) =>
+  text.split(/(\*\*[^*]+\*\*)/g).map((part, i) =>
+    part.startsWith('**') && part.endsWith('**')
+      ? <strong key={i} className="text-dark-text font-semibold">{part.slice(2, -2)}</strong>
+      : part
+  );
+
 export default function LabProjectDetailed({ project, lang }) {
   const zh = lang === 'zh';
   const labels = {
@@ -67,7 +75,7 @@ export default function LabProjectDetailed({ project, lang }) {
             {labels.desc}
           </div>
           <div className="sm:col-span-3 text-[0.9375rem] text-dark-text-secondary leading-relaxed">
-            {project.description}
+            {parseBold(project.description)}
           </div>
         </div>
 

@@ -1,6 +1,15 @@
 import { motion } from 'framer-motion';
 import { useRef } from 'react';
 import { useInView } from 'framer-motion';
+import ToolsBand from './ToolsBand';
+
+// 解析文案中的 **高光** 标记(与 AI 页一致:高光词用近白描白)
+const parseBold = (text) =>
+  text.split(/(\*\*[^*]+\*\*)/g).map((part, i) =>
+    part.startsWith('**') && part.endsWith('**')
+      ? <strong key={i} className="text-dark-text font-semibold">{part.slice(2, -2)}</strong>
+      : part
+  );
 
 export default function About({ content, lang }) {
   const ref = useRef(null);
@@ -31,7 +40,7 @@ export default function About({ content, lang }) {
             {a.heading}
           </h1>
           <p className="text-[0.9375rem] sm:text-[0.9375rem] text-dark-text-secondary leading-relaxed whitespace-pre-line mb-12">
-            {a.intro}
+            {parseBold(a.intro)}
           </p>
 
           {/* Photo placeholder — wide, rounded */}
@@ -137,48 +146,20 @@ export default function About({ content, lang }) {
         </div>
       </section>
 
-      {/* 4. Tool stack — large icon on top, name below */}
-      <section className="px-6 sm:px-8 py-section border-t border-dark-border">
-        <div className="max-w-content mx-auto">
-          <h2 className="text-2xl sm:text-3xl font-medium text-dark-text mb-4 leading-tight">
-            {a.toolsTitle}
-          </h2>
-          <p className="text-[0.9375rem] text-dark-text-secondary leading-relaxed mb-12">
-            {a.toolsDesc}
-          </p>
-          <div className="grid grid-cols-3 sm:grid-cols-5 gap-x-8 gap-y-10">
-            {a.tools.map((tool, index) => {
-              // 工具图标映射
-              const iconMap = {
-                'Figma': '/tool-figma.png',
-                'Sketch': '/tool-sketch.png',
-                'Principle': '/tool-principle.png',
-                'Claude': '/tool-claude.png',
-                'Cursor': '/tool-cursor.png',
-                '微信开发者工具': '/tool-wechat-devtools.png',
-                'WeChat DevTools': '/tool-wechat-devtools.png',
-                'Photoshop': '/tool-photoshop.png',
-                'Illustrator': '/tool-illustrator.png',
-                'Claude Code': '/tool-claude-code.png',
-                'Midjourney': '/tool-midjourney.png'
-              };
-
-              return (
-                <div key={index} className="flex flex-col items-center gap-3 group">
-                  {/* Icon 图片 — 铺满圆角方块 */}
-                  <div className="w-16 h-16 rounded-2xl bg-dark-card border border-dark-border flex-shrink-0 overflow-hidden transition-all duration-300 group-hover:-translate-y-1 group-hover:border-stone-500">
-                    <img
-                      src={iconMap[tool]}
-                      alt={tool}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <span className="text-[0.9375rem] text-dark-text-secondary font-normal text-center leading-snug transition-colors duration-300 group-hover:text-dark-text">
-                    {tool}
-                  </span>
-                </div>
-              );
-            })}
+      {/* 4. Tool stack — auto-scrolling band (same mechanic as AI lessons band) */}
+      <section className="px-0 py-section border-t border-dark-border overflow-hidden">
+        <div className="px-6 sm:px-8">
+          <div className="max-w-content mx-auto">
+            <h2 className="text-2xl sm:text-3xl font-medium text-dark-text mb-4 leading-tight">
+              {a.toolsTitle}
+            </h2>
+            <p className="text-[0.9375rem] text-dark-text-secondary leading-relaxed mb-12">
+              {a.toolsDesc}
+            </p>
+          </div>
+          {/* 滚动带与正文同宽 */}
+          <div className="max-w-content mx-auto">
+            <ToolsBand tools={a.tools} />
           </div>
         </div>
       </section>

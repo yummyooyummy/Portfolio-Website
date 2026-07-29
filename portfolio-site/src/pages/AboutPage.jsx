@@ -1,5 +1,6 @@
 import Navbar from '../components/Navbar';
 import About from '../components/About';
+import PageEndNav from '../components/PageEndNav';
 import Footer from '../components/Footer';
 
 export default function AboutPage({ content, lang }) {
@@ -12,6 +13,7 @@ export default function AboutPage({ content, lang }) {
         <About content={content} lang={lang} />
       </div>
 
+      <PageEndNav lang={lang} page="about" />
       <Footer content={content} />
     </div>
   );

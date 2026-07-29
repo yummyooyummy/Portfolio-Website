@@ -9,22 +9,21 @@ export const content = {
       contact: '联系'
     },
     hero: {
-      headline: "一个交互设计师——也是那个把设计做成产品的人",
+      headline: "交互设计师，也是把设计做成产品的人。",
       subtitle: "交互设计是我的根基：三年半的大厂经历，让我习惯了驾驭信息密集、状态复杂的系统；AI 是我的放大器，让我能把想法独立做成真正上线的产品。执行的成本越来越低，而决定成品好坏的判断，始终在设计师手里。",
       cta1: "联系我",
       cta2: "下载简历"
     },
     stats: [
-      { number: "0→1", description: "从设计、代码到上线部署，一个人独立跑通产品从想法到上架的全流程。" },
-      { number: "3.5 年", description: "在腾讯天美做游戏交互设计三年半，负责大型游戏的核心界面与系统交互。" },
-      { number: "∞ 个", description: "已经独立做出微信小游戏、Web 应用等真实产品，还有更多正在路上。" },
-      { number: "2 种", description: "可专业工作的语言（中/英）" }
+      { number: "0→1", description: "设计、代码、部署——一个人跑通从想法到上架的完整流程。" },
+      { number: "3.5 年", description: "腾讯天美三年半，负责大型开放世界游戏的战斗 HUD、玩法系统与三端操作交互。" },
+      { number: "∞ 个", description: "微信小游戏、金融签署应用、滑雪社区小程序——真实的产品，一个接一个在路上。" }
     ],
     about: {
       title: "关于",
       label: "关于",
       heading: "你好，我是郑雨晴。一名交互设计师。",
-      intro: "我在腾讯天美做了三年半游戏交互设计，负责大型游戏的核心界面与系统交互。这段经历给了我两样东西：一是被大厂体系打磨出的专业交互能力，从需求拆解、流程设计到决策表达，都经过了真实项目的反复锤炼；二是面对高压和复杂时依然稳得住的心态——越是关键的时候，我越能沉下心把事情做成。\n\n比起止步纸面方案，我更偏爱让创意落地成真。离开腾讯后，依托 AI 生产力，我把脑子里的产品独立做出来——从设计、开发到上线，一个人跑通完整链路。我对新东西、尤其是 AI 一直很敏感，遇到感兴趣的会马上去研究、动手试，而不是停在想的阶段。我做事有规划，但也相信很多答案是边做边清晰的。高效自学、执行力强、在繁杂的选项里快速找到最优解，是我长久以来的核心竞争力。",
+      intro: "我在腾讯天美做了三年半游戏交互设计，负责大型游戏的核心界面与系统交互。这段经历给了我两样东西：一是被大厂体系打磨出的专业交互能力，从需求拆解、流程设计到决策表达，都经过了真实项目的反复锤炼；二是面对高压和复杂时依然稳得住的心态——越是关键的时候，我越能**沉下心把事情做成**。\n\n比起止步纸面方案，我更偏爱让创意落地成真。离开腾讯后，依托 AI 生产力，我把脑子里的产品独立做出来——从设计、开发到上线，**一个人跑通完整链路**。我对新东西、尤其是 AI 一直很敏感，遇到感兴趣的会马上去研究、动手试，而不是停在想的阶段。我做事有规划，但也相信很多答案是边做边清晰的。高效自学、执行力强、在繁杂的选项里快速找到最优解，是我长久以来的核心竞争力。",
       experienceTitle: "经历",
       experiences: [
         {
@@ -84,9 +83,9 @@ export const content = {
           nda: "受保密协议限制，本页不展示未公开的真实界面与设计稿，部分内容将以重绘示意呈现；完整案例可在面试中详细讲解。",
           caseIntro: "三年半里，我作为交互设计师深度参与了这款大型开放世界 ARPG 从研发到上市的过程。游戏是交互密度最高的产品形态之一——状态多、信息密、操作快。我的工作，就是把庞杂的玩法逻辑，翻译成玩家能直觉理解、顺手操作的界面与流程。这份翻译工作，横跨战斗、系统与跨端操作三个层面。",
           sections: [
-            { heading: "战斗中的实时交互", body: "战斗 HUD 是交互设计里最严苛的场景：玩家的注意力在敌人身上，界面只能用余光阅读。我负责血条、技能盘、战斗状态信息的整体交互设计——哪些信息常驻、哪些事件触发、哪些必须强提醒，本质是在为玩家的注意力做预算：每一个像素的信息，都要回答\"此刻玩家需要它吗\"。\n\n伤害跳字是其中我从头负责的模块。跳字要在高频刷屏下保持可读，不同伤害类型要一眼可辨，同时还要给操作以\"打中了\"的确认感——可读性、辨识度、反馈感三者的平衡，我反复调到帧级。" },
-            { heading: "玩法系统的交互设计", body: "副本、地图、家园、宠物、成就、钓鱼——每接一个系统，我的工作都是同一个完整循环：吃透玩法规则和数值逻辑，梳理信息架构和玩家的核心路径，设计交互流程和界面框架，穷举状态与边界情况，再输出交互文档推动落地。\n\n数年间一个接一个做下来，这套\"把复杂翻译成清晰\"的方法已经成为肌肉记忆——而这套方法不属于游戏，它属于任何复杂产品。" },
-            { heading: "三端的操作交互", body: "同一场战斗，玩家可能用触屏、键鼠或手柄进入。我负责三端的操作设计：手机上技能盘的布局与手势逻辑，PC 上技能与功能的按键分布，主机上手柄的键位映射与组合方式。\n\n三种输入方式的精度、速度、肌肉记忆完全不同，不能做\"一套设计三端缩放\"，而要从操作逻辑层面为每一端重新推导——早年做策划的经历，让我能从玩法底层理解\"这个操作为什么必须顺手\"。" },
+            { heading: "战斗中的实时交互", body: "战斗 HUD 是交互设计里最严苛的场景：玩家的注意力在敌人身上，界面只能用余光阅读。我负责血条、技能盘、战斗状态信息的整体交互设计——哪些信息常驻、哪些事件触发、哪些必须强提醒，本质是在**为玩家的注意力做预算**：每一个像素的信息，都要回答\"此刻玩家需要它吗\"。\n\n伤害跳字是其中我从头负责的模块。跳字要在高频刷屏下保持可读，不同伤害类型要一眼可辨，同时还要给操作以\"打中了\"的确认感——可读性、辨识度、反馈感三者的平衡，我反复调到帧级。" },
+            { heading: "玩法系统的交互设计", body: "副本、地图、家园、宠物、成就、钓鱼——每接一个系统，我的工作都是同一个完整循环：吃透玩法规则和数值逻辑，梳理信息架构和玩家的核心路径，设计交互流程和界面框架，穷举状态与边界情况，再输出交互文档推动落地。\n\n数年间一个接一个做下来，这套**\"把复杂翻译成清晰\"**的方法已经成为肌肉记忆——而这套方法不属于游戏，它属于任何复杂产品。" },
+            { heading: "三端的操作交互", body: "同一场战斗，玩家可能用触屏、键鼠或手柄进入。我负责三端的操作设计：手机上技能盘的布局与手势逻辑，PC 上技能与功能的按键分布，主机上手柄的键位映射与组合方式。\n\n三种输入方式的精度、速度、肌肉记忆完全不同，不能做\"一套设计三端缩放\"，而要从操作逻辑层面**为每一端重新推导**——早年做策划的经历，让我能从玩法底层理解\"这个操作为什么必须顺手\"。" },
             { heading: "工作方式", body: "从最初承接需求，到独立主导核心模块的交互设计、推动跨部门对齐与落地——我在大厂体系里完整走过了产品协作的全流程，也沉淀下规范化的设计方法，和把设计决策讲清楚、推到底的能力。" }
           ]
         },
@@ -100,10 +99,10 @@ export const content = {
           image: "/work-lianlian.jpg",
           facts: ["个人项目 · 从 0 到 1 独立完成", "微信小游戏 · 原生 Canvas · 包体 3 MB", "已完成开发与合规流程 · 上架审核中"],
           sections: [
-            { heading: "起点", body: "起点其实很简单：我想亲手做一个自己的小游戏。在腾讯的三年半里，我一直在把别人的游戏做好——这一次，我想把自己喜欢的东西做出来，从第一个想法到上架，每一步都自己来。" },
-            { heading: "玩法与视觉", body: "玩法是合并 15 级粒子——夸克 → 质子 → 原子 → 细胞 → 行星 → 恒星 → 星系 → 宇宙 → 奇点，每一次点击都是一次微型创世。\n\n视觉上我做了一个刻意的决定：避开合成类游戏惯用的糖果色爽感，选了深色星轨的冷调。我想要的不是刺激，而是\"凝视宇宙\"的安静——让玩家在合成的间隙，愿意多停留一会儿。", images: [{ src: "/lianlian-hub.jpg", alt: "连连小宇宙 · 游戏主界面" }, { src: "/lianlian-result.jpg", alt: "连连小宇宙 · 结算界面" }], imageLayout: "phones" },
-            { heading: "落地的质感", body: "技术上用微信原生 Canvas，没有引擎，包体控制在 3 MB。我把商业项目的标准带了进来：命中区按 Apple HIG 做到 44px、帧级降采样模糊、音效池化——独立做，不等于做得糙。这些细节玩家未必说得出，但摸得到。" },
-            { heading: "产品之外的完整性", body: "不会写代码的我，跟 AI 协同完成了代码、美术、音效和全部产品决策；也独立走完了大多数设计师没走过的部分——注册公司、版权登记、平台备案。一个产品的完整，不止于界面。" },
+            { heading: "起点", body: "起点其实很简单：我想亲手做一个自己的小游戏。在腾讯的三年半里，我一直在把别人的游戏做好——这一次，我想**把自己喜欢的东西做出来**，从第一个想法到上架，每一步都自己来。" },
+            { heading: "玩法与视觉", body: "玩法是合并 15 级粒子——夸克 → 质子 → 原子 → 细胞 → 行星 → 恒星 → 星系 → 宇宙 → 奇点，每一次点击都是一次微型创世。\n\n视觉上我做了一个刻意的决定：避开合成类游戏惯用的糖果色爽感，选了深色星轨的冷调。我想要的不是刺激，而是**\"凝视宇宙\"的安静**——让玩家在合成的间隙，愿意多停留一会儿。", images: [{ src: "/lianlian-hub.jpg", alt: "连连小宇宙 · 游戏主界面" }, { src: "/lianlian-result.jpg", alt: "连连小宇宙 · 结算界面" }], imageLayout: "phones" },
+            { heading: "落地的质感", body: "技术上用微信原生 Canvas，没有引擎，包体控制在 3 MB。我把商业项目的标准带了进来：命中区按 Apple HIG 做到 44px、帧级降采样模糊、音效池化——**独立做，不等于做得糙**。这些细节玩家未必说得出，但摸得到。" },
+            { heading: "产品之外的完整性", body: "不会写代码的我，跟 AI 协同完成了代码、美术、音效和全部产品决策；也独立走完了大多数设计师没走过的部分——注册公司、版权登记、平台备案。**一个产品的完整，不止于界面**。" },
             { heading: "状态", body: "游戏已完成全部开发与合规流程，正在微信上架审核中；后续计划推出抖音版本。" }
           ],
           github: "https://github.com/yummyooyummy/genesis-game"
@@ -117,11 +116,11 @@ export const content = {
           description: "一条专属链接，让客户在手机上完成合同签署，结果自动归档。",
           facts: ["个人项目 · 产品定义、交互设计与全栈实现", "Next.js + Airtable + Vercel · 移动端优先", "已部署"],
           sections: [
-            { heading: "背景", body: "一位做金融的朋友找到我：客户每次签合同都要走线下——打印、签字、拍照回传，流程繁琐，文件散落在聊天记录里，事后核对全靠人工。我决定帮他把整个签署流程搬到线上，也把它当作一次完整的产品实践：从理解业务、定义流程，到设计、开发、部署，全部独立完成。" },
-            { heading: "三个约束", body: "动手之前，有三个前提决定了所有设计方向：客户大多不熟悉数字工具，操作必须零学习成本；签署发生在手机上，一条链接就要走完全程，不能要求下载任何东西；这是有法律意义的金融文件，每一步都必须严谨、可追溯。" },
-            { heading: "两条链接，各走各的最短路径", body: "业务里有两种签署场景：新客户开户，和老客户补签协议。我没有做一个\"通用流程\"，而是拆成两条独立链接——开户链接从风险确认开始（风险提示 → 阅读合同 → 手写签名），补签链接直接进入合同（阅读 → 签名）。老客户不需要被再教育一遍风险，少一步，就少一次流失。\n\n几个具体的设计决策：风险确认页把提示逐条列出，勾选确认后才能继续——合规的动作，但不做成吓人的法律墙；合同直接在页面内阅读，不跳转、不下载；签名板可以清除重签，因为第一次手写签名很少有人满意；每一步顶部有进度指示，随时能返回上一步。在\"严谨\"和\"顺畅\"之间，每一步都在找平衡。" },
-            { heading: "看不见的严谨", body: "这类工具真正的考验在异常情况：链接被重复打开怎么办？签到一半断网怎么办？两个人同时提交怎么办？我处理了链接失效、防重复提交、并发写入这些边界情况，并让系统在客户签署完成后自动合成 PDF、归档回数据库——设计一个金融工具，\"不出错\"本身就是体验的一部分。" },
-            { heading: "结果", body: "从朋友的一句需求，到一个可以直接投入使用的完整系统——这个项目让我第一次完整经历了\"为真实业务做产品\"：需求是活的、约束是真的、错误是有代价的。" }
+            { heading: "背景", body: "一位做金融的朋友找到我：客户每次签合同都要走线下——打印、签字、拍照回传，流程繁琐，文件散落在聊天记录里，事后核对全靠人工。我决定帮他把整个签署流程搬到线上，也把它当作**一次完整的产品实践**：从理解业务、定义流程，到设计、开发、部署，全部独立完成。" },
+            { heading: "三个约束", body: "动手之前，有三个前提决定了所有设计方向：客户大多不熟悉数字工具，操作必须零学习成本；签署发生在手机上，一条链接就要走完全程，不能要求下载任何东西；这是有法律意义的金融文件，每一步都必须**严谨、可追溯**。" },
+            { heading: "两条链接，各走各的最短路径", body: "业务里有两种签署场景：新客户开户，和老客户补签协议。我没有做一个\"通用流程\"，而是拆成两条独立链接——开户链接从风险确认开始（风险提示 → 阅读合同 → 手写签名），补签链接直接进入合同（阅读 → 签名）。老客户不需要被再教育一遍风险，**少一步，就少一次流失**。\n\n几个具体的设计决策：风险确认页把提示逐条列出，勾选确认后才能继续——合规的动作，但不做成吓人的法律墙；合同直接在页面内阅读，不跳转、不下载；签名板可以清除重签，因为第一次手写签名很少有人满意；每一步顶部有进度指示，随时能返回上一步。在\"严谨\"和\"顺畅\"之间，每一步都在找平衡。" },
+            { heading: "看不见的严谨", body: "这类工具真正的考验在异常情况：链接被重复打开怎么办？签到一半断网怎么办？两个人同时提交怎么办？我处理了链接失效、防重复提交、并发写入这些边界情况，并让系统在客户签署完成后自动合成 PDF、归档回数据库——设计一个金融工具，**\"不出错\"本身就是体验的一部分**。" },
+            { heading: "结果", body: "从朋友的一句需求，到一个可以直接投入使用的完整系统——这个项目让我第一次完整经历了**\"为真实业务做产品\"**：需求是活的、约束是真的、错误是有代价的。" }
           ],
           github: "https://github.com/yummyooyummy/signing-app"
         }
@@ -131,7 +130,7 @@ export const content = {
     },
     lab: {
       title: "试验场",
-      description: "一些还没成型的想法，正在这里慢慢长出来。进来看看它们现在的样子。",
+      description: "一些还没成型的想法，正在这里慢慢长出来。",
       label: "试验场",
       heading: "构想与实践",
       intro: "比起反复打磨方案，我更愿意把它直接做出来。这里是我用 AI 验证想法的地方——把脑子里的产品快速落成真实的、能用的东西。有些还在打磨，有些才刚起步，但每一个都是\"想到\"与\"做到\"之间的一次真实尝试。",
@@ -166,31 +165,27 @@ export const content = {
         },
         {
           type: "detailed",
-          name: "品牌小程序优化",
-          subtitle: "",
-          fullName: "品牌小程序优化",
-          techStack: "微信小程序、Figma",
-          description: "一个正在进行的商业项目。某品牌此前使用模板化的小程序，界面与交互无法体现品牌调性。我负责整体重设计——重新梳理视觉语言与核心流程，把一个\"模板感\"的通用产品，做成贴合品牌定位、经得起细看的产品体验。",
+          name: "珠宝品牌小程序",
+          subtitle: "界面与交互重设计",
+          fullName: "某珠宝品牌小程序 · 界面与交互重设计",
+          techStack: "微信小程序 · Figma",
+          status: "商业委托项目 · 方案设计中",
+          description: "一个商业委托项目。某珠宝品牌此前使用模板化的小程序，通用的界面与交互撑不起珠宝品类对质感的要求。我负责整体重设计——重新梳理视觉语言与核心流程，**让线上门店的气质，配得上柜台里的商品**，并推动最终落地上线。",
           keyFeatures: [
             {
-              title: "品牌化视觉重塑",
-              desc: "从配色、字体到组件细节，建立一套贴合品牌调性的视觉语言，摆脱模板感。"
+              title: "品牌化视觉语言",
+              desc: "从配色、字体到组件细节，围绕珠宝品牌的调性重建视觉语言，摆脱模板感。"
             },
             {
               title: "交互体验升级",
-              desc: "重新梳理核心流程与页面结构，让操作更顺、层级更清晰。"
+              desc: "重新梳理核心流程与页面结构，让浏览与购买更顺、层级更清晰。"
             },
             {
-              title: "商业转化考量",
-              desc: "在视觉升级的同时，兼顾引导、转化等商业目标，让设计为业务服务。"
+              title: "商业目标兼顾",
+              desc: "在质感升级的同时，兼顾引导与转化，让设计为生意服务。"
             }
           ],
           links: []
-        },
-        {
-          type: "simple",
-          name: "计划表小程序",
-          fullName: "计划表小程序（开发中）"
         }
       ]
     },
@@ -199,12 +194,12 @@ export const content = {
       label: "AI 实践",
       heading: "和 AI 一起，把想法做出来",
       intro: [
-        "AI 让执行的成本无限趋近于零。一个想法，几小时内就能变成可用的产品，被验证、被推翻、被重做——试错不再昂贵。",
-        "但当执行不再是瓶颈，**判断**就成了真正稀缺的东西。AI 能生成无数个方案，却分不清哪一个是对的。决定 AI 的速度通向一件好作品、还是一堆平庸产出的，是**设计的判断力**。",
-        "这正是**我的位置**。多年的交互设计训练，让我对**\"好\"**有清晰的标准——我清楚一个界面、一段流程怎样才算成立，也因此能在 AI 大量的产出里，快速筛掉平庸的、留下对的，并把它打磨到我满意的质感。",
-        "我也在持续**打磨怎样把 AI 用得更高效**：把需求拆解成清晰的任务和指令、为不同环节搭建**稳定的工作流**、对产出建立自己的检验标准。把 AI 当成一个能力很强、但需要被清楚指挥的助手——任务定义得越准确，它就做得越好。",
-        "工具会不断更替，**方法**却沉淀下来。从构想到落地的这套**流程**，才是我真正稳定的能力，工具只是其中可被替换的变量。",
-        "于是那些曾经只停留在脑子里、停留在原型里的想法，如今能被一件件做出来。这是 AI 给我的，也是我对它的回答。"
+        "AI 让**执行的成本无限趋近于零**。一个想法，几小时内就能变成可用的产品，被验证、被推翻、被重做——试错不再昂贵。",
+        "但当执行不再是瓶颈，判断就成了真正稀缺的东西。AI 能生成无数个方案，却分不清哪一个是对的。决定 AI 的速度通向一件好作品、还是一堆平庸产出的，是**设计的判断力**。",
+        "这正是我的位置。多年的交互设计训练，让我对\"好\"有清晰的标准——我清楚一个界面、一段流程怎样才算成立，也因此能在 AI 大量的产出里，**快速筛掉平庸的、留下对的**，并把它打磨到我满意的质感。",
+        "我也在持续打磨怎样把 AI 用得更高效：把需求拆解成清晰的任务和指令、为不同环节搭建**稳定的工作流**、对产出建立自己的检验标准。把 AI 当成一个能力很强、但需要被清楚指挥的助手——任务定义得越准确，它就做得越好。",
+        "工具会不断更替，**方法却沉淀下来**。从构想到落地的这套流程，才是我真正稳定的能力，工具只是其中可被替换的变量。",
+        "于是那些曾经只停留在脑子里、停留在原型里的想法，如今能被**一件件做出来**。这是 AI 给我的，也是我对它的回答。"
       ],
       workflow: {
         title: "我的工作流程",
@@ -227,9 +222,7 @@ export const content = {
           { num: "04", punch: "“方案可以让它出十个，选哪个永远是我的事。”", exp: "生成是便宜的，选择是贵的。越是关键的判断，越不能外包给 AI。" },
           { num: "05", punch: "“变化的不只是效率，是所有权。”", exp: "在大厂，我是产品流水线上的一环；现在，AI 给了我整条流水线。它没有取代我的工作，而是把一个完整的产品，还给了我一个人。" }
         ]
-      },
-      outro: "这套流程做出来的东西，都在作品页。",
-      outroCta: "去看看 →"
+      }
     },
     contact: {
       title: "联系我",
@@ -269,22 +262,21 @@ export const content = {
       contact: 'Contact'
     },
     hero: {
-      headline: "An interaction designer — and the one who turns that design into a real product.",
+      headline: "Interaction designer — and the one who turns design into real products.",
       subtitle: "Interaction design is my foundation: three and a half years inside a major tech company taught me to handle dense, complex systems. AI is my amplifier: it lets me take an idea all the way to a launched product, on my own. Execution keeps getting cheaper — the judgment that decides whether the result is any good stays with the designer.",
       cta1: "Get in touch",
       cta2: "Download CV"
     },
     stats: [
-      { number: "0→1", description: "From design and code to deployment, I take a product all the way from idea to launch on my own." },
-      { number: "3.5 yrs", description: "Three and a half years as a game interaction designer at Tencent TiMi, owning core interfaces and system interactions for a large-scale game." },
-      { number: "∞", description: "I've already built real products on my own — a WeChat mini-game, a web app — with more on the way." },
-      { number: "2", description: "Languages, professionally fluent" }
+      { number: "0→1", description: "Design, code, deployment — one person carrying an idea all the way to launch." },
+      { number: "3.5 yrs", description: "Three and a half years at Tencent TiMi: battle HUD, gameplay systems, and tri-platform input design for a large-scale open-world game." },
+      { number: "∞", description: "A WeChat mini-game, a financial signing app, a ski community mini-program — real products, one after another." }
     ],
     about: {
       title: "About",
       label: "About",
       heading: "Hi, I'm Yuqing — an interaction designer.",
-      intro: "I spent three and a half years designing game interactions at Tencent TiMi, owning core interfaces and system interactions for a large-scale game. That experience gave me two things: first, professional interaction design skills sharpened by the structure of a major company — from breaking down requirements and designing flows to articulating decisions, all tested and refined through real projects; second, the composure to stay steady under pressure and complexity — the more critical the moment, the more I settle in and get it done.\n\nRather than stopping at paper specs, I prefer bringing ideas to life. After leaving Tencent, I've used AI as leverage to build the products in my head — design, development, launch, the full path, solo. I've always been quick to pick up on new things, especially AI — when something catches my interest, I dive in, research it, try it, rather than just thinking about it. I plan my work, but I also trust that many answers emerge as you go. Fast self-learning, strong execution, and quickly finding the best path among messy options — those have been my edge for a long time.",
+      intro: "I spent three and a half years designing game interactions at Tencent TiMi, owning core interfaces and system interactions for a large-scale game. That experience gave me two things: first, professional interaction design skills sharpened by the structure of a major company — from breaking down requirements and designing flows to articulating decisions, all tested and refined through real projects; second, the composure to stay steady under pressure and complexity — the more critical the moment, the more I **settle in and get it done**.\n\nRather than stopping at paper specs, I prefer bringing ideas to life. After leaving Tencent, I've used AI as leverage to build the products in my head — design, development, launch, **the full path, solo**. I've always been quick to pick up on new things, especially AI — when something catches my interest, I dive in, research it, try it, rather than just thinking about it. I plan my work, but I also trust that many answers emerge as you go. Fast self-learning, strong execution, and quickly finding the best path among messy options — those have been my edge for a long time.",
       experienceTitle: "Experience",
       experiences: [
         {
@@ -344,9 +336,9 @@ export const content = {
           nda: "Due to NDA, this page shows no unreleased interfaces or design files; some content will be presented as redrawn diagrams. The full case can be discussed in detail in an interview.",
           caseIntro: "Over three and a half years, I worked as an interaction designer on this large-scale open-world ARPG as it moved from development to launch. Games are among the most interaction-dense products there are — countless states, dense information, fast inputs. My job was translation: turning sprawling gameplay logic into interfaces and flows players can grasp intuitively and operate without thinking. That translation spanned three layers: combat, systems, and cross-platform input.",
           sections: [
-            { heading: "Real-time interaction in combat", body: "The battle HUD is one of the harshest environments in interaction design: the player's attention is on the enemy, and the interface can only be read with peripheral vision. I owned the interaction design of health bars, the skill wheel, and combat status information — deciding what stays persistent, what appears on events, and what demands a hard interrupt. It is, at heart, budgeting the player's attention: every pixel of information has to answer \"does the player need this right now?\"\n\nDamage numbers were a module I owned end to end. They must stay readable under rapid-fire spam, different damage types must be distinguishable at a glance, and every hit still needs to feel confirmed. Balancing readability, distinction, and feedback — I tuned it frame by frame." },
-            { heading: "Interaction design for gameplay systems", body: "Dungeons, the map, housing, pets, achievements, fishing — with every system I took on, the work followed the same complete loop: absorb the gameplay rules and numeric logic, map the information architecture and the player's core paths, design the interaction flows and interface framework, exhaust the states and edge cases, then deliver the spec and drive it to ship.\n\nDoing this system after system for years turned \"translating complexity into clarity\" into muscle memory — and that method doesn't belong to games. It belongs to any complex product." },
-            { heading: "Input design across three platforms", body: "The same battle might be played by touch, by keyboard and mouse, or by gamepad. I owned the input design for all three: the skill wheel's layout and gesture logic on mobile, the key bindings for skills and functions on PC, and the button mapping and combinations on the controller.\n\nThe three input methods differ completely in precision, speed, and muscle memory — you can't design once and scale it across platforms. Each one has to be re-derived from the logic of the gameplay itself. My early experience as a game designer let me reason from that level about why a control has to feel right." },
+            { heading: "Real-time interaction in combat", body: "The battle HUD is one of the harshest environments in interaction design: the player's attention is on the enemy, and the interface can only be read with peripheral vision. I owned the interaction design of health bars, the skill wheel, and combat status information — deciding what stays persistent, what appears on events, and what demands a hard interrupt. It is, at heart, **budgeting the player's attention**: every pixel of information has to answer \"does the player need this right now?\"\n\nDamage numbers were a module I owned end to end. They must stay readable under rapid-fire spam, different damage types must be distinguishable at a glance, and every hit still needs to feel confirmed. Balancing readability, distinction, and feedback — I tuned it frame by frame." },
+            { heading: "Interaction design for gameplay systems", body: "Dungeons, the map, housing, pets, achievements, fishing — with every system I took on, the work followed the same complete loop: absorb the gameplay rules and numeric logic, map the information architecture and the player's core paths, design the interaction flows and interface framework, exhaust the states and edge cases, then deliver the spec and drive it to ship.\n\nDoing this system after system for years turned **\"translating complexity into clarity\"** into muscle memory — and that method doesn't belong to games. It belongs to any complex product." },
+            { heading: "Input design across three platforms", body: "The same battle might be played by touch, by keyboard and mouse, or by gamepad. I owned the input design for all three: the skill wheel's layout and gesture logic on mobile, the key bindings for skills and functions on PC, and the button mapping and combinations on the controller.\n\nThe three input methods differ completely in precision, speed, and muscle memory — you can't design once and scale it across platforms. Each one has to be **re-derived from the logic of the gameplay** itself. My early experience as a game designer let me reason from that level about why a control has to feel right." },
             { heading: "How I worked", body: "From taking on requirements to independently leading the interaction design of core modules and driving cross-team alignment — I went through the full cycle of product collaboration inside a large organization, and came away with a disciplined design method and the ability to articulate and push design decisions all the way to shipping." }
           ]
         },
@@ -360,10 +352,10 @@ export const content = {
           image: "/work-lianlian.jpg",
           facts: ["Personal project · Built solo, 0 → 1", "WeChat mini game · Native Canvas · 3 MB bundle", "Development and compliance complete · In store review"],
           sections: [
-            { heading: "Where it started", body: "The starting point was simple: I wanted to make a game of my own, with my own hands. For three and a half years at Tencent I had been making other people's games better — this time, I wanted to build something I love, and take every step myself, from the first idea to the store." },
-            { heading: "Gameplay and visual direction", body: "The gameplay is merging fifteen tiers of particles — quark → proton → atom → cell → planet → star → galaxy → universe → singularity. Every tap is a tiny act of creation.\n\nVisually I made one deliberate call: skip the candy-colored dopamine that merge games default to, and go with a cold, dark, star-trail palette. What I wanted wasn't stimulation but the quiet of gazing into the cosmos — so that between merges, players might want to linger a little longer.", images: [{ src: "/lianlian-hub.jpg", alt: "Genesis · Game hub" }, { src: "/lianlian-result.jpg", alt: "Genesis · Results screen" }], imageLayout: "phones" },
-            { heading: "Craft in the build", body: "Technically it runs on WeChat's native Canvas — no engine, bundle kept at 3 MB. I brought commercial-project standards with me: 44px hit targets per Apple's HIG, frame-level downsampled blur, pooled sound effects. Building independently doesn't mean building rough. Players may never name these details, but they can feel them." },
-            { heading: "Complete beyond the product", body: "I don't write code — so I paired with AI to produce the code, art, and sound, while making every product decision myself. I also walked the road most designers never do: company registration, copyright filing, platform compliance. A product isn't complete at the interface." },
+            { heading: "Where it started", body: "The starting point was simple: I wanted to make a game of my own, with my own hands. For three and a half years at Tencent I had been making other people's games better — this time, I wanted to **build something I love**, and take every step myself, from the first idea to the store." },
+            { heading: "Gameplay and visual direction", body: "The gameplay is merging fifteen tiers of particles — quark → proton → atom → cell → planet → star → galaxy → universe → singularity. Every tap is a tiny act of creation.\n\nVisually I made one deliberate call: skip the candy-colored dopamine that merge games default to, and go with a cold, dark, star-trail palette. What I wanted wasn't stimulation but **the quiet of gazing into the cosmos** — so that between merges, players might want to linger a little longer.", images: [{ src: "/lianlian-hub.jpg", alt: "Genesis · Game hub" }, { src: "/lianlian-result.jpg", alt: "Genesis · Results screen" }], imageLayout: "phones" },
+            { heading: "Craft in the build", body: "Technically it runs on WeChat's native Canvas — no engine, bundle kept at 3 MB. I brought commercial-project standards with me: 44px hit targets per Apple's HIG, frame-level downsampled blur, pooled sound effects. **Building independently doesn't mean building rough.** Players may never name these details, but they can feel them." },
+            { heading: "Complete beyond the product", body: "I don't write code — so I paired with AI to produce the code, art, and sound, while making every product decision myself. I also walked the road most designers never do: company registration, copyright filing, platform compliance. **A product isn't complete at the interface.**" },
             { heading: "Status", body: "Development and the full compliance process are complete; the game is currently in WeChat's store review. A Douyin version is planned next." }
           ],
           github: "https://github.com/yummyooyummy/genesis-game"
@@ -377,11 +369,11 @@ export const content = {
           description: "One private link lets a client sign a contract on their phone — auto-archived.",
           facts: ["Personal project · Product definition, interaction design, full-stack build", "Next.js + Airtable + Vercel · Mobile-first", "Deployed"],
           sections: [
-            { heading: "Background", body: "A friend who works in finance came to me: every contract with a client went through an offline loop — print, sign, photograph, send back. The process was tedious, documents were scattered across chat threads, and reconciliation was entirely manual. I decided to move the whole signing flow online, and to treat it as a complete product exercise: understanding the business, defining the flow, then designing, building, and deploying it — all on my own." },
-            { heading: "Three constraints", body: "Before starting, three premises set the direction for every design decision: most clients aren't fluent with digital tools, so the flow had to require zero learning; signing happens on a phone, so one link had to carry the entire journey with nothing to download; and these are legally meaningful financial documents, so every step had to be rigorous and traceable." },
-            { heading: "Two links, each taking its shortest path", body: "The business really has two signing scenarios: onboarding a new client, and re-signing with an existing one. Instead of one \"universal flow,\" I split them into two independent links — the onboarding link starts with risk confirmation (risk notice → read contract → handwritten signature), while the re-signing link goes straight to the contract (read → sign). A returning client doesn't need the risk lecture again; one step fewer is one drop-off fewer.\n\nA few concrete decisions: the risk page lists each notice explicitly and requires a checked confirmation to continue — a compliance act, but not a wall of legal intimidation; the contract is read inline, no redirects, no downloads; the signature pad allows clearing and re-signing, because first handwritten signatures rarely satisfy anyone; and a step indicator sits at the top with the option to go back at any point. Between rigor and smoothness, every step is a balance." },
-            { heading: "The rigor you don't see", body: "The real test of a tool like this is the abnormal path: what if a link is opened twice? What if the connection drops mid-signing? What if two submissions land at once? I handled expired links, duplicate-submission protection, and concurrent writes, and had the system auto-compose the signed PDF and archive it back to the database. In a financial tool, \"nothing goes wrong\" is itself part of the experience." },
-            { heading: "Outcome", body: "From a friend's one-sentence request to a complete system ready for real use — this project was my first full pass through building for a real business: the requirements were alive, the constraints were real, and mistakes had a cost." }
+            { heading: "Background", body: "A friend who works in finance came to me: every contract with a client went through an offline loop — print, sign, photograph, send back. The process was tedious, documents were scattered across chat threads, and reconciliation was entirely manual. I decided to move the whole signing flow online, and to treat it as **a complete product exercise**: understanding the business, defining the flow, then designing, building, and deploying it — all on my own." },
+            { heading: "Three constraints", body: "Before starting, three premises set the direction for every design decision: most clients aren't fluent with digital tools, so the flow had to require zero learning; signing happens on a phone, so one link had to carry the entire journey with nothing to download; and these are legally meaningful financial documents, so every step had to be **rigorous and traceable**." },
+            { heading: "Two links, each taking its shortest path", body: "The business really has two signing scenarios: onboarding a new client, and re-signing with an existing one. Instead of one \"universal flow,\" I split them into two independent links — the onboarding link starts with risk confirmation (risk notice → read contract → handwritten signature), while the re-signing link goes straight to the contract (read → sign). A returning client doesn't need the risk lecture again; **one step fewer is one drop-off fewer.**\n\nA few concrete decisions: the risk page lists each notice explicitly and requires a checked confirmation to continue — a compliance act, but not a wall of legal intimidation; the contract is read inline, no redirects, no downloads; the signature pad allows clearing and re-signing, because first handwritten signatures rarely satisfy anyone; and a step indicator sits at the top with the option to go back at any point. Between rigor and smoothness, every step is a balance." },
+            { heading: "The rigor you don't see", body: "The real test of a tool like this is the abnormal path: what if a link is opened twice? What if the connection drops mid-signing? What if two submissions land at once? I handled expired links, duplicate-submission protection, and concurrent writes, and had the system auto-compose the signed PDF and archive it back to the database. In a financial tool, **\"nothing goes wrong\" is itself part of the experience**." },
+            { heading: "Outcome", body: "From a friend's one-sentence request to a complete system ready for real use — this project was my first full pass through **building for a real business**: the requirements were alive, the constraints were real, and mistakes had a cost." }
           ],
           github: "https://github.com/yummyooyummy/signing-app"
         }
@@ -391,7 +383,7 @@ export const content = {
     },
     lab: {
       title: "Lab",
-      description: "Some ideas that haven't quite taken shape yet are slowly growing here. Come see what they look like right now.",
+      description: "Some ideas that haven't quite taken shape yet are slowly growing here.",
       label: "Lab",
       heading: "Ideas & experiments",
       intro: "I'd rather build an idea than keep polishing it on paper. This is where I use AI to test what's in my head — turning concepts into real, working things, fast. Some are still being refined, some just got started, but each one is a genuine attempt to close the gap between thinking and making.",
@@ -426,31 +418,27 @@ export const content = {
         },
         {
           type: "detailed",
-          name: "Brand Mini-Program Redesign",
-          subtitle: "",
-          fullName: "Brand Mini-Program Redesign",
-          techStack: "WeChat Mini-Program, Figma",
-          description: "An ongoing commercial project. A brand had been running on a templated mini-program whose interface and interactions failed to reflect its identity. I'm leading a full redesign — reworking the visual language and core flows to turn a generic, template-feeling product into an experience that fits the brand and holds up to close inspection.",
+          name: "Jewelry Brand Mini-Program",
+          subtitle: "Interface & Interaction Redesign",
+          fullName: "Jewelry Brand Mini-Program · Interface & Interaction Redesign",
+          techStack: "WeChat Mini-Program · Figma",
+          status: "Commissioned commercial project · In design",
+          description: "A commissioned commercial project. A jewelry brand had been running on a templated mini-program — and a generic interface can't carry the sense of quality the category demands. I'm leading a full redesign, reworking the visual language and core flows so that **the online store feels worthy of what's in the display case**, and driving it through to launch.",
           keyFeatures: [
             {
-              title: "Brand-driven visual rework",
-              desc: "a cohesive visual language — color, type, component details — built around the brand's identity, moving away from the template look."
+              title: "Brand-driven visual language",
+              desc: "color, type, and component details rebuilt around the jewelry brand's identity, moving away from the template look."
             },
             {
               title: "Elevated interaction",
-              desc: "core flows and page structures reorganized for smoother operation and clearer hierarchy."
+              desc: "core flows and page structures reorganized so browsing and buying feel smoother and clearer."
             },
             {
-              title: "Commercial intent",
-              desc: "visual upgrades balanced against business goals like guidance and conversion, keeping design in service of the product."
+              title: "Business goals in balance",
+              desc: "quality upgrades balanced with guidance and conversion, keeping design in service of the business."
             }
           ],
           links: []
-        },
-        {
-          type: "simple",
-          name: "Planner Mini-Program",
-          fullName: "Planner Mini-Program (in development)"
         }
       ]
     },
@@ -459,12 +447,12 @@ export const content = {
       label: "AI Practice",
       heading: "Building ideas, together with AI",
       intro: [
-        "AI is driving the cost of execution toward zero. An idea can become a working product in hours — validated, scrapped, rebuilt. Trial and error is no longer expensive.",
-        "But once execution stops being the bottleneck, **judgment** becomes the scarce thing. AI can generate endless options, yet can't tell which one is right. What decides whether AI's speed leads to something good or to mediocre output is **design judgment**.",
-        "This is **exactly where I come in**. Years of interaction design have given me a clear sense of what **\"good\"** means — I know when an interface or a flow truly holds up, which lets me cut the mediocre and keep what's right out of everything AI produces, and refine it to a quality I'm satisfied with.",
-        "I'm also continually **sharpening how to use AI more effectively**: breaking needs down into clear tasks and instructions, building **stable workflows** for each stage of the work, and holding its output to my own standards of quality. I treat AI as a highly capable assistant that needs clear direction — the more precisely a task is defined, the better it performs.",
-        "Tools keep changing; **methods** endure. The **process** from concept to launch is my real, stable capability — the tools are just replaceable variables within it.",
-        "And so the ideas that once stayed in my head, or stuck in a prototype, can now be built one by one. That's what AI has given me — and my answer to it."
+        "AI is driving **the cost of execution toward zero**. An idea can become a working product in hours — validated, scrapped, rebuilt. Trial and error is no longer expensive.",
+        "But once execution stops being the bottleneck, judgment becomes the scarce thing. AI can generate endless options, yet can't tell which one is right. What decides whether AI's speed leads to something good or to mediocre output is **design judgment**.",
+        "This is exactly where I come in. Years of interaction design have given me a clear sense of what \"good\" means — I know when an interface or a flow truly holds up, which lets me **cut the mediocre and keep what's right** out of everything AI produces, and refine it to a quality I'm satisfied with.",
+        "I'm also continually sharpening how to use AI more effectively: breaking needs down into clear tasks and instructions, building **stable workflows** for each stage of the work, and holding its output to my own standards of quality. I treat AI as a highly capable assistant that needs clear direction — the more precisely a task is defined, the better it performs.",
+        "Tools keep changing; **methods endure**. The process from concept to launch is my real, stable capability — the tools are just replaceable variables within it.",
+        "And so the ideas that once stayed in my head, or stuck in a prototype, can now be **built one by one**. That's what AI has given me — and my answer to it."
       ],
       workflow: {
         title: "How I work",
@@ -487,9 +475,7 @@ export const content = {
           { num: "04", punch: "“It can generate ten options. Choosing is forever my job.”", exp: "Generation is cheap; choice is expensive. The more critical the judgment, the less it can be outsourced." },
           { num: "05", punch: "“What changed isn't just speed — it's ownership.”", exp: "At a big company, I was one link in the production line; now AI hands me the whole line. It didn't take my work away. It gave a whole product back to one person." }
         ]
-      },
-      outro: "Everything this process produces lives on the Work page.",
-      outroCta: "Take a look →"
+      }
     },
     contact: {
       title: "Contact",

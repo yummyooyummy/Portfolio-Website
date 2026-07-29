@@ -2,6 +2,14 @@ import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
+// 解析文案中的 **高光** 标记(与 AI 页一致:高光词用近白描白)
+const parseBold = (text) =>
+  text.split(/(\*\*[^*]+\*\*)/g).map((part, i) =>
+    part.startsWith('**') && part.endsWith('**')
+      ? <strong key={i} className="text-dark-text font-semibold">{part.slice(2, -2)}</strong>
+      : part
+  );
+
 export default function ProjectDetail({ content, lang, slug }) {
   const project = content.work.projects.find(p => p.slug === slug);
   const backHref = lang === 'zh' ? '/work' : '/en/work';
@@ -81,7 +89,7 @@ export default function ProjectDetail({ content, lang, slug }) {
                     {section.heading}
                   </h2>
                   <p className="text-[0.9375rem] text-dark-text-secondary leading-relaxed whitespace-pre-line">
-                    {section.body}
+                    {parseBold(section.body)}
                   </p>
                   {section.images && (
                     <div

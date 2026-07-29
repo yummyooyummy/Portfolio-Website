@@ -3,8 +3,7 @@ import { useRef } from 'react';
 import { useInView } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import ProjectCard from '../components/ProjectCard';
-import TwoColumnIntro from '../components/TwoColumnIntro';
-import LabIntro from '../components/LabIntro';
+import PageEndNav from '../components/PageEndNav';
 import Footer from '../components/Footer';
 
 export default function WorkPage({ content, lang }) {
@@ -35,9 +34,7 @@ export default function WorkPage({ content, lang }) {
         </div>
       </motion.section>
 
-      {/* Bottom section: reuse homepage modules below Select work */}
-      <TwoColumnIntro content={content} lang={lang} />
-      <LabIntro content={content} lang={lang} />
+      <PageEndNav lang={lang} page="work" />
       <Footer content={content} />
     </div>
   );

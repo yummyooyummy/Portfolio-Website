@@ -25,12 +25,12 @@ export default function Hero({ content, lang }) {
     >
       <div className="max-w-content mx-auto">
         {/* Headline */}
-        <h1 className={`${headlineSize} font-medium mb-6 leading-110 tracking-tighter-custom text-dark-text max-w-4xl`}>
+        <h1 className={`${headlineSize} font-medium mb-6 leading-110 tracking-tighter-custom text-dark-text`}>
           {content.hero.headline}
         </h1>
 
         {/* Subtitle */}
-        <p className={`${subtitleSize} text-dark-text-secondary mb-8 leading-relaxed font-medium max-w-3xl`}>
+        <p className={`${subtitleSize} text-dark-text-secondary mb-8 leading-relaxed font-medium`}>
           {content.hero.subtitle}
         </p>
 

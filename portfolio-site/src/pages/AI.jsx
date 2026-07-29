@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import AIWorkflow from '../components/AIWorkflow';
 import AILessons from '../components/AILessons';
+import PageEndNav from '../components/PageEndNav';
 
 export default function AI({ content, lang }) {
   const a = content.ai;
@@ -85,26 +86,10 @@ export default function AI({ content, lang }) {
               <AILessons lessons={a.lessons} />
             </div>
           </div>
-
-          {/* Outro: link to Work page */}
-          {a.outro && (
-            <div className="px-6 sm:px-8">
-              <div className="max-w-content mx-auto mt-20 pt-10 border-t border-dark-border">
-                <p className="text-[0.9375rem] text-dark-text-secondary leading-relaxed">
-                  {a.outro}{' '}
-                  <a
-                    href={lang === 'zh' ? '/work' : '/en/work'}
-                    className="text-dark-text font-medium hover:text-dark-text-secondary transition-colors whitespace-nowrap"
-                  >
-                    {a.outroCta}
-                  </a>
-                </p>
-              </div>
-            </div>
-          )}
         </section>
       )}
 
+      <PageEndNav lang={lang} page="ai" />
       <Footer content={content} />
     </div>
   );
