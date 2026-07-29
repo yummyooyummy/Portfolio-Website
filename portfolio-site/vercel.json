@@ -4,10 +4,25 @@
     {
       "source": "/",
       "has": [
-        { "type": "query", "key": "lang", "value": "en" }
+        {
+          "type": "query",
+          "key": "lang",
+          "value": "en"
+        }
       ],
       "destination": "/en/",
       "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/cv.pdf",
+      "headers": [
+        {
+          "key": "Content-Disposition",
+          "value": "inline; filename*=UTF-8''%E9%83%91%E9%9B%A8%E6%99%B4%E7%AE%80%E5%8E%86.pdf"
+        }
+      ]
     }
   ]
 }

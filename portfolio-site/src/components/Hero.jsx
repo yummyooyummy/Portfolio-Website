@@ -48,7 +48,8 @@ export default function Hero({ content, lang }) {
             </a>
             <a
               href="/cv.pdf"
-              download
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-full sm:w-auto border border-dark-text-secondary text-dark-text px-8 py-3.5 rounded-lg hover:bg-dark-card transition-colors focus:outline-none focus:ring-2 focus:ring-dark-text-secondary text-center font-medium flex items-center justify-center gap-2"
             >
               {content.hero.cta2}
