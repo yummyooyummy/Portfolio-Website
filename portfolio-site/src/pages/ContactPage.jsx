@@ -29,7 +29,7 @@ export default function ContactPage({ content, lang }) {
           <p className="text-sm uppercase tracking-wider text-dark-text-secondary mb-6 font-normal">
             {c.label}
           </p>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-medium leading-110 tracking-tighter-custom text-dark-text mb-8 max-w-2xl">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-medium leading-110 tracking-tighter-custom text-dark-text mb-8">
             {c.heading}
           </h1>
 
