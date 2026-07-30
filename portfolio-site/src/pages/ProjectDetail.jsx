@@ -3,6 +3,105 @@ import { useEffect, useRef, useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
+// Before/After 拉杆对比:无人操作时自动缓慢左右扫动,拖拽后暂停,停手几秒恢复
+function BeforeAfter({ before, after }) {
+  const boxRef = useRef(null);
+  const topRef = useRef(null);
+  const handleRef = useRef(null);
+  const posRef = useRef(50);      // 当前位置(%)
+  const dirRef = useRef(1);       // 扫动方向
+  const idleRef = useRef(true);   // 是否处于自动扫动
+  const timerRef = useRef(null);
+
+  const apply = (p) => {
+    if (topRef.current) topRef.current.style.clipPath = `inset(0 ${100 - p}% 0 0)`;
+    if (handleRef.current) handleRef.current.style.left = `${p}%`;
+  };
+
+  useEffect(() => {
+    let raf;
+    const tick = () => {
+      if (idleRef.current) {
+        posRef.current += 0.12 * dirRef.current;
+        if (posRef.current >= 82) dirRef.current = -1;
+        if (posRef.current <= 18) dirRef.current = 1;
+        apply(posRef.current);
+      }
+      raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, []);
+
+  const setFromClientX = (clientX) => {
+    const r = boxRef.current.getBoundingClientRect();
+    let p = ((clientX - r.left) / r.width) * 100;
+    p = Math.max(4, Math.min(96, p));
+    posRef.current = p;
+    apply(p);
+  };
+
+  const interact = (e) => {
+    idleRef.current = false;
+    setFromClientX(e.clientX);
+    clearTimeout(timerRef.current);
+    timerRef.current = setTimeout(() => { idleRef.current = true; }, 2500);
+  };
+
+  return (
+    <div className="mt-8">
+      <div
+        ref={boxRef}
+        className="relative mx-auto max-w-[15rem] rounded-card border border-dark-border overflow-hidden cursor-ew-resize select-none touch-none"
+        onPointerDown={(e) => { boxRef.current.setPointerCapture(e.pointerId); interact(e); }}
+        onPointerMove={(e) => { if (e.buttons) interact(e); }}
+      >
+        <img src={after.src} alt={after.alt || ''} loading="lazy" draggable="false" className="w-full block" />
+        <img
+          ref={topRef}
+          src={before.src}
+          alt={before.alt || ''}
+          loading="lazy"
+          draggable="false"
+          className="absolute inset-0 w-full block"
+          style={{ clipPath: 'inset(0 50% 0 0)' }}
+        />
+        <div ref={handleRef} className="absolute top-0 bottom-0 w-[2px] bg-dark-text/80" style={{ left: '50%' }}>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-dark-text text-dark-bg flex items-center justify-center text-sm font-bold shadow-lg">
+            ⇔
+          </div>
+        </div>
+      </div>
+      <div className="flex justify-between mx-auto max-w-[15rem] mt-2.5">
+        <span className="text-xs text-dark-text-secondary/80">← {before.label}</span>
+        <span className="text-xs text-dark-text-secondary/80">{after.label} →</span>
+      </div>
+    </div>
+  );
+}
+
+// 手稿区块:档案式编号标注,无框融入页面(手稿底色与网页一致)
+// 所有手稿统一宽度并在正文栏内居中,彼此左右对齐
+function SketchImages({ images }) {
+  return (
+    <div className="mt-10 space-y-12">
+      {images.map((img, j) => (
+        <figure key={j} className="mx-auto w-full max-w-[34rem]">
+          <figcaption className="text-[0.6875rem] uppercase tracking-[0.18em] text-dark-text-secondary/70 mb-3">
+            {img.label}
+          </figcaption>
+          <img
+            src={img.src}
+            alt={img.alt || ''}
+            loading="lazy"
+            className="w-full block"
+          />
+        </figure>
+      ))}
+    </div>
+  );
+}
+
 // 解析文案中的 **高光** 标记(与 AI 页一致:高光词用近白描白)
 const parseBold = (text) =>
   text.split(/(\*\*[^*]+\*\*)/g).map((part, i) =>
@@ -15,9 +114,17 @@ const pad2 = (n) => String(n + 1).padStart(2, '0');
 
 // 图片组:统一 16:9 图框 + 图注;两张及以上并排
 function SectionImages({ images, layout }) {
+  if (layout === 'sketch') {
+    return <SketchImages images={images} />;
+  }
+  if (layout === 'beforeAfter' && images.length === 2) {
+    return <BeforeAfter before={images[0]} after={images[1]} />;
+  }
   if (layout === 'phones') {
+    // 竖屏截图:限制整组宽度,三张一排更紧凑,不撑满正文列
+    const cols = images.length >= 3 ? 'grid-cols-3 max-w-2xl' : 'grid-cols-2 max-w-lg';
     return (
-      <div className="grid grid-cols-2 gap-4 sm:gap-6 mt-8">
+      <div className={`grid ${cols} gap-3 sm:gap-5 mt-8`}>
         {images.map((img, j) => (
           <figure key={j}>
             <img

@@ -96,13 +96,13 @@ export const content = {
           tag: "微信小游戏",
           source: "个人项目 · 微信小游戏",
           cardTitle: "用 AI 从零独立打造的微信休闲小游戏",
-          description: "粒子合成 × 宇宙演化。从夸克到奇点，一个人走完全程。",
+          description: "连连看 × 消消乐的零门槛玩法，装进一场宇宙演化——从夸克到奇点，一个人走完全程。",
           image: "/work-lianlian.jpg",
           facts: ["个人项目 · 从 0 到 1 独立完成", "微信小游戏 · 原生 Canvas · 包体 3 MB", "已完成开发与合规流程 · 上架审核中"],
           sections: [
             { heading: "起点", body: "起点其实很简单：我想亲手做一个自己的小游戏。在腾讯的三年半里，我一直在把别人的游戏做好——这一次，我想**把自己喜欢的东西做出来**，从第一个想法到上架，每一步都自己来。" },
-            { heading: "玩法与视觉", body: "玩法是合并 15 级粒子——夸克 → 质子 → 原子 → 细胞 → 行星 → 恒星 → 星系 → 宇宙 → 奇点，每一次点击都是一次微型创世。\n\n视觉上我做了一个刻意的决定：避开合成类游戏惯用的糖果色爽感，选了深色星轨的冷调。我想要的不是刺激，而是**\"凝视宇宙\"的安静**——让玩家在合成的间隙，愿意多停留一会儿。", images: [{ src: "/lianlian-hub.jpg", alt: "连连小宇宙 · 游戏主界面" }, { src: "/lianlian-result.jpg", alt: "连连小宇宙 · 结算界面" }], imageLayout: "phones" },
-            { heading: "落地的质感", body: "技术上用微信原生 Canvas，没有引擎，包体控制在 3 MB。我把商业项目的标准带了进来：命中区按 Apple HIG 做到 44px、帧级降采样模糊、音效池化——**独立做，不等于做得糙**。这些细节玩家未必说得出，但摸得到。" },
+            { heading: "玩法：人人都能上手", body: "玩法把连连看的配对和消消乐的消除感结合到一起：连接相同的粒子完成合成，从夸克、原子、细胞，一路演化到行星、星系与奇点——**每一次连接，都是一次微型创世**。\n\n规则一眼就懂，不需要任何教学。我给它定的设计目标，是**从小朋友到长辈都能立刻上手**——上手门槛压到最低，而 15 级演化链持续给人往下走的目标感。开始界面会随玩家成长变化：新手看到的是引导，资深玩家看到的是图鉴和更高的挑战。", images: [{ src: "/lianlian-sketch-core.png", label: "Sketch 01 · 合成机制", alt: "设计手稿：连接相同粒子，触发合成与扩散" }, { src: "/lianlian-sketch-levels.png", label: "Sketch 02 · 演化链", alt: "设计手稿：15 级演化链，从夸克到星系" }], imageLayout: "sketch" },
+            { heading: "包装与质感", body: "视觉上我刻意避开休闲游戏惯用的糖果色爽感，选了深色星轨的冷调——把一个简单的玩法装进**\"凝视宇宙\"的安静**里，让它在一众小游戏里显得特别。\n\n技术上用微信原生 Canvas，没有引擎，包体控制在 3 MB。我把商业项目的标准带了进来：命中区按 Apple HIG 做到 44px、帧级降采样模糊、音效池化——**独立做，不等于做得糙**。", images: [{ src: "/lianlian-proto.jpg", label: "最早原型", alt: "最早的可玩原型" }, { src: "/lianlian-final.jpg", label: "上线版本", alt: "上线版本的同一界面" }], imageLayout: "beforeAfter" },
             { heading: "产品之外的完整性", body: "不会写代码的我，跟 AI 协同完成了代码、美术、音效和全部产品决策；也独立走完了大多数设计师没走过的部分——注册公司、版权登记、平台备案。**一个产品的完整，不止于界面**。" },
             { heading: "状态", body: "游戏已完成全部开发与合规流程，正在微信上架审核中；后续计划推出抖音版本。" }
           ],
@@ -348,13 +348,13 @@ export const content = {
           tag: "WeChat Mini Game",
           source: "Personal · WeChat Mini Game",
           cardTitle: "A casual WeChat mini game built from scratch, independently, with AI",
-          description: "Particle fusion meets cosmic evolution — from quark to singularity, built solo.",
+          description: "Link-and-match gameplay with zero learning curve, wrapped in a cosmic evolution — from quark to singularity, built solo.",
           image: "/work-lianlian.jpg",
           facts: ["Personal project · Built solo, 0 → 1", "WeChat mini game · Native Canvas · 3 MB bundle", "Development and compliance complete · In store review"],
           sections: [
             { heading: "Where it started", body: "The starting point was simple: I wanted to make a game of my own, with my own hands. For three and a half years at Tencent I had been making other people's games better — this time, I wanted to **build something I love**, and take every step myself, from the first idea to the store." },
-            { heading: "Gameplay and visual direction", body: "The gameplay is merging fifteen tiers of particles — quark → proton → atom → cell → planet → star → galaxy → universe → singularity. Every tap is a tiny act of creation.\n\nVisually I made one deliberate call: skip the candy-colored dopamine that merge games default to, and go with a cold, dark, star-trail palette. What I wanted wasn't stimulation but **the quiet of gazing into the cosmos** — so that between merges, players might want to linger a little longer.", images: [{ src: "/lianlian-hub.jpg", alt: "Genesis · Game hub" }, { src: "/lianlian-result.jpg", alt: "Genesis · Results screen" }], imageLayout: "phones" },
-            { heading: "Craft in the build", body: "Technically it runs on WeChat's native Canvas — no engine, bundle kept at 3 MB. I brought commercial-project standards with me: 44px hit targets per Apple's HIG, frame-level downsampled blur, pooled sound effects. **Building independently doesn't mean building rough.** Players may never name these details, but they can feel them." },
+            { heading: "Gameplay anyone can pick up", body: "The gameplay fuses the pair-matching of link games with the satisfying clears of match-3: connect identical particles to merge them, evolving from quarks, atoms, and cells all the way to planets, galaxies, and the singularity — **every connection is a tiny act of creation**.\n\nThe rules are understood at a glance, no tutorial needed. My design goal was a game **anyone from kids to grandparents can pick up instantly** — the entry bar pressed to the floor, while the 15-tier evolution chain keeps pulling players forward. The start screen grows with the player: newcomers see guidance; veterans see their collection and a higher challenge.", images: [{ src: "/lianlian-sketch-core.png", label: "Sketch 01 · Merge mechanism", alt: "Design sketch: connect identical particles to trigger merges and ripples" }, { src: "/lianlian-sketch-levels.png", label: "Sketch 02 · Evolution chain", alt: "Design sketch: the 15-tier evolution chain, from quark to galaxy" }], imageLayout: "sketch" },
+            { heading: "Packaging and craft", body: "Visually I deliberately avoided the candy-colored rush casual games default to, choosing a cold, dark star-trail palette — wrapping a simple mechanic in **the quiet of gazing into the cosmos**, making it stand out among mini games.\n\nTechnically it runs on WeChat's native Canvas — no engine, bundle kept at 3 MB. I brought commercial-project standards with me: 44px hit targets per Apple's HIG, frame-level downsampled blur, pooled sound effects — **building independently doesn't mean building rough**.", images: [{ src: "/lianlian-proto.jpg", label: "First prototype", alt: "The earliest playable prototype" }, { src: "/lianlian-final.jpg", label: "Shipped version", alt: "The same screen in the shipped version" }], imageLayout: "beforeAfter" },
             { heading: "Complete beyond the product", body: "I don't write code — so I paired with AI to produce the code, art, and sound, while making every product decision myself. I also walked the road most designers never do: company registration, copyright filing, platform compliance. **A product isn't complete at the interface.**" },
             { heading: "Status", body: "Development and the full compliance process are complete; the game is currently in WeChat's store review. A Douyin version is planned next." }
           ],
