@@ -86,7 +86,7 @@ function SketchImages({ images }) {
   return (
     <div className="mt-10 space-y-12">
       {images.map((img, j) => (
-        <figure key={j} className="mx-auto w-full max-w-[34rem]">
+        <figure key={j} className={`mx-auto w-full ${img.wide ? '' : 'max-w-[34rem]'}`}>
           <figcaption className="text-[0.6875rem] uppercase tracking-[0.18em] text-dark-text-secondary/70 mb-3">
             {img.label}
           </figcaption>
@@ -220,14 +220,37 @@ export default function ProjectDetail({ content, lang, slug }) {
     <div className="min-h-screen bg-dark-bg">
       <Navbar content={content} lang={lang} />
 
-      {/* Header:返回 + 标签 + 标题 */}
+      {/* Header:低调淡出底图——封面以低透明度+模糊铺在标题背后,向下渐隐 */}
       <motion.section
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
-        className="px-6 sm:px-8 pt-page-top bg-dark-bg"
+        className="relative px-6 sm:px-8 pt-page-top bg-dark-bg overflow-hidden"
       >
-        <div className="max-w-[64rem] mx-auto">
+        {project.image && (() => {
+          // 每个案例可单独调底图强度:暗色封面需要更高透明度与提亮才能显形
+          const hb = project.heroBackdrop || {};
+          return (
+            <img
+              src={project.image}
+              alt=""
+              aria-hidden="true"
+              className="absolute pointer-events-none select-none"
+              style={{
+                left: '-3%',
+                top: '-12%',
+                width: '106%',
+                height: '124%',
+                objectFit: 'cover',
+                opacity: hb.opacity ?? 0.18,
+                filter: `blur(14px) brightness(${hb.brightness ?? 1}) saturate(${hb.saturate ?? 1})`,
+                WebkitMaskImage: 'linear-gradient(to bottom, #000 0%, transparent 92%)',
+                maskImage: 'linear-gradient(to bottom, #000 0%, transparent 92%)'
+              }}
+            />
+          );
+        })()}
+        <div className="relative max-w-[64rem] mx-auto">
           <a
             href={backHref}
             className="inline-block text-[0.9375rem] text-dark-text-secondary hover:text-dark-text transition-colors mb-10"

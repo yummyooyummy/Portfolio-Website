@@ -98,6 +98,7 @@ export const content = {
           cardTitle: "用 AI 从零独立打造的微信休闲小游戏",
           description: "连连看 × 消消乐的零门槛玩法，装进一场宇宙演化——从夸克到奇点，一个人走完全程。",
           image: "/work-lianlian.jpg",
+          heroBackdrop: { opacity: 0.5, brightness: 2.7, saturate: 1.8 },
           facts: ["个人项目 · 从 0 到 1 独立完成", "微信小游戏 · 原生 Canvas · 包体 3 MB", "已完成开发与合规流程 · 上架审核中"],
           sections: [
             { heading: "起点", body: "起点其实很简单：我想亲手做一个自己的小游戏。在腾讯的三年半里，我一直在把别人的游戏做好——这一次，我想**把自己喜欢的东西做出来**，从第一个想法到上架，每一步都自己来。" },
@@ -115,11 +116,14 @@ export const content = {
           source: "个人项目 · Web 应用",
           cardTitle: "为金融客户打造的全流程电子签署系统",
           description: "一条专属链接，让客户在手机上完成合同签署，结果自动归档。",
+          image: "/work-signing.jpg",
+          heroBackdrop: { opacity: 0.6, brightness: 3.8, saturate: 1.7 },
           facts: ["个人项目 · 产品定义、交互设计与全栈实现", "Next.js + Airtable + Vercel · 移动端优先", "已部署"],
           sections: [
             { heading: "背景", body: "一位做金融的朋友找到我：客户每次签合同都要走线下——打印、签字、拍照回传，流程繁琐，文件散落在聊天记录里，事后核对全靠人工。我决定帮他把整个签署流程搬到线上，也把它当作**一次完整的产品实践**：从理解业务、定义流程，到设计、开发、部署，全部独立完成。" },
             { heading: "三个约束", body: "动手之前，有三个前提决定了所有设计方向：客户大多不熟悉数字工具，操作必须零学习成本；签署发生在手机上，一条链接就要走完全程，不能要求下载任何东西；这是有法律意义的金融文件，每一步都必须**严谨、可追溯**。" },
-            { heading: "两条链接，各走各的最短路径", body: "业务里有两种签署场景：新客户开户，和老客户补签协议。我没有做一个\"通用流程\"，而是拆成两条独立链接——开户链接从风险确认开始（风险提示 → 阅读合同 → 手写签名），补签链接直接进入合同（阅读 → 签名）。老客户不需要被再教育一遍风险，**少一步，就少一次流失**。\n\n几个具体的设计决策：风险确认页把提示逐条列出，勾选确认后才能继续——合规的动作，但不做成吓人的法律墙；合同直接在页面内阅读，不跳转、不下载；签名板可以清除重签，因为第一次手写签名很少有人满意；每一步顶部有进度指示，随时能返回上一步。在\"严谨\"和\"顺畅\"之间，每一步都在找平衡。" },
+            { heading: "为什么做得这么小", body: "我没有做 App，也没有做后台管理系统——最终的形态小到极致：一条链接、一个页面、一次签名。这不是省事，而是对约束的回应：客户不熟悉数字工具，任何\"下载、注册、学习\"都会成为流失点。**判断什么不该做，往往比做什么更重要**。\n\n从需求到第一版可用，只用了几天；之后的迭代都建立在真实使用的反馈上。这是我对\"最小可行产品\"的一次完整实践：**先让业务跑起来，再让它变得更好**。" },
+            { heading: "两条链接，各走各的最短路径", body: "业务里有两种签署场景：新客户开户，和老客户补签协议。我没有做一个\"通用流程\"，而是拆成两条独立链接——开户链接从风险确认开始（风险提示 → 阅读合同 → 手写签名），补签链接直接进入合同（阅读 → 签名）。老客户不需要被再教育一遍风险，**少一步，就少一次流失**。\n\n几个具体的设计决策：风险确认页把提示逐条列出，勾选确认后才能继续——合规的动作，但不做成吓人的法律墙；合同直接在页面内阅读，不跳转、不下载；签名板可以清除重签，因为第一次手写签名很少有人满意；每一步顶部有进度指示，随时能返回上一步。在\"严谨\"和\"顺畅\"之间，每一步都在找平衡。", images: [{ src: "/signing-flow.png", label: "Flow · 两条签署路径", alt: "两条签署链接的流程对比：开户四步走完，补签跳过风险确认", wide: true }], imageLayout: "sketch" },
             { heading: "看不见的严谨", body: "这类工具真正的考验在异常情况：链接被重复打开怎么办？签到一半断网怎么办？两个人同时提交怎么办？我处理了链接失效、防重复提交、并发写入这些边界情况，并让系统在客户签署完成后自动合成 PDF、归档回数据库——设计一个金融工具，**\"不出错\"本身就是体验的一部分**。" },
             { heading: "结果", body: "从朋友的一句需求，到一个可以直接投入使用的完整系统——这个项目让我第一次完整经历了**\"为真实业务做产品\"**：需求是活的、约束是真的、错误是有代价的。" }
           ],
@@ -350,6 +354,7 @@ export const content = {
           cardTitle: "A casual WeChat mini game built from scratch, independently, with AI",
           description: "Link-and-match gameplay with zero learning curve, wrapped in a cosmic evolution — from quark to singularity, built solo.",
           image: "/work-lianlian.jpg",
+          heroBackdrop: { opacity: 0.5, brightness: 2.7, saturate: 1.8 },
           facts: ["Personal project · Built solo, 0 → 1", "WeChat mini game · Native Canvas · 3 MB bundle", "Development and compliance complete · In store review"],
           sections: [
             { heading: "Where it started", body: "The starting point was simple: I wanted to make a game of my own, with my own hands. For three and a half years at Tencent I had been making other people's games better — this time, I wanted to **build something I love**, and take every step myself, from the first idea to the store." },
@@ -367,11 +372,14 @@ export const content = {
           source: "Personal · Web App",
           cardTitle: "An end-to-end e-signing system for financial clients",
           description: "One private link lets a client sign a contract on their phone — auto-archived.",
+          image: "/work-signing.jpg",
+          heroBackdrop: { opacity: 0.6, brightness: 3.8, saturate: 1.7 },
           facts: ["Personal project · Product definition, interaction design, full-stack build", "Next.js + Airtable + Vercel · Mobile-first", "Deployed"],
           sections: [
             { heading: "Background", body: "A friend who works in finance came to me: every contract with a client went through an offline loop — print, sign, photograph, send back. The process was tedious, documents were scattered across chat threads, and reconciliation was entirely manual. I decided to move the whole signing flow online, and to treat it as **a complete product exercise**: understanding the business, defining the flow, then designing, building, and deploying it — all on my own." },
             { heading: "Three constraints", body: "Before starting, three premises set the direction for every design decision: most clients aren't fluent with digital tools, so the flow had to require zero learning; signing happens on a phone, so one link had to carry the entire journey with nothing to download; and these are legally meaningful financial documents, so every step had to be **rigorous and traceable**." },
-            { heading: "Two links, each taking its shortest path", body: "The business really has two signing scenarios: onboarding a new client, and re-signing with an existing one. Instead of one \"universal flow,\" I split them into two independent links — the onboarding link starts with risk confirmation (risk notice → read contract → handwritten signature), while the re-signing link goes straight to the contract (read → sign). A returning client doesn't need the risk lecture again; **one step fewer is one drop-off fewer.**\n\nA few concrete decisions: the risk page lists each notice explicitly and requires a checked confirmation to continue — a compliance act, but not a wall of legal intimidation; the contract is read inline, no redirects, no downloads; the signature pad allows clearing and re-signing, because first handwritten signatures rarely satisfy anyone; and a step indicator sits at the top with the option to go back at any point. Between rigor and smoothness, every step is a balance." },
+            { heading: "Why so small", body: "I didn't build an app, and I didn't build an admin backend — the final form is as small as it gets: one link, one page, one signature. That wasn't laziness; it was a response to the constraints: for clients unfamiliar with digital tools, every \"download, register, learn\" is a drop-off point. **Knowing what not to build often matters more than building.**\n\nFrom request to first usable version took days, not months; every iteration since has been driven by real usage. It was my first complete practice of the minimum viable product: **get the business running first, then make it better**." },
+            { heading: "Two links, each taking its shortest path", body: "The business really has two signing scenarios: onboarding a new client, and re-signing with an existing one. Instead of one \"universal flow,\" I split them into two independent links — the onboarding link starts with risk confirmation (risk notice → read contract → handwritten signature), while the re-signing link goes straight to the contract (read → sign). A returning client doesn't need the risk lecture again; **one step fewer is one drop-off fewer.**\n\nA few concrete decisions: the risk page lists each notice explicitly and requires a checked confirmation to continue — a compliance act, but not a wall of legal intimidation; the contract is read inline, no redirects, no downloads; the signature pad allows clearing and re-signing, because first handwritten signatures rarely satisfy anyone; and a step indicator sits at the top with the option to go back at any point. Between rigor and smoothness, every step is a balance.", images: [{ src: "/signing-flow.png", label: "Flow · Two signing paths", alt: "Flow comparison of the two signing links: onboarding takes four steps; re-signing skips risk confirmation", wide: true }], imageLayout: "sketch" },
             { heading: "The rigor you don't see", body: "The real test of a tool like this is the abnormal path: what if a link is opened twice? What if the connection drops mid-signing? What if two submissions land at once? I handled expired links, duplicate-submission protection, and concurrent writes, and had the system auto-compose the signed PDF and archive it back to the database. In a financial tool, **\"nothing goes wrong\" is itself part of the experience**." },
             { heading: "Outcome", body: "From a friend's one-sentence request to a complete system ready for real use — this project was my first full pass through **building for a real business**: the requirements were alive, the constraints were real, and mistakes had a cost." }
           ],
