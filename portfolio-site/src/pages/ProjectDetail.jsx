@@ -371,6 +371,22 @@ export default function ProjectDetail({ content, lang, slug }) {
                     {section.images && (
                       <SectionImages images={section.images} layout={section.imageLayout} />
                     )}
+                    {/* 全览图:插在指定章节末尾 */}
+                    {project.overviewImage?.afterSection === i && (
+                      <div className="mt-10">
+                        <img
+                          src={project.overviewImage.src}
+                          alt={project.overviewImage.alt}
+                          loading="lazy"
+                          className="w-full rounded-card border border-dark-border"
+                        />
+                        {project.overviewImage.caption && (
+                          <p className="text-xs text-dark-text-secondary/80 mt-3 text-center tracking-wide">
+                            {project.overviewImage.caption}
+                          </p>
+                        )}
+                      </div>
+                    )}
                   </section>
                 ))}
               </div>
@@ -380,6 +396,23 @@ export default function ProjectDetail({ content, lang, slug }) {
                   {project.fullDescription}
                 </p>
               )
+            )}
+
+            {/* 全部界面一览图(未指定章节时,放在底部) */}
+            {project.overviewImage && project.overviewImage.afterSection === undefined && (
+              <div className="mt-16">
+                <img
+                  src={project.overviewImage.src}
+                  alt={project.overviewImage.alt}
+                  loading="lazy"
+                  className="w-full rounded-card border border-dark-border"
+                />
+                {project.overviewImage.caption && (
+                  <p className="text-xs text-dark-text-secondary/80 mt-3 text-center tracking-wide">
+                    {project.overviewImage.caption}
+                  </p>
+                )}
+              </div>
             )}
 
             {/* GitHub link */}

@@ -1,4 +1,4 @@
-export default function ProjectCard({ project, lang }) {
+export default function ProjectCard({ project, lang, compact = false }) {
   return (
     <a
       href={lang === 'zh' ? `/work/${project.slug}` : `/en/work/${project.slug}`}
@@ -27,10 +27,17 @@ export default function ProjectCard({ project, lang }) {
         </span>
       </div>
 
-      {/* Large title */}
-      <h3 className="text-2xl sm:text-3xl font-medium text-dark-text leading-tight group-hover:text-dark-text-secondary transition-colors">
+      {/* Large title (compact cards use one size down) */}
+      <h3 className={`${compact ? 'text-xl sm:text-2xl' : 'text-2xl sm:text-3xl'} font-medium text-dark-text leading-tight group-hover:text-dark-text-secondary transition-colors`}>
         {project.cardTitle || project.name}
       </h3>
+
+      {/* 副文案:一句话让卡片自带信息量 */}
+      {project.description && (
+        <p className="text-[0.875rem] text-dark-text-secondary leading-relaxed mt-2.5">
+          {project.description}
+        </p>
+      )}
     </a>
   );
 }

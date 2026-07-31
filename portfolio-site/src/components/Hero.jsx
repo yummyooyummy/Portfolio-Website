@@ -21,9 +21,20 @@ export default function Hero({ content, lang }) {
       initial={{ opacity: 0, y: 20 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
-      className="bg-dark-bg px-6 sm:px-8 pt-hero-top pb-section"
+      className="bg-dark-bg px-6 sm:px-8 pt-page-top pb-16"
     >
       <div className="max-w-content mx-auto">
+        {/* 状态徽章:正在看新机会 */}
+        <div className="inline-flex items-center gap-2.5 border border-dark-border rounded-full px-4 py-1.5 mb-7">
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-60"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-green-400"></span>
+          </span>
+          <span className="text-[0.8125rem] text-dark-text-secondary">
+            {content.contact.status} · {content.contact.statusDetail}
+          </span>
+        </div>
+
         {/* Headline */}
         <h1 className={`${headlineSize} font-medium mb-6 leading-110 tracking-tighter-custom text-dark-text`}>
           {content.hero.headline}
@@ -35,7 +46,7 @@ export default function Hero({ content, lang }) {
         </p>
 
         {/* Button row + social icons */}
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 mb-20">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 mb-12">
           <div className="flex flex-col sm:flex-row gap-4">
             <a
               href={lang === 'zh' ? '/contact' : '/en/contact'}
@@ -100,9 +111,9 @@ export default function Hero({ content, lang }) {
           {statCards.map((stat, index) => (
             <div
               key={index}
-              className="bg-dark-card border border-dark-border p-8 rounded-card shadow-card-subtle"
+              className="bg-dark-card border border-dark-border p-7 rounded-card shadow-card-subtle"
             >
-              <div className="text-4xl md:text-5xl font-medium text-dark-text mb-4 leading-tight">
+              <div className="text-3xl md:text-4xl font-medium text-dark-text mb-3 leading-tight">
                 {stat.number}
               </div>
               <div className="text-[0.9375rem] text-dark-text-secondary font-normal leading-relaxed">

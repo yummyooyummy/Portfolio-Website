@@ -22,10 +22,14 @@ export default function SelectWork({ content, lang }) {
           {lang === 'zh' ? '精选作品' : 'Select work'}
         </h2>
 
-        <div className="space-y-20">
-          {projects.map((project, index) => (
-            <ProjectCard key={index} project={project} lang={lang} />
-          ))}
+        {/* 杂志式排布:第一个作品全宽,其余两个桌面端半宽并排;手机端保持单列 */}
+        <div className="space-y-16 md:space-y-14">
+          {projects[0] && <ProjectCard project={projects[0]} lang={lang} />}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-8">
+            {projects.slice(1).map((project, index) => (
+              <ProjectCard key={index} project={project} lang={lang} compact />
+            ))}
+          </div>
         </div>
       </div>
     </motion.section>

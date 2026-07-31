@@ -2,7 +2,7 @@ export const content = {
   zh: {
     nav: {
       name: '郑雨晴',
-      about: '关于',
+      about: '关于我',
       work: '作品',
       lab: '试验场',
       ai: 'AI 实践',
@@ -17,11 +17,11 @@ export const content = {
     stats: [
       { number: "0→1", description: "设计、代码、部署——一个人跑通从想法到上架的完整流程。" },
       { number: "3.5 年", description: "腾讯天美三年半，负责大型开放世界游戏的战斗 HUD、玩法系统与三端操作交互。" },
-      { number: "∞ 个", description: "微信小游戏、金融签署应用、滑雪社区小程序——真实的产品，一个接一个在路上。" }
+      { number: "4 个", description: "微信小游戏、金融签署应用、滑雪社区小程序、这个网站——真实的产品，还在增加。" }
     ],
     about: {
-      title: "关于",
-      label: "关于",
+      title: "关于我",
+      label: "关于我",
       heading: "你好，我是郑雨晴。一名交互设计师。",
       intro: "我在腾讯天美做了三年半游戏交互设计，负责大型游戏的核心界面与系统交互。这段经历给了我两样东西：一是被大厂体系打磨出的扎实交互硬功；二是面对高压和复杂时稳得住的心态——越是关键的时候，我越能**沉下心把事情做成**。\n\n比起止步纸面方案，我更偏爱让创意落地成真。离开腾讯后，我依托 AI 把脑子里的产品独立做出来——从设计、开发到上线，**一个人跑通完整链路**。我对新东西一直很敏感，遇到感兴趣的会马上动手试，而不是停在想的阶段；高效自学、执行力强，是我长久以来的核心竞争力。",
       experienceTitle: "经历",
@@ -103,10 +103,11 @@ export const content = {
           sections: [
             { heading: "起点", body: "起点其实很简单：我想亲手做一个自己的小游戏。在腾讯的三年半里，我一直在把别人的游戏做好——这一次，我想**把自己喜欢的东西做出来**，从第一个想法到上架，每一步都自己来。" },
             { heading: "玩法：人人都能上手", body: "玩法把连连看的配对和消消乐的消除感结合到一起：连接相同的粒子完成合成，从夸克、原子、细胞，一路演化到行星、星系与奇点——**每一次连接，都是一次微型创世**。\n\n规则一眼就懂，不需要任何教学。我给它定的设计目标，是**从小朋友到长辈都能立刻上手**——上手门槛压到最低，而 15 级演化链持续给人往下走的目标感。开始界面会随玩家成长变化：新手看到的是引导，资深玩家看到的是图鉴和更高的挑战。", images: [{ src: "/lianlian-sketch-core.png", label: "Sketch 01 · 合成机制", alt: "设计手稿：连接相同粒子，触发合成与扩散" }, { src: "/lianlian-sketch-levels.png", label: "Sketch 02 · 演化链", alt: "设计手稿：15 级演化链，从夸克到星系" }], imageLayout: "sketch" },
-            { heading: "包装与质感", body: "视觉上我刻意避开休闲游戏惯用的糖果色爽感，选了深色星轨的冷调——把一个简单的玩法装进**\"凝视宇宙\"的安静**里，让它在一众小游戏里显得特别。\n\n技术上用微信原生 Canvas，没有引擎，包体控制在 3 MB。我把商业项目的标准带了进来：命中区按 Apple HIG 做到 44px、帧级降采样模糊、音效池化——**独立做，不等于做得糙**。", images: [{ src: "/lianlian-proto.jpg", label: "最早原型", alt: "最早的可玩原型" }, { src: "/lianlian-final.jpg", label: "上线版本", alt: "上线版本的同一界面" }], imageLayout: "beforeAfter" },
+            { heading: "包装与质感", body: "视觉上我刻意避开休闲游戏惯用的糖果色爽感，选了深色星轨的冷调——把一个简单的玩法装进**\"凝视宇宙\"的安静**里，让它在一众小游戏里显得特别。\n\n技术上用微信原生 Canvas，没有引擎，包体控制在 3 MB。我把商业项目的标准带了进来：命中区按 Apple HIG 做到 44px、帧级降采样模糊、音效池化——**独立做，不等于做得糙**。" },
             { heading: "产品之外的完整性", body: "不会写代码的我，跟 AI 协同完成了代码、美术、音效和全部产品决策；也独立走完了大多数设计师没走过的部分——注册公司、版权登记、平台备案。**一个产品的完整，不止于界面**。" },
             { heading: "状态", body: "游戏已完成全部开发与合规流程，正在微信上架审核中；后续计划推出抖音版本。" }
           ],
+          overviewImage: { src: "/genesis-overview.jpg", alt: "GENESIS 万物起源 全部界面一览", caption: "GENESIS · 全部界面一览", afterSection: 2 },
           github: "https://github.com/yummyooyummy/genesis-game"
         },
         {
@@ -135,7 +136,7 @@ export const content = {
     },
     lab: {
       title: "试验场",
-      description: "一些还没成型的想法，正在这里慢慢长出来。",
+      description: "正在做：新疆滑雪社区小程序——25+ 页面、前后端独立实现；还有更多试验在路上。",
       label: "试验场",
       heading: "构想与实践",
       intro: "比起反复打磨方案，我更愿意把它直接做出来。这里是我用 AI 验证想法的地方——把脑子里的产品快速落成真实的、能用的东西。有些还在打磨，有些才刚起步，但每一个都是\"想到\"与\"做到\"之间的一次真实尝试。",
@@ -144,6 +145,7 @@ export const content = {
           type: "detailed",
           name: "新疆滑雪",
           subtitle: "滑雪社区小程序",
+          image: "/ski-cover.jpg",
           fullName: "新疆滑雪 · 滑雪社区小程序",
           techStack: "微信小程序原生 · 微信云开发（云函数 + 云数据库）· Vant Weapp · Figma",
           status: "界面设计已全部完成（Figma）· 功能开发完成约一半，持续推进中",
@@ -273,7 +275,7 @@ export const content = {
     stats: [
       { number: "0→1", description: "Design, code, deployment — one person carrying an idea all the way to launch." },
       { number: "3.5 yrs", description: "Three and a half years at Tencent TiMi: battle HUD, gameplay systems, and tri-platform input design for a large-scale open-world game." },
-      { number: "∞", description: "A WeChat mini-game, a financial signing app, a ski community mini-program — real products, one after another." }
+      { number: "4", description: "A WeChat mini game, a financial signing app, a ski community mini-program, and this site — real products, still counting." }
     ],
     about: {
       title: "About",
@@ -359,10 +361,11 @@ export const content = {
           sections: [
             { heading: "Where it started", body: "The starting point was simple: I wanted to make a game of my own, with my own hands. For three and a half years at Tencent I had been making other people's games better — this time, I wanted to **build something I love**, and take every step myself, from the first idea to the store." },
             { heading: "Gameplay anyone can pick up", body: "The gameplay fuses the pair-matching of link games with the satisfying clears of match-3: connect identical particles to merge them, evolving from quarks, atoms, and cells all the way to planets, galaxies, and the singularity — **every connection is a tiny act of creation**.\n\nThe rules are understood at a glance, no tutorial needed. My design goal was a game **anyone from kids to grandparents can pick up instantly** — the entry bar pressed to the floor, while the 15-tier evolution chain keeps pulling players forward. The start screen grows with the player: newcomers see guidance; veterans see their collection and a higher challenge.", images: [{ src: "/lianlian-sketch-core.png", label: "Sketch 01 · Merge mechanism", alt: "Design sketch: connect identical particles to trigger merges and ripples" }, { src: "/lianlian-sketch-levels.png", label: "Sketch 02 · Evolution chain", alt: "Design sketch: the 15-tier evolution chain, from quark to galaxy" }], imageLayout: "sketch" },
-            { heading: "Packaging and craft", body: "Visually I deliberately avoided the candy-colored rush casual games default to, choosing a cold, dark star-trail palette — wrapping a simple mechanic in **the quiet of gazing into the cosmos**, making it stand out among mini games.\n\nTechnically it runs on WeChat's native Canvas — no engine, bundle kept at 3 MB. I brought commercial-project standards with me: 44px hit targets per Apple's HIG, frame-level downsampled blur, pooled sound effects — **building independently doesn't mean building rough**.", images: [{ src: "/lianlian-proto.jpg", label: "First prototype", alt: "The earliest playable prototype" }, { src: "/lianlian-final.jpg", label: "Shipped version", alt: "The same screen in the shipped version" }], imageLayout: "beforeAfter" },
+            { heading: "Packaging and craft", body: "Visually I deliberately avoided the candy-colored rush casual games default to, choosing a cold, dark star-trail palette — wrapping a simple mechanic in **the quiet of gazing into the cosmos**, making it stand out among mini games.\n\nTechnically it runs on WeChat's native Canvas — no engine, bundle kept at 3 MB. I brought commercial-project standards with me: 44px hit targets per Apple's HIG, frame-level downsampled blur, pooled sound effects — **building independently doesn't mean building rough**." },
             { heading: "Complete beyond the product", body: "I don't write code — so I paired with AI to produce the code, art, and sound, while making every product decision myself. I also walked the road most designers never do: company registration, copyright filing, platform compliance. **A product isn't complete at the interface.**" },
             { heading: "Status", body: "Development and the full compliance process are complete; the game is currently in WeChat's store review. A Douyin version is planned next." }
           ],
+          overviewImage: { src: "/genesis-overview.jpg", alt: "GENESIS — all screens at a glance", caption: "GENESIS · All screens", afterSection: 2 },
           github: "https://github.com/yummyooyummy/genesis-game"
         },
         {
@@ -391,7 +394,7 @@ export const content = {
     },
     lab: {
       title: "Lab",
-      description: "Some ideas that haven't quite taken shape yet are slowly growing here.",
+      description: "In progress: a ski community mini-program — 25+ screens, built full-stack solo — with more experiments on the way.",
       label: "Lab",
       heading: "Ideas & experiments",
       intro: "I'd rather build an idea than keep polishing it on paper. This is where I use AI to test what's in my head — turning concepts into real, working things, fast. Some are still being refined, some just got started, but each one is a genuine attempt to close the gap between thinking and making.",
@@ -399,6 +402,7 @@ export const content = {
         {
           type: "detailed",
           name: "Xinjiang Ski",
+          image: "/ski-cover.jpg",
           subtitle: "A Skiing Community Mini-Program",
           fullName: "Xinjiang Ski — A Skiing Community Mini-Program",
           techStack: "Native WeChat Mini-Program · WeChat CloudBase (cloud functions + database) · Vant Weapp · Figma",
