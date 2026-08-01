@@ -19,9 +19,10 @@ export default function WorkPage({ content, lang }) {
       {/* Project cards section - starts directly after navbar, uses global section spacing */}
       <motion.section
         ref={ref}
-        initial={{ opacity: 0, y: 20 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-        transition={{ duration: 0.6, ease: 'easeOut' }}
+        initial={{ opacity: 0, y: 14 }}
+        whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 'some', margin: '0px 0px -40px 0px' }}
+        transition={{ duration: 0.5, ease: 'easeOut' }}
         className="px-6 sm:px-8 pt-page-top pb-section bg-dark-bg"
       >
         <div className="max-w-content mx-auto">

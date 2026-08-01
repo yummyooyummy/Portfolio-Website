@@ -222,9 +222,9 @@ export default function ProjectDetail({ content, lang, slug }) {
 
       {/* Header:低调淡出底图——封面以低透明度+模糊铺在标题背后,向下渐隐 */}
       <motion.section
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 14 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: 'easeOut' }}
+        transition={{ duration: 0.5, ease: 'easeOut' }}
         className="relative px-6 sm:px-8 pt-page-top bg-dark-bg overflow-hidden"
       >
         {project.image && (() => {

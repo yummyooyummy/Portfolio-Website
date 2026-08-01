@@ -20,9 +20,10 @@ export default function LabPage({ content, lang }) {
       {/* Top section: label + heading + intro */}
       <motion.section
         ref={topRef}
-        initial={{ opacity: 0, y: 20 }}
-        animate={topInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 0 }}
-        transition={{ duration: 0.6, ease: 'easeOut' }}
+        initial={{ opacity: 0, y: 14 }}
+        whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 'some', margin: '0px 0px -40px 0px' }}
+        transition={{ duration: 0.5, ease: 'easeOut' }}
         className="px-6 sm:px-8 pt-page-top pb-section bg-dark-bg"
       >
         <div className="max-w-content mx-auto">
@@ -44,10 +45,10 @@ export default function LabPage({ content, lang }) {
           {l.projects.map((project, index) => (
             <div key={index}>
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 14 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.1, margin: "-50px" }}
-                transition={{ duration: 0.6, ease: 'easeOut' }}
+                viewport={{ once: true, amount: 'some', margin: '0px 0px -40px 0px' }}
+                transition={{ duration: 0.5, ease: 'easeOut' }}
               >
                 {project.type === 'detailed' ? (
                   <LabProjectDetailed project={project} lang={lang} />

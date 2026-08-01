@@ -34,9 +34,10 @@ export default function AI({ content, lang }) {
       {/* 1. Opinion: label + heading + four paragraphs (same top structure as About) */}
       <motion.section
         ref={topRef}
-        initial={{ opacity: 0, y: 20 }}
-        animate={topInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-        transition={{ duration: 0.6, ease: 'easeOut' }}
+        initial={{ opacity: 0, y: 14 }}
+        whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 'some', margin: '0px 0px -40px 0px' }}
+        transition={{ duration: 0.5, ease: 'easeOut' }}
         className="px-6 sm:px-8 pt-page-top pb-section bg-dark-bg"
       >
         <div className="max-w-content mx-auto">
@@ -59,9 +60,10 @@ export default function AI({ content, lang }) {
       {/* 2. Workflow: small title + six-stage timeline */}
       <motion.section
         ref={flowRef}
-        initial={{ opacity: 0, y: 20 }}
-        animate={flowInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-        transition={{ duration: 0.6, ease: 'easeOut' }}
+        initial={{ opacity: 0, y: 14 }}
+        whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 'some', margin: '0px 0px -40px 0px' }}
+        transition={{ duration: 0.5, ease: 'easeOut' }}
         className="px-6 sm:px-8 py-section border-t border-dark-border bg-dark-bg"
       >
         <div className="max-w-content mx-auto">

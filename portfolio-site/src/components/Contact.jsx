@@ -10,9 +10,10 @@ export default function Contact({ content }) {
     <motion.section
       id="contact"
       ref={ref}
-      initial={{ opacity: 0, y: 20 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-      transition={{ duration: 0.6, ease: 'easeOut' }}
+      initial={{ opacity: 0, y: 14 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 'some', margin: '0px 0px -40px 0px' }}
+      transition={{ duration: 0.5, ease: 'easeOut' }}
       className="py-12 sm:py-20 px-6 sm:px-8 bg-gray-50"
     >
       <div className="max-w-2xl mx-auto text-center">

@@ -26,10 +26,11 @@ export default function Hero({ content, lang }) {
   return (
     <motion.section
       ref={ref}
-      initial={{ opacity: 0, y: 20 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-      transition={{ duration: 0.6, ease: 'easeOut' }}
-      className="bg-dark-bg px-6 sm:px-8 pt-page-top pb-16"
+      initial={{ opacity: 0, y: 14 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 'some', margin: '0px 0px -40px 0px' }}
+      transition={{ duration: 0.5, ease: 'easeOut' }}
+      className="bg-dark-bg px-6 sm:px-8 pt-24 sm:pt-page-top pb-8 sm:pb-16"
     >
       <div className="max-w-content mx-auto">
         {/* 状态徽章:正在看新机会 */}
