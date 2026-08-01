@@ -1,10 +1,18 @@
 import { motion } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { useInView } from 'framer-motion';
 
 export default function Hero({ content, lang }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.1, margin: "-50px" });
+  // 微信内置浏览器屏蔽文件下载,检测到微信环境时改为弹出引导蒙层
+  const [showWxTip, setShowWxTip] = useState(false);
+  const handleCvClick = (e) => {
+    if (typeof navigator !== 'undefined' && /MicroMessenger/i.test(navigator.userAgent)) {
+      e.preventDefault();
+      setShowWxTip(true);
+    }
+  };
 
   // Only the first 3 stats render as cards in the hero
   const statCards = content.stats.slice(0, 3);
@@ -47,10 +55,10 @@ export default function Hero({ content, lang }) {
 
         {/* Button row + social icons */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 mb-12">
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-row gap-3 sm:gap-4">
             <a
               href={lang === 'zh' ? '/contact' : '/en/contact'}
-              className="w-full sm:w-auto bg-dark-text text-dark-bg px-8 py-3.5 rounded-lg hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-dark-text font-medium flex items-center justify-center gap-2"
+              className="flex-1 sm:flex-none bg-dark-text text-dark-bg px-4 sm:px-8 py-3.5 rounded-lg hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-dark-text font-medium flex items-center justify-center gap-2"
             >
               {content.hero.cta1}
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -60,9 +68,10 @@ export default function Hero({ content, lang }) {
             <a
               href={lang === 'zh' ? '/cv.pdf' : '/cv-en.pdf'}
               download={lang === 'zh' ? '郑雨晴-交互设计师.pdf' : 'Yuqing-Zheng-Interaction-Designer.pdf'}
+              onClick={handleCvClick}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto border border-dark-text-secondary text-dark-text px-8 py-3.5 rounded-lg hover:bg-dark-card transition-colors focus:outline-none focus:ring-2 focus:ring-dark-text-secondary text-center font-medium flex items-center justify-center gap-2"
+              className="flex-1 sm:flex-none border border-dark-text-secondary text-dark-text px-4 sm:px-8 py-3.5 rounded-lg hover:bg-dark-card transition-colors focus:outline-none focus:ring-2 focus:ring-dark-text-secondary text-center font-medium flex items-center justify-center gap-2"
             >
               {content.hero.cta2}
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -107,8 +116,21 @@ export default function Hero({ content, lang }) {
           </div>
         </div>
 
-        {/* Stat cards — immediately below buttons, same left edge */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* 移动端:紧凑数据条(一行三列) */}
+        <div className="flex md:hidden border-y border-dark-border py-4">
+          {statCards.map((stat, index) => (
+            <div
+              key={index}
+              className={`flex-1 text-center px-1 ${index > 0 ? 'border-l border-dark-border' : ''}`}
+            >
+              <div className="text-xl font-medium text-dark-text leading-tight">{stat.number}</div>
+              <div className="text-[11px] text-dark-text-secondary mt-1.5">{stat.short}</div>
+            </div>
+          ))}
+        </div>
+
+        {/* Stat cards — desktop only, immediately below buttons, same left edge */}
+        <div className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-6">
           {statCards.map((stat, index) => (
             <div
               key={index}
@@ -124,6 +146,32 @@ export default function Hero({ content, lang }) {
           ))}
         </div>
       </div>
+
+      {/* 微信内下载引导蒙层 */}
+      {showWxTip && (
+        <div
+          className="fixed inset-0 z-[100] bg-black/85 flex flex-col items-end px-6 pt-6"
+          onClick={() => setShowWxTip(false)}
+        >
+          {/* 指向右上角的箭头 */}
+          <svg className="w-14 h-14 text-white mb-4 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M17 7H9M17 7v8" />
+          </svg>
+          <div className="w-full text-right">
+            <p className="text-white text-base font-medium leading-relaxed">
+              {lang === 'zh' ? '微信内无法直接下载文件' : "WeChat's browser blocks downloads"}
+            </p>
+            <p className="text-white/80 text-sm mt-2 leading-relaxed">
+              {lang === 'zh'
+                ? '请点击右上角「···」，选择「在浏览器中打开」即可下载简历'
+                : 'Tap "···" in the top-right corner and choose "Open in Browser" to download the CV'}
+            </p>
+            <p className="text-white/50 text-xs mt-6">
+              {lang === 'zh' ? '点击任意位置关闭' : 'Tap anywhere to close'}
+            </p>
+          </div>
+        </div>
+      )}
     </motion.section>
   );
 }

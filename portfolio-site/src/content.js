@@ -15,9 +15,9 @@ export const content = {
       cta2: "下载简历"
     },
     stats: [
-      { number: "0→1", description: "设计、代码、部署——一个人跑通从想法到上架的完整流程。" },
-      { number: "3.5 年", description: "腾讯天美三年半，负责大型开放世界游戏的战斗 HUD、玩法系统与三端操作交互。" },
-      { number: "4 个", description: "微信小游戏、金融签署应用、滑雪社区小程序、这个网站——真实的产品，还在增加。" }
+      { number: "0→1", short: "独立跑通全流程", description: "设计、代码、部署——一个人跑通从想法到上架的完整流程。" },
+      { number: "3.5 年", short: "腾讯天美交互", description: "腾讯天美三年半，负责大型开放世界游戏的战斗 HUD、玩法系统与三端操作交互。" },
+      { number: "4 个", short: "真实上线产品", description: "微信小游戏、金融签署应用、滑雪社区小程序、这个网站——真实的产品，还在增加。" }
     ],
     about: {
       title: "关于我",
@@ -274,9 +274,9 @@ export const content = {
       cta2: "Download CV"
     },
     stats: [
-      { number: "0→1", description: "Design, code, deployment — one person carrying an idea all the way to launch." },
-      { number: "3.5 yrs", description: "Three and a half years at Tencent TiMi: battle HUD, gameplay systems, and tri-platform input design for a large-scale open-world game." },
-      { number: "4", description: "A WeChat mini game, a financial signing app, a ski community mini-program, and this site — real products, still counting." }
+      { number: "0→1", short: "Full cycle, solo", description: "Design, code, deployment — one person carrying an idea all the way to launch." },
+      { number: "3.5 yrs", short: "Tencent TiMi IxD", description: "Three and a half years at Tencent TiMi: battle HUD, gameplay systems, and tri-platform input design for a large-scale open-world game." },
+      { number: "4", short: "Products shipped", description: "A WeChat mini game, a financial signing app, a ski community mini-program, and this site — real products, still counting." }
     ],
     about: {
       title: "About",
