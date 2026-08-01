@@ -43,11 +43,13 @@ export default function About({ content, lang }) {
             {parseBold(a.intro)}
           </p>
 
-          {/* Photo placeholder — wide, rounded */}
-          <div className="aspect-[16/10] bg-dark-card border border-dark-border rounded-card overflow-hidden flex items-center justify-center">
-            <span className="text-dark-text-secondary text-sm opacity-50">
-              {lang === 'zh' ? '照片占位' : 'Photo'}
-            </span>
+          {/* 个人照片 — 宽幅、圆角 */}
+          <div className="aspect-[16/10] bg-dark-card border border-dark-border rounded-card overflow-hidden">
+            <img
+              src="/profile-photo.jpg"
+              alt={lang === 'zh' ? '郑雨晴' : 'Yuqing Zheng'}
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
       </section>

@@ -43,7 +43,12 @@ export default function Navbar({ content, lang }) {
           className="flex items-center gap-3 focus:outline-none rounded-full"
           aria-label={content.nav.name}
         >
-          <span className="w-8 h-8 rounded-full bg-dark-card border border-dark-border flex-shrink-0" aria-hidden="true" />
+          <img
+            src="/avatar.jpg"
+            alt=""
+            className="w-8 h-8 rounded-full border border-dark-border flex-shrink-0 object-cover"
+            aria-hidden="true"
+          />
           <span className="font-medium text-lg text-dark-text">{content.nav.name}</span>
         </a>
 

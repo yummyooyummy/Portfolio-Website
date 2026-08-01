@@ -58,7 +58,8 @@ export default function Hero({ content, lang }) {
               </svg>
             </a>
             <a
-              href="/cv.pdf"
+              href={lang === 'zh' ? '/cv.pdf' : '/cv-en.pdf'}
+              download={lang === 'zh' ? '郑雨晴-交互设计师.pdf' : 'Yuqing-Zheng-Interaction-Designer.pdf'}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto border border-dark-text-secondary text-dark-text px-8 py-3.5 rounded-lg hover:bg-dark-card transition-colors focus:outline-none focus:ring-2 focus:ring-dark-text-secondary text-center font-medium flex items-center justify-center gap-2"

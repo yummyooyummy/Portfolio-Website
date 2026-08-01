@@ -173,6 +173,7 @@ export const content = {
         {
           type: "detailed",
           name: "珠宝品牌小程序",
+          image: "/jewelry-cover.jpg",
           subtitle: "界面与交互重设计",
           fullName: "某珠宝品牌小程序 · 界面与交互重设计",
           techStack: "微信小程序 · Figma",
@@ -431,6 +432,7 @@ export const content = {
         {
           type: "detailed",
           name: "Jewelry Brand Mini-Program",
+          image: "/jewelry-cover.jpg",
           subtitle: "Interface & Interaction Redesign",
           fullName: "Jewelry Brand Mini-Program · Interface & Interaction Redesign",
           techStack: "WeChat Mini-Program · Figma",
