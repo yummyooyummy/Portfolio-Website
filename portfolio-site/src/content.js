@@ -23,14 +23,14 @@ export const content = {
       title: "关于我",
       label: "关于我",
       heading: "你好，我是郑雨晴。一名交互设计师。",
-      intro: "我在腾讯天美做了三年半游戏交互设计，负责大型游戏的核心界面与系统交互。这段经历给了我两样东西：一是被大厂体系打磨出的扎实交互硬功；二是面对高压和复杂时稳得住的心态——越是关键的时候，我越能**沉下心把事情做成**。\n\n比起止步纸面方案，我更偏爱让创意落地成真。离开腾讯后，我依托 AI 把脑子里的产品独立做出来——从设计、开发到上线，**一个人跑通完整链路**。我对新东西一直很敏感，遇到感兴趣的会马上动手试，而不是停在想的阶段；高效自学、执行力强，是我长久以来的核心竞争力。",
+      intro: "我在腾讯天美做了三年半游戏交互设计，负责大型游戏的核心界面与系统交互。这段经历给了我两样东西：一是被大厂体系打磨出的扎实交互硬功；二是面对高压和复杂时稳得住的心态——越是关键的时候，我越能**沉下心把事情做成**。\n\n比起止步纸面方案，我更偏爱让创意落地成真。离开腾讯后，我依托 AI 把脑子里的产品独立做出来——从设计、开发到做出可用的成品，**一个人跑通完整链路**。我对新东西一直很敏感，遇到感兴趣的会马上动手试，而不是停在想的阶段；高效自学、执行力强，是我长久以来的核心竞争力。",
       experienceTitle: "经历",
       experiences: [
         {
           org: "独立探索 AI 产品",
           role: "AI 产品设计与开发",
           period: "2025 – 至今",
-          desc: "从产品定义、交互设计，到借助 AI 完成开发与部署，独立做出微信小游戏、Web 应用、小程序等多个真实产品，并推进到上线与上架。"
+          desc: "从产品定义、交互设计，到借助 AI 完成开发与实现，独立做出微信小游戏、Web 应用、小程序等多个真实作品，并推进到合规与上架流程。"
         },
         {
           org: "腾讯 · 天美工作室",
@@ -63,7 +63,7 @@ export const content = {
       ],
       toolsTitle: "工具",
       toolsDesc: "工具只是手段，真正的价值在于把复杂问题转化为清晰方案的能力。这些是我常用的，也在持续换新。",
-      tools: ["Figma", "Sketch", "Principle", "Claude", "Cursor", "微信开发者工具", "Photoshop", "Illustrator", "Claude Code", "Midjourney"],
+      tools: ["Figma", "Figma Make", "Sketch", "Principle", "Claude", "Cursor", "微信开发者工具", "Photoshop", "Illustrator", "Claude Code", "Midjourney", "Google Flow"],
       offClockTitle: "工作之外",
       offClockText: "工作之外，我喜欢需要全身心投入的事：滑雪时只剩下身体和雪道；画画和陶艺是另一种安静——十年绘画功底，是我审美的底层来源。"
     },
@@ -298,12 +298,12 @@ export const content = {
     },
     hero: {
       headline: "Interaction designer — and the one who turns design into real products.",
-      subtitle: "Interaction design is my foundation: three and a half years inside a major tech company taught me to handle dense, complex systems. AI is my amplifier: it lets me take an idea all the way to a launched product, on my own. Execution keeps getting cheaper — the judgment that decides whether the result is any good stays with the designer.",
+      subtitle: "Interaction design is my foundation: three and a half years inside a major tech company taught me to handle dense, complex systems. AI is my amplifier: it lets me take an idea all the way to a working product, on my own. Execution keeps getting cheaper — the judgment that decides whether the result is any good stays with the designer.",
       cta1: "Get in touch",
       cta2: "Download CV"
     },
     stats: [
-      { number: "0→1", short: "Full cycle, solo", description: "Design, code, deployment — one person carrying an idea all the way to launch." },
+      { number: "0→1", short: "Full cycle, solo", description: "Design, code, build — one person carrying an idea from first sketch to store submission." },
       { number: "3.5 yrs", short: "Tencent TiMi IxD", description: "Three and a half years at Tencent TiMi: battle HUD, gameplay systems, and tri-platform input design for a large-scale open-world game." },
       { number: "4", short: "Built end to end, solo", description: "A WeChat mini game, a financial signing app, a ski community mini-program, and this site — design through working build, all solo. Still counting." }
     ],
@@ -311,14 +311,14 @@ export const content = {
       title: "About",
       label: "About",
       heading: "Hi, I'm Yuqing — an interaction designer.",
-      intro: "I spent three and a half years designing game interactions at Tencent TiMi, owning core interfaces and system interactions for a large-scale game. That experience gave me two things: solid interaction fundamentals sharpened by a major company, and the composure to stay steady under pressure — the more critical the moment, the more I **settle in and get it done**.\n\nRather than stopping at paper specs, I prefer bringing ideas to life. After leaving Tencent, I've used AI to build the products in my head — design, development, launch, **the full path, solo**. When something new catches my interest, I try it hands-on rather than just thinking about it; fast self-learning and strong execution have long been my edge.",
+      intro: "I spent three and a half years designing game interactions at Tencent TiMi, owning core interfaces and system interactions for a large-scale game. That experience gave me two things: solid interaction fundamentals sharpened by a major company, and the composure to stay steady under pressure — the more critical the moment, the more I **settle in and get it done**.\n\nRather than stopping at paper specs, I prefer bringing ideas to life. After leaving Tencent, I've used AI to build the products in my head — design, development, and a working build — **the full path, solo**. When something new catches my interest, I try it hands-on rather than just thinking about it; fast self-learning and strong execution have long been my edge.",
       experienceTitle: "Experience",
       experiences: [
         {
           org: "Independent AI Exploration",
           role: "AI Product Design & Development",
           period: "2025 – Present",
-          desc: "From product definition and interaction design to AI-assisted development and deployment — multiple real products built solo, carried through to launch and store submission."
+          desc: "From product definition and interaction design to AI-assisted development and working builds — multiple real products built solo, carried through compliance and store submission."
         },
         {
           org: "Tencent · TiMi Studio",
@@ -351,7 +351,7 @@ export const content = {
       ],
       toolsTitle: "Tool stack",
       toolsDesc: "Tools are just means; the real value is turning complexity into clarity. These are the ones I work with — always rotating in new ones.",
-      tools: ["Figma", "Sketch", "Principle", "Claude", "Cursor", "WeChat DevTools", "Photoshop", "Illustrator", "Claude Code", "Midjourney"],
+      tools: ["Figma", "Figma Make", "Sketch", "Principle", "Claude", "Cursor", "WeChat DevTools", "Photoshop", "Illustrator", "Claude Code", "Midjourney", "Google Flow"],
       offClockTitle: "Off the clock",
       offClockText: "Off the clock, I like things that demand full attention: skiing leaves just body and slope; painting and pottery are a different kind of quiet — ten years of drawing is where my visual sense comes from."
     },
@@ -559,10 +559,10 @@ export const content = {
       status: "Open to new opportunities",
       statusDetail: "Based in Nanjing / Shanghai",
       discussTitle: "Reach out if you want to discuss:",
-      discussText: "Interaction / product design — core interfaces for complex systems, from problem to launch; AI products — from definition to independently building working products; complex systems and multi-platform experiences — information-dense products across devices and input methods. Remote and project-based collaboration welcome too.",
+      discussText: "Interaction / product design — core interfaces for complex systems, from problem to delivery; AI products — from definition to independently building working products; complex systems and multi-platform experiences — information-dense products across devices and input methods. Remote and project-based collaboration welcome too.",
       discussHighlights: [
         { text: "Interaction / product design", bold: true },
-        { text: " — core interfaces for complex systems, from problem to launch; ", bold: false },
+        { text: " — core interfaces for complex systems, from problem to delivery; ", bold: false },
         { text: "AI products", bold: true },
         { text: " — from definition to independently building working products; ", bold: false },
         { text: "complex systems and multi-platform experiences", bold: true },
