@@ -10,14 +10,14 @@ export const content = {
     },
     hero: {
       headline: "交互设计师，也是把设计做成产品的人。",
-      subtitle: "交互设计是我的根基：三年半的大厂经历，让我习惯了驾驭信息密集、状态复杂的系统；AI 是我的放大器，让我能把想法独立做成真正上线的产品。执行的成本越来越低，而决定成品好坏的判断，始终在设计师手里。",
+      subtitle: "交互设计是我的根基：三年半的大厂经历，让我习惯了驾驭信息密集、状态复杂的系统；AI 是我的放大器，让我能把想法独立做成真正可用的产品。执行的成本越来越低，而决定成品好坏的判断，始终在设计师手里。",
       cta1: "联系我",
       cta2: "下载简历"
     },
     stats: [
       { number: "0→1", short: "独立跑通全流程", description: "设计、代码、部署——一个人跑通从想法到上架的完整流程。" },
       { number: "3.5 年", short: "腾讯天美交互", description: "腾讯天美三年半，负责大型开放世界游戏的战斗 HUD、玩法系统与三端操作交互。" },
-      { number: "4 个", short: "真实上线产品", description: "微信小游戏、金融签署应用、滑雪社区小程序、这个网站——真实的产品，还在增加。" }
+      { number: "4 款", short: "独立完成的作品", description: "微信小游戏、金融签署应用、滑雪社区小程序、这个网站——从设计到可用，一个人完成，还在增加。" }
     ],
     about: {
       title: "关于我",
@@ -77,7 +77,7 @@ export const content = {
           name: "王者荣耀世界 Honor of Kings World",
           tag: "腾讯天美 · 游戏交互设计",
           source: "腾讯天美 · 游戏交互设计",
-          cardTitle: "战斗、系统与三端操作的交互设计",
+          cardTitle: "在信息最密集的战斗界面里，做注意力与帧级反馈的设计",
           description: "基于《王者荣耀》IP 的开放世界动作角色扮演游戏（2026 年上市）。负责战斗 HUD、多个玩法系统与三端操作的交互设计。",
           image: "/work-hok.jpg",
           facts: ["腾讯天美 · 游戏交互设计师", "2021.11 – 2025.05", "大型开放世界 ARPG · 2026 年上市", "手机 / PC / 主机"],
@@ -95,7 +95,7 @@ export const content = {
           name: "连连小宇宙",
           tag: "微信小游戏",
           source: "个人项目 · 微信小游戏",
-          cardTitle: "用 AI 从零独立打造的微信休闲小游戏",
+          cardTitle: "玩法、视觉、代码、音效——一个人的完整作品",
           description: "连连看 × 消消乐的零门槛玩法，装进一场宇宙演化——从夸克到奇点，一个人走完全程。",
           image: "/work-lianlian.jpg",
           heroBackdrop: { opacity: 0.5, brightness: 2.7, saturate: 1.8 },
@@ -115,18 +115,18 @@ export const content = {
           name: "衍生品投资签署应用",
           tag: "Web 应用",
           source: "个人项目 · Web 应用",
-          cardTitle: "为金融客户打造的全流程电子签署系统",
+          cardTitle: "把一个真实的业务流程，重新设计成 3 天可用的手机端体验",
           description: "一条专属链接，让客户在手机上完成合同签署，结果自动归档。",
           image: "/work-signing.jpg",
           heroBackdrop: { opacity: 0.6, brightness: 3.8, saturate: 1.7 },
-          facts: ["个人项目 · 产品定义、交互设计与全栈实现", "Next.js + Airtable + Vercel · 移动端优先", "已部署"],
+          facts: ["个人项目 · 产品定义、交互设计与全栈实现", "Next.js + Airtable + Vercel · 移动端优先", "3 天完成可用版本"],
           sections: [
-            { heading: "背景", body: "一位做金融的朋友找到我：客户每次签合同都要走线下——打印、签字、拍照回传，流程繁琐，文件散落在聊天记录里，事后核对全靠人工。我决定帮他把整个签署流程搬到线上，也把它当作**一次完整的产品实践**：从理解业务、定义流程，到设计、开发、部署，全部独立完成。" },
+            { heading: "背景", body: "一位做金融的朋友找到我：客户每次签合同都要走线下——打印、签字、拍照回传，流程繁琐，文件散落在聊天记录里，事后核对全靠人工。我决定帮他把整个签署流程搬到线上，也把它当作**一次完整的产品实践**：从理解业务、定义流程，到交互设计与全栈实现，全部独立完成。" },
             { heading: "三个约束", body: "动手之前，有三个前提决定了所有设计方向：客户大多不熟悉数字工具，操作必须零学习成本；签署发生在手机上，一条链接就要走完全程，不能要求下载任何东西；这是有法律意义的金融文件，每一步都必须**严谨、可追溯**。" },
-            { heading: "为什么做得这么小", body: "我没有做 App，也没有做后台管理系统——最终的形态小到极致：一条链接、一个页面、一次签名。这不是省事，而是对约束的回应：客户不熟悉数字工具，任何\"下载、注册、学习\"都会成为流失点。**判断什么不该做，往往比做什么更重要**。\n\n从需求到第一版可用，只用了几天；之后的迭代都建立在真实使用的反馈上。这是我对\"最小可行产品\"的一次完整实践：**先让业务跑起来，再让它变得更好**。" },
+            { heading: "为什么做得这么小", body: "我没有做 App，也没有做后台管理系统——最终的形态小到极致：一条链接、一个页面、一次签名。这不是省事，而是对约束的回应：客户不熟悉数字工具，任何\"下载、注册、学习\"都会成为流失点。**判断什么不该做，往往比做什么更重要**。\n\n从需求到第一版可用，只用了几天；之后的每一次迭代，都建立在把流程从头走一遍之后发现的问题上。这是我对\"最小可行产品\"的一次完整实践：**先让业务跑起来，再让它变得更好**。" },
             { heading: "两条链接，各走各的最短路径", body: "业务里有两种签署场景：新客户开户，和老客户补签协议。我没有做一个\"通用流程\"，而是拆成两条独立链接——开户链接从风险确认开始（风险提示 → 阅读合同 → 手写签名），补签链接直接进入合同（阅读 → 签名）。老客户不需要被再教育一遍风险，**少一步，就少一次流失**。\n\n几个具体的设计决策：风险确认页把提示逐条列出，勾选确认后才能继续——合规的动作，但不做成吓人的法律墙；合同直接在页面内阅读，不跳转、不下载；签名板可以清除重签，因为第一次手写签名很少有人满意；每一步顶部有进度指示，随时能返回上一步。在\"严谨\"和\"顺畅\"之间，每一步都在找平衡。", images: [{ src: "/signing-flow.png", label: "Flow · 两条签署路径", alt: "两条签署链接的流程对比：开户四步走完，补签跳过风险确认", wide: true }], imageLayout: "sketch" },
             { heading: "看不见的严谨", body: "这类工具真正的考验在异常情况：链接被重复打开怎么办？签到一半断网怎么办？两个人同时提交怎么办？我处理了链接失效、防重复提交、并发写入这些边界情况，并让系统在客户签署完成后自动合成 PDF、归档回数据库——设计一个金融工具，**\"不出错\"本身就是体验的一部分**。" },
-            { heading: "结果", body: "从朋友的一句需求，到一个可以直接投入使用的完整系统——这个项目让我第一次完整经历了**\"为真实业务做产品\"**：需求是活的、约束是真的、错误是有代价的。" }
+            { heading: "结果", body: "从朋友的一句需求，到一个跑得通、能直接交付使用的完整系统——这个项目让我第一次完整经历了**\"为真实业务做产品\"**：需求是活的、约束是真的、错误是有代价的。" }
           ],
           github: "https://github.com/yummyooyummy/signing-app"
         }
@@ -136,7 +136,7 @@ export const content = {
     },
     lab: {
       title: "试验场",
-      description: "正在做：新疆滑雪社区小程序——25+ 页面、前后端独立实现；还有更多试验在路上。",
+      description: "正在做的几件事：滑雪社区小程序的 25+ 页面设计与全栈实现、一个珠宝品牌的小程序重设计，还有一套我每天在用的 AI 工作台。",
       label: "试验场",
       heading: "构想与实践",
       intro: "比起反复打磨方案，我更愿意把它直接做出来。这里是我用 AI 验证想法的地方——把脑子里的产品快速落成真实的、能用的东西。有些还在打磨，有些才刚起步，但每一个都是\"想到\"与\"做到\"之间的一次真实尝试。",
@@ -194,6 +194,35 @@ export const content = {
             }
           ],
           links: []
+        },
+        {
+          type: "detailed",
+          name: "求职工作台",
+          image: "/workbench-cover.jpg",
+          subtitle: "给自己做的 AI 工作流",
+          fullName: "求职工作台 · 给自己做的一套 AI 工作流",
+          techStack: "Obsidian（Markdown 数据层）· HTML 面板 · AI Agent 工作流 · 定时任务",
+          status: "每天真实在用 · 持续迭代",
+          description: "求职是一件典型的\"信息很多、状态很碎、还必须每天跟进\"的事。我给自己做了一套工作台：把散落在聊天、邮件、招聘网站里的非结构化信息，交给一套 AI 工作流自动解析成结构化数据，再按规则触发提醒。设计上我最在意的其实不是自动化本身，而是**AI 不确定时该怎么呈现**——凡是它拿不准的信息，一律标注出来交给我确认，而不是替我猜。这一条决定了我敢不敢每天真的用它。",
+          keyFeatures: [
+            {
+              title: "非结构化 → 结构化",
+              desc: "把截图、聊天记录、招聘信息里的碎片信息，自动解析成可比较、可排序、可追踪的结构化字段。"
+            },
+            {
+              title: "不确定性的呈现方式",
+              desc: "AI 拿不准的字段不猜、不留白，而是显式标注并停在人工确认点——把\"这里不可信\"设计成界面的一部分。"
+            },
+            {
+              title: "面板的信息密度",
+              desc: "一屏之内同时呈现管道状态、待跟进、日程与生活状态。信息密集但不拥挤，是我在游戏 HUD 上练了三年半的老问题。"
+            },
+            {
+              title: "每天真的在用",
+              desc: "不是演示 Demo。它每天定时运行，我每天打开——用不用得下去，是我给自己设的唯一验收标准。"
+            }
+          ],
+          links: []
         }
       ]
     },
@@ -216,7 +245,7 @@ export const content = {
           { num: "03", title: "定义", doing: "用 AI 产出两份关键文档：产品设计文档理清功能与边界，开发流程文档把设计拆成可执行的步骤。", role: "把模糊的想法，翻译成清晰的规格。" },
           { num: "04", title: "设计", doing: "以 Figma 为主完成界面与交互设计，穿插 Claude、Midjourney 等工具快速生成迭代。工具按需组合，质量由我把关。", role: "把控每一屏的质感。" },
           { num: "05", title: "构建", doing: "用 Claude Code 把设计稿落成真实代码。我逐屏测试、记录问题、给出明确的修改方向，直到成品和设计稿一致。", role: "像审查交付一样，校验每个细节。" },
-          { num: "06", title: "打磨", doing: "先做出最小可用的版本跑起来，再在真实使用里补全细节、提升质感，把\"能用\"养成\"成熟\"。", role: "让产品从能用，走到成熟。" }
+          { num: "06", title: "打磨", doing: "先做出最小可用的版本跑起来，再在一遍遍完整走查里补全细节、提升质感，把\"能用\"养成\"成熟\"。", role: "让产品从能用，走到成熟。" }
         ]
       },
       lessons: {
@@ -242,12 +271,12 @@ export const content = {
       status: "正在看新机会",
       statusDetail: "base 南京 / 上海",
       discussTitle: "可以聊聊这些方向：",
-      discussText: "交互 / 产品设计——复杂系统的核心界面，从需求到落地；AI 产品——从定义到独立做出真实上线的产品；复杂系统与多端体验——信息密集的产品，跨设备与输入方式的操作设计。远程与项目制的合作，我也保持开放。",
+      discussText: "交互 / 产品设计——复杂系统的核心界面，从需求到落地；AI 产品——从定义到独立做出真正可用的产品；复杂系统与多端体验——信息密集的产品，跨设备与输入方式的操作设计。远程与项目制的合作，我也保持开放。",
       discussHighlights: [
         { text: "交互 / 产品设计", bold: true },
         { text: "——复杂系统的核心界面，从需求到落地；", bold: false },
         { text: "AI 产品", bold: true },
-        { text: "——从定义到独立做出真实上线的产品；", bold: false },
+        { text: "——从定义到独立做出真正可用的产品；", bold: false },
         { text: "复杂系统与多端体验", bold: true },
         { text: "——信息密集的产品，跨设备与输入方式的操作设计。远程与项目制的合作，我也保持开放。", bold: false }
       ],
@@ -276,7 +305,7 @@ export const content = {
     stats: [
       { number: "0→1", short: "Full cycle, solo", description: "Design, code, deployment — one person carrying an idea all the way to launch." },
       { number: "3.5 yrs", short: "Tencent TiMi IxD", description: "Three and a half years at Tencent TiMi: battle HUD, gameplay systems, and tri-platform input design for a large-scale open-world game." },
-      { number: "4", short: "Products shipped", description: "A WeChat mini game, a financial signing app, a ski community mini-program, and this site — real products, still counting." }
+      { number: "4", short: "Built end to end, solo", description: "A WeChat mini game, a financial signing app, a ski community mini-program, and this site — design through working build, all solo. Still counting." }
     ],
     about: {
       title: "About",
@@ -336,7 +365,7 @@ export const content = {
           name: "Honor of Kings: World",
           tag: "Tencent TiMi · Game Interaction Design",
           source: "Tencent TiMi · Game Interaction",
-          cardTitle: "Interaction design across combat, systems, and three platforms",
+          cardTitle: "Designing attention and frame-level feedback in the densest interface there is",
           description: "An open-world action RPG built on the Honor of Kings IP (released 2026). Responsible for the battle HUD, multiple gameplay systems, and cross-platform input design.",
           image: "/work-hok.jpg",
           facts: ["Tencent TiMi · Game Interaction Designer", "2021.11 – 2025.05", "Large-scale open-world ARPG · released 2026", "Mobile / PC / Console"],
@@ -354,7 +383,7 @@ export const content = {
           name: "Genesis",
           tag: "WeChat Mini Game",
           source: "Personal · WeChat Mini Game",
-          cardTitle: "A casual WeChat mini game built from scratch, independently, with AI",
+          cardTitle: "Gameplay, visuals, code, sound — one person, one complete piece of work",
           description: "Link-and-match gameplay with zero learning curve, wrapped in a cosmic evolution — from quark to singularity, built solo.",
           image: "/work-lianlian.jpg",
           heroBackdrop: { opacity: 0.5, brightness: 2.7, saturate: 1.8 },
@@ -374,18 +403,18 @@ export const content = {
           name: "Derivatives Signing App",
           tag: "Web App",
           source: "Personal · Web App",
-          cardTitle: "An end-to-end e-signing system for financial clients",
+          cardTitle: "A real business process, redesigned into a usable mobile experience in 3 days",
           description: "One private link lets a client sign a contract on their phone — auto-archived.",
           image: "/work-signing.jpg",
           heroBackdrop: { opacity: 0.6, brightness: 3.8, saturate: 1.7 },
-          facts: ["Personal project · Product definition, interaction design, full-stack build", "Next.js + Airtable + Vercel · Mobile-first", "Deployed"],
+          facts: ["Personal project · Product definition, interaction design, full-stack build", "Next.js + Airtable + Vercel · Mobile-first", "Usable version built in 3 days"],
           sections: [
-            { heading: "Background", body: "A friend who works in finance came to me: every contract with a client went through an offline loop — print, sign, photograph, send back. The process was tedious, documents were scattered across chat threads, and reconciliation was entirely manual. I decided to move the whole signing flow online, and to treat it as **a complete product exercise**: understanding the business, defining the flow, then designing, building, and deploying it — all on my own." },
+            { heading: "Background", body: "A friend who works in finance came to me: every contract with a client went through an offline loop — print, sign, photograph, send back. The process was tedious, documents were scattered across chat threads, and reconciliation was entirely manual. I decided to move the whole signing flow online, and to treat it as **a complete product exercise**: understanding the business, defining the flow, then designing and building it end to end — all on my own." },
             { heading: "Three constraints", body: "Before starting, three premises set the direction for every design decision: most clients aren't fluent with digital tools, so the flow had to require zero learning; signing happens on a phone, so one link had to carry the entire journey with nothing to download; and these are legally meaningful financial documents, so every step had to be **rigorous and traceable**." },
-            { heading: "Why so small", body: "I didn't build an app, and I didn't build an admin backend — the final form is as small as it gets: one link, one page, one signature. That wasn't laziness; it was a response to the constraints: for clients unfamiliar with digital tools, every \"download, register, learn\" is a drop-off point. **Knowing what not to build often matters more than building.**\n\nFrom request to first usable version took days, not months; every iteration since has been driven by real usage. It was my first complete practice of the minimum viable product: **get the business running first, then make it better**." },
+            { heading: "Why so small", body: "I didn't build an app, and I didn't build an admin backend — the final form is as small as it gets: one link, one page, one signature. That wasn't laziness; it was a response to the constraints: for clients unfamiliar with digital tools, every \"download, register, learn\" is a drop-off point. **Knowing what not to build often matters more than building.**\n\nFrom request to first usable version took days, not months; every iteration since came from walking the whole flow again and finding what broke. It was my first complete practice of the minimum viable product: **get the business running first, then make it better**." },
             { heading: "Two links, each taking its shortest path", body: "The business really has two signing scenarios: onboarding a new client, and re-signing with an existing one. Instead of one \"universal flow,\" I split them into two independent links — the onboarding link starts with risk confirmation (risk notice → read contract → handwritten signature), while the re-signing link goes straight to the contract (read → sign). A returning client doesn't need the risk lecture again; **one step fewer is one drop-off fewer.**\n\nA few concrete decisions: the risk page lists each notice explicitly and requires a checked confirmation to continue — a compliance act, but not a wall of legal intimidation; the contract is read inline, no redirects, no downloads; the signature pad allows clearing and re-signing, because first handwritten signatures rarely satisfy anyone; and a step indicator sits at the top with the option to go back at any point. Between rigor and smoothness, every step is a balance.", images: [{ src: "/signing-flow.png", label: "Flow · Two signing paths", alt: "Flow comparison of the two signing links: onboarding takes four steps; re-signing skips risk confirmation", wide: true }], imageLayout: "sketch" },
             { heading: "The rigor you don't see", body: "The real test of a tool like this is the abnormal path: what if a link is opened twice? What if the connection drops mid-signing? What if two submissions land at once? I handled expired links, duplicate-submission protection, and concurrent writes, and had the system auto-compose the signed PDF and archive it back to the database. In a financial tool, **\"nothing goes wrong\" is itself part of the experience**." },
-            { heading: "Outcome", body: "From a friend's one-sentence request to a complete system ready for real use — this project was my first full pass through **building for a real business**: the requirements were alive, the constraints were real, and mistakes had a cost." }
+            { heading: "Outcome", body: "From a friend's one-sentence request to a complete, working system ready to hand over — this project was my first full pass through **building for a real business**: the requirements were alive, the constraints were real, and mistakes had a cost." }
           ],
           github: "https://github.com/yummyooyummy/signing-app"
         }
@@ -395,7 +424,7 @@ export const content = {
     },
     lab: {
       title: "Lab",
-      description: "In progress: a ski community mini-program — 25+ screens, built full-stack solo — with more experiments on the way.",
+      description: "In progress: 25+ screens of a ski community mini-program built full-stack solo, a jewelry brand mini-program redesign, and an AI workbench I use every day.",
       label: "Lab",
       heading: "Ideas & experiments",
       intro: "I'd rather build an idea than keep polishing it on paper. This is where I use AI to test what's in my head — turning concepts into real, working things, fast. Some are still being refined, some just got started, but each one is a genuine attempt to close the gap between thinking and making.",
@@ -453,6 +482,35 @@ export const content = {
             }
           ],
           links: []
+        },
+        {
+          type: "detailed",
+          name: "Job-Search Workbench",
+          image: "/workbench-cover.jpg",
+          subtitle: "An AI workflow I built for myself",
+          fullName: "Job-Search Workbench · An AI workflow I built for myself",
+          techStack: "Obsidian (Markdown data layer) · HTML dashboard · AI agent workflow · scheduled tasks",
+          status: "In daily use · continuously iterated",
+          description: "A job search is a textbook case of too much information, too many scattered states, and a daily obligation to keep up. So I built myself a workbench: unstructured fragments from chats, emails, and job boards get parsed by an AI workflow into structured data, then trigger reminders by rule. What I cared about most in the design wasn't the automation — it was **how uncertainty gets shown**. Anything the AI isn't sure about is flagged and handed back to me to confirm, never guessed. That single decision is why I actually trust it enough to use it every day.",
+          keyFeatures: [
+            {
+              title: "Unstructured to structured",
+              desc: "Fragments from screenshots, chat logs, and job posts parsed automatically into fields that can be compared, sorted, and tracked."
+            },
+            {
+              title: "Designing for uncertainty",
+              desc: "Fields the AI isn't confident about are neither guessed nor left blank — they're explicitly flagged and held at a human checkpoint. \"This isn't trustworthy\" is designed into the interface."
+            },
+            {
+              title: "Density on one screen",
+              desc: "Pipeline status, follow-ups, schedule, and personal state all live on a single screen. Dense but not crowded — the same problem I spent three and a half years solving on game HUDs."
+            },
+            {
+              title: "Actually used, daily",
+              desc: "Not a demo. It runs on a schedule and I open it every morning. Whether I keep using it is the only acceptance criterion I set."
+            }
+          ],
+          links: []
         }
       ]
     },
@@ -501,12 +559,12 @@ export const content = {
       status: "Open to new opportunities",
       statusDetail: "Based in Nanjing / Shanghai",
       discussTitle: "Reach out if you want to discuss:",
-      discussText: "Interaction / product design — core interfaces for complex systems, from problem to launch; AI products — from definition to independently shipping real products; complex systems and multi-platform experiences — information-dense products across devices and input methods. Remote and project-based collaboration welcome too.",
+      discussText: "Interaction / product design — core interfaces for complex systems, from problem to launch; AI products — from definition to independently building working products; complex systems and multi-platform experiences — information-dense products across devices and input methods. Remote and project-based collaboration welcome too.",
       discussHighlights: [
         { text: "Interaction / product design", bold: true },
         { text: " — core interfaces for complex systems, from problem to launch; ", bold: false },
         { text: "AI products", bold: true },
-        { text: " — from definition to independently shipping real products; ", bold: false },
+        { text: " — from definition to independently building working products; ", bold: false },
         { text: "complex systems and multi-platform experiences", bold: true },
         { text: " — information-dense products across devices and input methods. Remote and project-based collaboration welcome too.", bold: false }
       ],
