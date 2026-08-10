@@ -68,7 +68,7 @@ export default function Hero({ content, lang }) {
             </a>
             <a
               href={lang === 'zh' ? '/cv.pdf' : '/cv-en.pdf'}
-              download={lang === 'zh' ? '郑雨晴-交互设计师.pdf' : 'Yuqing-Zheng-Interaction-Designer.pdf'}
+              download={lang === 'zh' ? '郑雨晴-交互设计师-简历.pdf' : 'Yuqing-Zheng-Interaction-Designer-CV.pdf'}
               onClick={handleCvClick}
               target="_blank"
               rel="noopener noreferrer"
