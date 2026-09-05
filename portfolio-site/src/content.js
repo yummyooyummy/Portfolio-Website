@@ -192,31 +192,6 @@ export const content = {
         },
         {
           type: "detailed",
-          name: "珠宝品牌小程序",
-          image: "/jewelry-cover.jpg",
-          subtitle: "界面与交互重设计",
-          fullName: "某珠宝品牌小程序 · 界面与交互重设计",
-          techStack: "微信小程序 · Figma",
-          status: "商业委托项目 · 方案设计中",
-          description: "某珠宝品牌此前使用模板化的小程序，通用的界面撑不起珠宝品类对质感的要求。我负责整体重设计——重新梳理视觉语言与核心流程，**让线上门店的气质，配得上柜台里的商品**。",
-          keyFeatures: [
-            {
-              title: "品牌化视觉语言",
-              desc: "从配色、字体到组件细节，围绕珠宝品牌的调性重建视觉语言，摆脱模板感。"
-            },
-            {
-              title: "交互体验升级",
-              desc: "重新梳理核心流程与页面结构，让浏览与购买更顺、层级更清晰。"
-            },
-            {
-              title: "商业目标兼顾",
-              desc: "在质感升级的同时，兼顾引导与转化，让设计为生意服务。"
-            }
-          ],
-          links: []
-        },
-        {
-          type: "detailed",
           name: "求职工作台",
           image: "/workbench-cover.jpg",
           subtitle: "给自己做的 AI 工作流",
@@ -240,6 +215,31 @@ export const content = {
             {
               title: "每天真的在用",
               desc: "不是演示 Demo。它每天定时运行，我每天打开——用不用得下去，是我给自己设的唯一验收标准。"
+            }
+          ],
+          links: []
+        },
+        {
+          type: "detailed",
+          name: "珠宝品牌小程序",
+          image: "/jewelry-cover.jpg",
+          subtitle: "界面与交互重设计",
+          fullName: "某珠宝品牌小程序 · 界面与交互重设计",
+          techStack: "微信小程序 · Figma",
+          status: "商业委托项目 · 方案设计中",
+          description: "某珠宝品牌此前使用模板化的小程序，通用的界面撑不起珠宝品类对质感的要求。我负责整体重设计——重新梳理视觉语言与核心流程，**让线上门店的气质，配得上柜台里的商品**。",
+          keyFeatures: [
+            {
+              title: "品牌化视觉语言",
+              desc: "从配色、字体到组件细节，围绕珠宝品牌的调性重建视觉语言，摆脱模板感。"
+            },
+            {
+              title: "交互体验升级",
+              desc: "重新梳理核心流程与页面结构，让浏览与购买更顺、层级更清晰。"
+            },
+            {
+              title: "商业目标兼顾",
+              desc: "在质感升级的同时，兼顾引导与转化，让设计为生意服务。"
             }
           ],
           links: []
@@ -500,31 +500,6 @@ export const content = {
         },
         {
           type: "detailed",
-          name: "Jewelry Brand Mini-Program",
-          image: "/jewelry-cover.jpg",
-          subtitle: "Interface & Interaction Redesign",
-          fullName: "Jewelry Brand Mini-Program · Interface & Interaction Redesign",
-          techStack: "WeChat Mini-Program · Figma",
-          status: "Commissioned commercial project · In design",
-          description: "A jewelry brand had been running on a templated mini-program — and a generic interface can't carry the sense of quality the category demands. I'm leading a full redesign, reworking the visual language and core flows so that **the online store feels worthy of what's in the display case**.",
-          keyFeatures: [
-            {
-              title: "Brand-driven visual language",
-              desc: "color, type, and component details rebuilt around the jewelry brand's identity, moving away from the template look."
-            },
-            {
-              title: "Elevated interaction",
-              desc: "core flows and page structures reorganized so browsing and buying feel smoother and clearer."
-            },
-            {
-              title: "Business goals in balance",
-              desc: "quality upgrades balanced with guidance and conversion, keeping design in service of the business."
-            }
-          ],
-          links: []
-        },
-        {
-          type: "detailed",
           name: "Job-Search Workbench",
           image: "/workbench-cover.jpg",
           subtitle: "An AI workflow I built for myself",
@@ -548,6 +523,31 @@ export const content = {
             {
               title: "Actually used, daily",
               desc: "Not a demo. It runs on a schedule and I open it every morning. Whether I keep using it is the only acceptance criterion I set."
+            }
+          ],
+          links: []
+        },
+        {
+          type: "detailed",
+          name: "Jewelry Brand Mini-Program",
+          image: "/jewelry-cover.jpg",
+          subtitle: "Interface & Interaction Redesign",
+          fullName: "Jewelry Brand Mini-Program · Interface & Interaction Redesign",
+          techStack: "WeChat Mini-Program · Figma",
+          status: "Commissioned commercial project · In design",
+          description: "A jewelry brand had been running on a templated mini-program — and a generic interface can't carry the sense of quality the category demands. I'm leading a full redesign, reworking the visual language and core flows so that **the online store feels worthy of what's in the display case**.",
+          keyFeatures: [
+            {
+              title: "Brand-driven visual language",
+              desc: "color, type, and component details rebuilt around the jewelry brand's identity, moving away from the template look."
+            },
+            {
+              title: "Elevated interaction",
+              desc: "core flows and page structures reorganized so browsing and buying feel smoother and clearer."
+            },
+            {
+              title: "Business goals in balance",
+              desc: "quality upgrades balanced with guidance and conversion, keeping design in service of the business."
             }
           ],
           links: []
