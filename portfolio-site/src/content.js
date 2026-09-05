@@ -100,6 +100,7 @@ export const content = {
           image: "/work-assetgate.jpg",
           heroBackdrop: { opacity: 0.5, brightness: 1.6, saturate: 1.2 },
           facts: ["个人项目 · 一天做出可用 MVP", "Figma 插件 · 原生 JavaScript · 零依赖、无构建", "开源（MIT）· 本地安装即可用"],
+          github: "https://github.com/yummyooyummy/assetgate",
           sections: [
             { heading: "起点：产量上来了，信任没跟上", body: "AI 现在一次能生成十几个界面，但我不敢直接拿来用。远看是对的，细看每一层的命名、层级、类型都可能是随手给的——图层叫 Frame 1、Container、Text，嵌套没有逻辑。人能看，机器不能用：没法批量导出、交接，也沉淀不成可复用的资产。\n\n问题不在于 AI 做得不够快，而在于**我没办法快速确认它做得对不对**——逐层点开检查，比自己画一遍还慢。**我想要的是一道二次校验。**" },
             { heading: "定位：管线上的质量门", body: "这一步目前是缺位的。现有插件大多停留在帮你改名字、查样式一致性，没有一个回答**这份稿子达没达到可以交出去的标准**——而产量越大，人工抽查越不可能。\n\nAssetGate 补的就是这个位置：**AI 生成 → AI 按规范整理 → AssetGate 验收。** 标准写一次，机器执行一万次，返工发生在交接之前。", images: [{ src: "/assetgate-flow.png", label: "Flow · 有无质量门", alt: "有无质量门的两条工作流对比：没有它，问题在交接后才暴露；有它，不合格的稿子在交接前被打回整理", wide: true }], imageLayout: "sketch" },
@@ -407,6 +408,7 @@ export const content = {
           image: "/work-assetgate.jpg",
           heroBackdrop: { opacity: 0.5, brightness: 1.6, saturate: 1.2 },
           facts: ["Personal project · Working MVP in one day", "Figma plugin · Vanilla JavaScript · Zero dependencies, no build step", "Open source (MIT) · Installs locally from manifest"],
+          github: "https://github.com/yummyooyummy/assetgate",
           sections: [
             { heading: "Starting point: output scaled, trust didn't", body: "AI can turn out a dozen screens at once, but I don't dare use them as they come. From a distance they look right; up close, every layer's name, nesting and type may have been assigned at random — layers called Frame 1, Container, Text, nesting with no logic. Readable by people, useless to machines: you can't batch-export it, hand it off, or turn it into reusable assets.\n\nThe problem isn't that AI is too slow — it's that **I had no fast way to confirm it got things right**, and opening every layer to check takes longer than drawing the screen myself. **What I wanted was a second pass.**" },
             { heading: "Positioning: a gate on the pipeline", body: "That step is missing today. Existing plugins mostly rename things or check style consistency; none answer **whether a file meets the bar to be handed off** — and the more you generate, the less spot-checking by hand is possible.\n\nThat's the slot AssetGate fills: **AI generates → AI tidies to spec → AssetGate signs off.** Write the standard once, let a machine run it ten thousand times, and catch rework before hand-off.", images: [{ src: "/assetgate-flow.png", label: "Flow · With and without a gate", alt: "Two workflows compared: without a gate, problems surface after hand-off; with AssetGate, non-compliant files are sent back for tidying before hand-off", wide: true }], imageLayout: "sketch" },
