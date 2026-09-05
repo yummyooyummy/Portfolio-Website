@@ -26,6 +26,9 @@ const ROUTES = [
   { path: '/work/honor-of-kings', route: '/work/honor-of-kings', lang: 'zh', outFile: resolve(distDir, 'work/honor-of-kings/index.html') },
   { path: '/en/work/honor-of-kings', route: '/work/honor-of-kings', lang: 'en', outFile: resolve(distDir, 'en/work/honor-of-kings/index.html') },
 
+  { path: '/work/assetgate', route: '/work/assetgate', lang: 'zh', outFile: resolve(distDir, 'work/assetgate/index.html') },
+  { path: '/en/work/assetgate', route: '/work/assetgate', lang: 'en', outFile: resolve(distDir, 'en/work/assetgate/index.html') },
+
   { path: '/work/genesis', route: '/work/genesis', lang: 'zh', outFile: resolve(distDir, 'work/genesis/index.html') },
   { path: '/en/work/genesis', route: '/work/genesis', lang: 'en', outFile: resolve(distDir, 'en/work/genesis/index.html') },
 
@@ -51,6 +54,7 @@ function getHreflangTags(route) {
     '/about': { zh: '/about', en: '/en/about' },
     '/work': { zh: '/work', en: '/en/work' },
     '/work/honor-of-kings': { zh: '/work/honor-of-kings', en: '/en/work/honor-of-kings' },
+    '/work/assetgate': { zh: '/work/assetgate', en: '/en/work/assetgate' },
     '/work/genesis': { zh: '/work/genesis', en: '/en/work/genesis' },
     '/work/signing-app': { zh: '/work/signing-app', en: '/en/work/signing-app' },
     '/lab': { zh: '/lab', en: '/en/lab' },

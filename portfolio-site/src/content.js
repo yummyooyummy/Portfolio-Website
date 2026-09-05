@@ -91,6 +91,25 @@ export const content = {
           ]
         },
         {
+          slug: "assetgate",
+          name: "AssetGate",
+          tag: "Figma 插件",
+          source: "个人项目 · Figma 插件",
+          cardTitle: "给 AI 生成的设计稿把关——一天做出来的质量门",
+          description: "按你自己定的标准检查图层命名与结构，只报告、不改动。AI 生成 → AI 整理 → AssetGate 验收。",
+          image: "/work-assetgate.jpg",
+          heroBackdrop: { opacity: 0.5, brightness: 1.6, saturate: 1.2 },
+          facts: ["个人项目 · 一天做出可用 MVP", "Figma 插件 · 原生 JavaScript · 零依赖、无构建", "开源（MIT）· 本地安装即可用"],
+          sections: [
+            { heading: "新瓶颈", body: "AI 让\"画出一版界面\"变得很快。但生成出来的文件是非结构化的：图层全叫 Frame 1、Container、Text，层级随手嵌套，没有任何语义。这样的稿子人能看，机器不能用——没法批量导出、没法交接、没法沉淀成可复用的资产，更没法成为 AI 的训练素材。\n\n**当执行不再是瓶颈，产出物的结构化质量就成了新瓶颈。**" },
+            { heading: "它在链条上的位置", body: "市面上的工具分两派：帮你**起名**的（Figma 自带的 AI 重命名、各种 rename 插件），和检查**样式一致性**的（Design Lint 这类查颜色字体是否用了 token）。没有人做\"这份资产**是否达到进入自动化流程的标准**\"这道门控。\n\n所以 AssetGate 的真实用途不是帮你改名，而是验收：**AI 生成 → AI 按规范整理 → AssetGate 验收——它是这条链的质量门。** 我给自己一天时间验证这个命题：定义规范、做出插件、跑通真实测试。" },
+            { heading: "三个决定", body: "**信任优先。** 工具类产品用户愿不愿意用，本质上是信任问题。所以每条问题都回显它违反的具体标准，点击直接跳转定位，界面常驻\"只检查，不会改动你的文件\"；机器判不了的五类情况——名字取得好不好、业务名合不合适、图标语义准不准——写在界面最顶部明示，而不是假装能判。\n\n**标准由使用者定义。** 每个团队的规范都不一样，所以我做的是\"定义规范 + 执行检查\"的能力，不是某一套具体规范。设定项全是大白话勾选，不需要懂正则、不需要看文档。\n\n**只做客观可判的规则，宁可少报也不误报。** 问题分两级：确定违规的计入合格率，启发式判断的只算建议。一次误报就足以毁掉全部信任。" },
+            { heading: "被自己的数据打脸", body: "第一版规则跑在我自己的真实文件上：28 个问题里 19 个是误报——AI 把每段文字外面套了一层同名 Frame，我的规则说\"叫 txt/ 但不是文字图层\"；emoji 当图标用，规则说\"文字图层应该叫 txt/\"。第二版：9 个问题，9 个全是误报——组件式命名被当成\"区块要用中文\"，有填充的分割线被当成\"空图层\"。第三版归零。\n\n三轮的根因是同一个：我在做**字符串匹配**，而正确的做法是**先看这个图层实际是什么**。这是我做过最真实的一次用户研究——用户就是我自己，数据不会客气。" },
+            { heading: "0% 和 100%", body: "同一套界面设计做了对照测试。Figma Make 的原始产出：88 层、88 个问题、合格率 **0%**。把命名规范交给 AI、让它按规范重新生成：87 层、0 个必须修的问题、合格率 **100%**，只剩 24 条结构类建议——16 处父子同名的多余包装层，8 处\"命名像组件却不是组件\"。\n\n两个发现。**AI 会严格遵守你明确写下的规则，但不会做你没说的事**：规范里写了命名怎么写，没写\"别套多余的层\"\"重复元素要组件化\"，AI 就一条都没做。**问题会掩盖建议**：文件太烂的时候你只看得到命名问题，看不到结构问题。" },
+            { heading: "如果重来", body: "我会把标准**前置到生成环节**——在给 AI 的提示里就注入命名和结构要求，让它生成时就合规，检查器只做兜底。这也是这类工具的正确演进方向：从\"事后门控\"走向\"生成时注入 + 事后兜底 + 合格资产自动打标入库\"的完整闭环。\n\n下一步：接上 Figma Agent，让\"AI 整理\"这一步也自动跑，AssetGate 在末端验收——那时它才真正成为一条自动化管线上的质量门，而不只是一个插件。" }
+          ]
+        },
+        {
           slug: "genesis",
           name: "连连小宇宙",
           tag: "微信小游戏",
@@ -376,6 +395,25 @@ export const content = {
             { heading: "Interaction design for gameplay systems", body: "Dungeons, the map, housing, pets, achievements, fishing — with every system I took on, the work followed the same complete loop: absorb the gameplay rules and numeric logic, map the information architecture and the player's core paths, design the interaction flows and interface framework, exhaust the states and edge cases, then deliver the spec and drive it to ship.\n\nDoing this system after system for years turned **\"translating complexity into clarity\"** into muscle memory — and that method doesn't belong to games. It belongs to any complex product.", images: [{ src: "/hok-dungeon.jpg", alt: "Honor of Kings: World live gameplay — dungeon interface (official public content)" }, { src: "/hok-pet.jpg", alt: "Honor of Kings: World live gameplay — pet system interface (official public content)" }] },
             { heading: "Input design across three platforms", body: "The same battle might be played by touch, by keyboard and mouse, or by gamepad. I owned the input design for all three: the skill wheel's layout and gesture logic on mobile, the key bindings for skills and functions on PC, and the button mapping and combinations on the controller.\n\nThe three input methods differ completely in precision, speed, and muscle memory — you can't design once and scale it across platforms. Each one has to be **re-derived from the logic of the gameplay** itself. My early experience as a game designer let me reason from that level about why a control has to feel right." },
             { heading: "How I worked", body: "From taking on requirements to independently leading the interaction design of core modules and driving cross-team alignment — I went through the full cycle of product collaboration inside a large organization, and came away with a disciplined design method and the ability to articulate and push design decisions all the way to shipping." }
+          ]
+        },
+        {
+          slug: "assetgate",
+          name: "AssetGate",
+          tag: "Figma Plugin",
+          source: "Personal · Figma Plugin",
+          cardTitle: "A quality gate for AI-generated design files — built in a day",
+          description: "Checks layer naming and structure against standards you define. Reports, never edits. AI generates → AI tidies → AssetGate signs off.",
+          image: "/work-assetgate.jpg",
+          heroBackdrop: { opacity: 0.5, brightness: 1.6, saturate: 1.2 },
+          facts: ["Personal project · Working MVP in one day", "Figma plugin · Vanilla JavaScript · Zero dependencies, no build step", "Open source (MIT) · Installs locally from manifest"],
+          sections: [
+            { heading: "The new bottleneck", body: "AI made \"draw a version of this screen\" fast. But what it produces is unstructured: every layer is called Frame 1, Container or Text, nesting is arbitrary, nothing carries meaning. A file like that is readable by people and useless to machines — you can't batch-export it, hand it off, turn it into reusable assets, or feed it back to an AI as training material.\n\n**Once execution stops being the bottleneck, the structural quality of the output becomes the new one.**" },
+            { heading: "Where it sits in the chain", body: "Existing tools fall into two camps: ones that **name things for you** (Figma's built-in AI rename, countless rename plugins), and ones that check **style consistency** (Design Lint and the like, verifying colors and type against tokens). Nobody was gating the question that actually matters: **does this asset meet the bar to enter an automated pipeline?**\n\nSo AssetGate isn't a renamer — it's the sign-off step: **AI generates → AI tidies to spec → AssetGate signs off. It's the quality gate on that chain.** I gave myself one day to test the idea: write the spec, build the plugin, run it on real files." },
+            { heading: "Three decisions", body: "**Trust first.** Whether people use a tool like this comes down to trust. So every issue shows the exact standard it violates, clicking one jumps to that layer, and the panel permanently states that it only inspects and never edits. The five things a machine cannot judge — is the name good, is the business term right, is the icon semantically accurate — are spelled out at the very top of the panel instead of pretended away.\n\n**The standards belong to the user.** Every team's conventions differ, so I built the ability to define a convention and enforce it, not one particular convention. Every setting is a plain-language checkbox: no regex, no docs.\n\n**Only rules a machine can judge objectively, and better to under-report than misreport.** Findings come in two tiers: definite violations count toward the pass rate; heuristic ones are suggestions only. One false positive is enough to destroy trust." },
+            { heading: "Corrected by my own data", body: "I ran the first version of the rules on my own real files: 19 of 28 reported issues were false positives. The AI had wrapped every text in a same-named Frame, and my rule said \"named txt/ but isn't a text layer\"; an emoji used as an icon triggered \"text layers should be named txt/\". Second version: 9 issues, all 9 false — component-style names flagged as \"blocks must be Chinese\", a filled divider flagged as an \"empty layer\". Third version: zero.\n\nAll three rounds had the same root cause: I was **matching strings**, when the right approach is to **look at what the layer actually is**. It was the most honest user research I've done — the user was me, and the data didn't spare my feelings." },
+            { heading: "0% and 100%", body: "A controlled test on the same screen design. Figma Make's raw output: 88 layers, 88 issues, pass rate **0%**. After handing the naming spec to the AI and regenerating: 87 layers, zero must-fix issues, pass rate **100%**, with 24 structural suggestions remaining — 16 redundant same-named wrappers, 8 layers named like components that weren't components.\n\nTwo findings. **AI follows the rules you write down and does nothing about the ones you don't**: the spec said how to name things and said nothing about redundant wrappers or componentizing repeats, so the AI did neither. **Problems hide suggestions**: when a file is bad enough, all you can see are naming issues; the structural ones only surface once naming is clean." },
+            { heading: "If I did it again", body: "I'd move the standard **upstream into generation** — inject the naming and structural requirements into the prompt so the output is compliant the moment it's produced, with the linter as a safety net. That's also where tools like this should go: from after-the-fact gating to \"inject at generation + gate as backstop + auto-tag compliant assets into the library\", a closed loop.\n\nNext step: wire in a Figma Agent so the \"AI tidies\" step runs automatically too, with AssetGate signing off at the end. That's when it becomes a real quality gate on an automated pipeline, not just a plugin." }
           ]
         },
         {
